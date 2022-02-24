@@ -1,12 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
     <title>The Ultimate Quiz App</title>
+    <link rel='stylesheet' href='assests/style.css'>
+    <!-- FontAweome CDN Link for Icons -->
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'/>
 </head>
 <body>
-    
+  <header>
+      <h1>Welcome to the Ultimate Quiz App</h1>
+  </header>
+<!-- Start and Quiz Topic -->
+  <div class='start-btn'>
+      <button>Start</button>
+    </div>
+
+    <!-- Rules and Game Mode -->
+    <div class='rules-box'>
+        <div class='rules-title'>The Rules of this Quiz!</div>
+        <div class='rules-list'>
+            <p class='rules'></p>
+            <p class='rules'></p>
+            <p class='rules'></p>
+            <p class='rules'></p>
+            <p class='rules'></p>
+        </div>
+        <div class='game-mode'>
+            <button class='quick-mode'>Quick</button>
+            <button class='hard-mode'>Hard</button>
+            <button class='pubquiz-mode'>Pub Quiz</button>
+        </div>
+        <div class='buttons'>
+            <button class='quit'>Exit</button>
+            <button class='restart'>Continue</button>
+        </div>
+    </div>
+
+    <!-- Questions Box -->
+    <div class='question-box'>
+        <header>
+            <div class='title'>Ultimate Quiz App</div>
+            <div class='timer'>
+                <div class='time-remain'>Time Left</div>
+                <div class='time'>Go!</div>
+            </div>
+        </header>
+        <section>
+            <div class='questions'>
+                <!-- insert the questions with JS -->
+            </div>
+            <div class='choices'>
+                <!-- Insert 4 different possible answers using JS -->
+            </div>
+        </section>
+
+        <!-- Footer for Questions Box -->
+        <footer>
+            <div class='total-ques'>
+                <!-- Counter goes here from JS -->
+            </div>
+            <button class='next-ques'>Next Question</button>
+        </footer>
+    </div>
+
+    <!-- Result Box -->
+    <div class='result-box'>
+        <div class='icon'>
+            <i class="fas fa-trophy"></i>
+        </div>
+        <div class="completed">You completed the Quiz!</div>
+        <div class="score">
+            <!-- Insert the score using JS -->
+        </div>
+        <div class="buttons">
+            <button class="restart">Replay Quiz</button>
+            <button class="quit">Quit Quiz</button>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
