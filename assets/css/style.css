@@ -26,8 +26,8 @@
     font-family: 'Ubuntu', sans-serif;
 }
 
-html {
-    background: url('assets/images/rudy_issa.jpg');
+body {
+    background-image: url("assets\images\rudy-issa-jedKD4yaTvk-unsplash.jpg");
     background-size: cover;
 }
 
