@@ -399,8 +399,7 @@ const quizObj = [
     
     {question:"Who painted ‘Girl with a Pearl Earring’?",
     answers:["Johannes Vermeer","Vincent Van Gogh","Leonardo da Vinci","Sandro Botticelli"],
-    correct:"Johannes Vermeer"}
-];
+    correct:"Johannes Vermeer"},];
 
 const startBtn = document.querySelector('.start-btn');
 const rulesBox = document.querySelector('.rules-box');
@@ -417,14 +416,16 @@ const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
 const test = gameMode.querySelectorAll('.game');
 const timer = document.querySelector('.timer');
-let timeCounter = document.querySelector('.time');
+let timeCounter = document.querySelector('.seconds');
 
-// Declare game mode questions
+
+
+
+// sets game mode questions
 const quickMode = document.querySelector('.quick-mode');
 const hardMode = document.querySelector('.hard-mode');
 const pubQuizMode = document.querySelector('.pubquiz-mode');
 
-// Declare the starting values for variables
 let randomNum = 0;
 let quesCount = 0;
 let quesNum = 1;
@@ -433,15 +434,110 @@ let userGameModeSelect = 0;
 let timeVal = 0;
 let counter;
 
-// Onclick Events
+// quickMode.onclick = () => {
+//     quesCount = 5;
+//     userGameModeSelect = quesCount;
+
+//     continue_btn.disabled = false;
+//     continue_btn.classList.add('restart');
+//     continue_btn.classList.remove('greyed');
+
+//     quickMode.setAttribute('class','selected');
+//     hardMode.removeAttribute('class','selected');
+//     pubQuizMode.removeAttribute('class','selected');
+// }
+
+// hardMode.onclick = () => {
+//     quesCount = 15;
+//     userGameModeSelect = quesCount;
+
+//     continue_btn.disabled = false;
+//     continue_btn.classList.add('restart');
+//     continue_btn.classList.remove('greyed');
+
+//     hardMode.setAttribute('class','selected');
+//     pubQuizMode.removeAttribute('class','selected');
+//     quickMode.removeAttribute('class','selected');
+// }
+
+// pubQuizMode.onclick = () => {
+//     quesCount = 50;
+//     userGameModeSelect = quesCount;
+
+//     continue_btn.disabled = false;
+//     continue_btn.classList.add('restart');
+//     continue_btn.classList.remove('greyed');
+
+    
+//     pubQuizMode.setAttribute('class','selected');
+//     quickMode.removeAttribute('class','selected');
+//     hardMode.removeAttribute('class','selected');
+// }
+
+
+// let test = document.querySelector('.game');
+
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 
+
+let gameSelect = (choice) => {
+
+    continue_btn.disabled = false;
+    continue_btn.classList.add('restart');
+    continue_btn.classList.remove('greyed');
+    
+    if(choice == 'quick'){
+        quesCount = 5;
+        timeVal = 15;
+        quickMode.classList.add('class','selected');
+        hardMode.classList.remove('class','selected');
+        pubQuizMode.classList.remove('class','selected');
+
+    } else if(choice == 'hard'){
+        quesCount = 15;
+        timeVal = 5;
+        hardMode.classList.add('class','selected');
+        pubQuizMode.classList.remove('class','selected');
+        quickMode.classList.remove('class','selected');
+
+    } else if(choice == 'pubQuiz'){
+        quesCount = 50;
+        timer.style.display = 'none';
+
+        pubQuizMode.classList.add('class','selected');
+        quickMode.classList.remove('class','selected');
+        hardMode.classList.remove('class','selected');
+    }
+    userGameModeSelect = quesCount;
+}
+
+// Get Questions from Main Array Object
 let quesList = [];
 quesList = quizObj.map(ques => ques.question);
-let answerList = quizObj.map(answ => answ.answers);
+let answerList = quizObj.map(answ => answ.answers)
+
+
+// Onclick Event that display the Rules box after clicking Start
+startBtn.onclick = () => {
+    continue_btn.disabled = true;
+    continue_btn.classList.remove('restart');
+    continue_btn.classList.add('greyed');
+    rulesBox.classList.add('activerules');
+}
+
+
+continue_btn.onclick = () => {
+    quesBox.classList.add('activeQuiz');
+    rulesBox.classList.remove('activerules');
+    randomQues();
+}
+
+exitBtn.onclick = () => {
+    rulesBox.classList.remove('activerules');
+}
 
 function randomQues(){
     timeCount(timeVal);
@@ -476,7 +572,7 @@ function randomQues(){
     totalQues.innerHTML = 
 `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
 
-};
+}
 
 function checkAnswers(userChoice){
     let userSelect = userChoice.textContent;
@@ -543,3 +639,22 @@ replayBtn.onclick = () => {
 quitBtn.onclick = () => {
     window.location.reload();
 }
+
+
+function timeCount(timeVal){
+    counter = setInterval(time, 1000);
+    function time(){
+        timeCounter.innerText = timeVal;
+        timeVal--;
+
+        if(timeVal < 9){
+            let addZero = timeCounter.innerText
+            timeCounter.innerText = '0' + addZero;
+        }
+
+        if(timeVal < 0){
+            clearInterval(counter);
+        }
+    }
+}
+
