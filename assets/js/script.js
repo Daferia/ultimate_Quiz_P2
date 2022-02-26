@@ -508,3 +508,17 @@ nextBtn.onclick = ()=>{
 
     }
 }
+
+replayBtn.onclick = () => {
+    resultsBox.classList.remove('activeResult');
+    quesBox.classList.add('activeQuiz');
+    randomNum = 0;
+    quesCount = userGameModeSelect;
+    quesNum = 1;
+    prevRandomNum = 0
+    randomQues();
+}
+
+quitBtn.onclick = () => {
+    window.location.reload();
+}
