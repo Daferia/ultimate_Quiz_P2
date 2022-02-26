@@ -42,6 +42,15 @@ body {
                 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.rules-box.activerules,
+.questions-box.activeQuiz,
+.result-box.activeResult{
+    opacity: 1;
+    z-index: 5;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .start-btn button   {
     font-size: 25px;
     font-weight: 500;
@@ -80,6 +89,12 @@ body {
     font-weight: 500;
     background: var(--light-gray);
     border: 1px solid var(--light-gray);
+}
+
+.game-mode .selected {
+    color: var(--cultured);
+    background-color: var(--onyx);
+    border: 1px solid var(--onyx);
 }
 
 .rules-box{
@@ -188,7 +203,7 @@ body {
     user-select: none;
 }
 
-.questions-box header .timer .seconds{
+.questions-box header .timer .time{
     font-size: 18px;
     font-weight: 500;
     height: 30px;
@@ -224,6 +239,69 @@ section .questions{
 section .choices{
     padding: 20px 0px;
     display: block;   
+}
+
+section .choices .option{
+    background: aliceblue;
+    border: 1px solid #84c5fe;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 17px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+section .choices .option:last-child{
+    margin-bottom: 0px;
+}
+
+section .choices .option:hover{
+    color: #004085;
+    background: #cce5ff;
+    border: 1px solid #b8daff;
+}
+
+section .choices .option.correct{
+    color: #155724;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+section .choices .option.incorrect{
+    color: #721c24;
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+}
+
+section .choices .option.disabled{
+    pointer-events: none;
+}
+
+section .choices .option .icon{
+    height: 26px;
+    width: 26px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 13px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    line-height: 24px;
+}
+.choices .option .icon.tick{
+    color: #23903c;
+    border-color: #23903c;
+    background: #d4edda;
+}
+
+.choices .option .icon.cross{
+    color: #a42834;
+    background: #f8d7da;
+    border-color: #a42834;
 }
 
 footer{
