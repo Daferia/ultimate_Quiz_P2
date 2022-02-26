@@ -610,9 +610,9 @@ function timeCount(timeVal){
             timeCounter.innerText = '0' + addZero;
         }
 
-        if(timeVal < 0){
-            clearInterval(counter);
-        }
+        // if(timeVal < 0){
+        //     clearInterval(counter);
+        // }
     }
 }
 
