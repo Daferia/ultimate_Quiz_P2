@@ -477,3 +477,22 @@ function randomQues(){
 `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
 
 };
+
+function checkAnswers(userChoice){
+    let userSelect = userChoice.textContent;
+    let findAnswer = [];
+    findAnswer = quizObj.map(answer => answer.correct);
+
+    // Get the corresponding answer based on the random number to match the question
+    let correctAnswer = findAnswer[randomNum];
+    
+    console.log(correctAnswer);
+    if(userSelect == correctAnswer){
+        userChoice.classList.add('correct');
+        nextBtn.classList.add('show');
+        console.log('This is correct!');
+    }else {
+        userChoice.classList.add('incorrect');
+        nextBtn.classList.add('show');
+    }
+}
