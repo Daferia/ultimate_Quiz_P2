@@ -439,3 +439,41 @@ hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 
+let quesList = [];
+quesList = quizObj.map(ques => ques.question);
+let answerList = quizObj.map(answ => answ.answers);
+
+function randomQues(){
+    timeCount(timeVal);
+    nextBtn.classList.remove('show');
+    randomNum = Math.ceil(Math.random()*100);
+    
+    // Code to try stop duplicating a question on after another by checkiing previous number.
+    if (prevRandomNum == randomNum){
+        randomNum += 1;
+    } else if( prevRandomNum == 99){
+        randomNum -= 2;
+    }
+
+    // sets previous number value for next round
+    prevRandomNum = randomNum;
+    
+    // Set Question Number and the corresponding question.
+    question.innerHTML = `${quesNum}. ${quesList[randomNum]}`;
+
+    choiceBox.innerHTML =
+    `<div class="option"><span>${answerList[randomNum][0]}</span></div>
+    <div class="option">${answerList[randomNum][1]}</div>
+    <div class="option">${answerList[randomNum][2]}</div>
+    <div class="option">${answerList[randomNum][3]}</div>`;
+    
+    let option = choiceBox.querySelectorAll('.option');
+
+    for(i=0; i < option.length; i++){
+        option[i].setAttribute('onclick', 'checkAnswers(this)');
+    }
+
+    totalQues.innerHTML = 
+`<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
+
+};
