@@ -416,7 +416,7 @@ const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
 const test = gameMode.querySelectorAll('.game');
 const timer = document.querySelector('.timer');
-let timeCounter = document.querySelector('.seconds');
+let timeCounter = document.querySelector('.time');
 
 
 
