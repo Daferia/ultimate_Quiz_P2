@@ -494,6 +494,27 @@ function checkAnswers(userChoice){
     }else {
         userChoice.classList.add('incorrect');
         nextBtn.classList.add('show');
+
+        // If user selects the wrong answer it will highlight the correct answer.
+        let checkOthers = answerList[randomNum];
+        for(i = 0; i < checkOthers.length; i++){
+            if (choiceBox.children[i].textContent == correctAnswer){;
+                choiceBox.children[i].setAttribute('class', 'option correct'); }       }
+        console.log('This is wrong')
+    }
+
+    console.log(prevRandomNum);
+    
+    // Stops the user from selecting another option
+    for(i= 0 ;i < 4; i++){ 
+        choiceBox.children[i].classList.add('disabled');
+    }
+
+    if (quesNum === quesCount){
+        console.log('print');
+        nextBtn.innerText = 'Finshed!';
+    } else{
+        nextBtn.innerText = 'Next Question'
     }
 }
 
