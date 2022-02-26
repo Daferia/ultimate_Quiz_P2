@@ -549,13 +549,10 @@ function checkAnswers(userChoice){
         userChoice.classList.add('incorrect');
         nextBtn.classList.add('show');
 
-        // If user selects the wrong answer it will highlight the correct answer.
-        let checkOthers = answerList[randomNum];
-        for(i = 0; i < checkOthers.length; i++){
-            if (choiceBox.children[i].textContent == correctAnswer){;
-                choiceBox.children[i].setAttribute('class', 'option correct'); }       }
-        console.log('This is wrong')
     }
+    
+    clearInterval(counter);
+
 
     console.log(prevRandomNum);
     
@@ -571,6 +568,25 @@ function checkAnswers(userChoice){
         nextBtn.innerText = 'Next Question'
     }
 }
+
+ // If user selects the wrong answer it will highlight the correct answer.
+
+let incorrectAnswer = val => {
+    let checkOthers = answerList[randomNum];
+
+    for(i = 0; i < checkOthers.length; i++){
+        if (choiceBox.children[i].textContent == val ){
+            choiceBox.children[i].setAttribute('class', 'option correct'); 
+        console.log(choiceBox.children[i])
+    }}
+
+    console.log(prevRandomNum);
+    // Stops the user from selecting another option
+    for(i= 0 ;i < 4; i++){ 
+        choiceBox.children[i].classList.add('disabled');
+        }
+}
+
 
 nextBtn.onclick = ()=>{
     if(quesNum < quesCount){
