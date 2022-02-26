@@ -434,48 +434,6 @@ let userGameModeSelect = 0;
 let timeVal = 0;
 let counter;
 
-// quickMode.onclick = () => {
-//     quesCount = 5;
-//     userGameModeSelect = quesCount;
-
-//     continue_btn.disabled = false;
-//     continue_btn.classList.add('restart');
-//     continue_btn.classList.remove('greyed');
-
-//     quickMode.setAttribute('class','selected');
-//     hardMode.removeAttribute('class','selected');
-//     pubQuizMode.removeAttribute('class','selected');
-// }
-
-// hardMode.onclick = () => {
-//     quesCount = 15;
-//     userGameModeSelect = quesCount;
-
-//     continue_btn.disabled = false;
-//     continue_btn.classList.add('restart');
-//     continue_btn.classList.remove('greyed');
-
-//     hardMode.setAttribute('class','selected');
-//     pubQuizMode.removeAttribute('class','selected');
-//     quickMode.removeAttribute('class','selected');
-// }
-
-// pubQuizMode.onclick = () => {
-//     quesCount = 50;
-//     userGameModeSelect = quesCount;
-
-//     continue_btn.disabled = false;
-//     continue_btn.classList.add('restart');
-//     continue_btn.classList.remove('greyed');
-
-    
-//     pubQuizMode.setAttribute('class','selected');
-//     quickMode.removeAttribute('class','selected');
-//     hardMode.removeAttribute('class','selected');
-// }
-
-
-// let test = document.querySelector('.game');
 
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
