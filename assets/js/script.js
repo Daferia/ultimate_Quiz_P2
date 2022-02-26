@@ -496,3 +496,15 @@ function checkAnswers(userChoice){
         nextBtn.classList.add('show');
     }
 }
+
+nextBtn.onclick = ()=>{
+    if(quesNum < quesCount){
+        quesNum ++;
+        randomQues(quesCount);
+    } else {
+        console.log('print');
+        quesBox.classList.remove('activeQuiz');
+        resultsBox.classList.add('activeResult');
+
+    }
+}
