@@ -455,7 +455,7 @@ let gameSelect = choice => {
     
     if(choice == 'quick'){
         quesCount = 5;
-        timeVal = 2;
+        timeVal = 15;
         quickMode.classList.add('class','selected');
         hardMode.classList.remove('class','selected');
         pubQuizMode.classList.remove('class','selected');
@@ -591,9 +591,7 @@ let incorrectAnswer = val => {
         if (choiceBox.children[i].textContent == val ){
             choiceBox.children[i].setAttribute('class', 'option correct');
             choiceBox.children[i].insertAdjacentHTML('beforeend', correctIconTag);
-
         }
-
     }
 }
 
