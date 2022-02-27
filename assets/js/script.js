@@ -570,7 +570,7 @@ let checkAnswers = userChoice => {
         console.log('print');
         nextBtn.innerText = 'Next Question';
     } else if(quesNum == quesCount){
-        nextBtn.innerText = 'Finshed!';
+        nextBtn.innerText = 'Quiz Completed';
     }
     clearInterval(counter);
 };
