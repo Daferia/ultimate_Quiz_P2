@@ -63,38 +63,12 @@ body {
     cursor: pointer;
 }
 
-.game-mode {
-    display: flex;
-    padding-bottom: 15px;
-}
-
-.game-mode button{
-    color: var(--light-gray);
-    background-color: var(--sonic-silver);
-    margin: auto;
-    height: 40px;
-    width: 100px;
-    font-size: 16px;
-    font-weight: 500;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--sonic-silver);
-    transition: all 0.3s ease;
-}
-
 .start-btn button:hover,
 .game-mode button:hover{
     color:var(--onyx);
     font-weight: 500;
     background: var(--light-gray);
     border: 1px solid var(--light-gray);
-}
-
-.game-mode .selected {
-    color: var(--cultured);
-    background-color: var(--onyx);
-    border: 1px solid var(--onyx);
 }
 
 .rules-box{
@@ -154,6 +128,48 @@ body {
     border-radius: 5px;
     border: 1px solid var(--sonic-silver);
     transition: all 0.3s ease;
+}
+
+.game-mode {
+    display: flex;
+    padding-bottom: 15px;
+    justify-content: space-around;
+}
+.game-mode h2 {
+    height: 60px;
+    width: 100%;
+    /* display: flex; */
+    align-items: center;
+    padding: 0 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.game-mode button{
+    color: var(--light-gray);
+    background-color: var(--sonic-silver);
+    margin: auto;
+    height: 40px;
+    width: 100px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid var(--sonic-silver);
+    transition: all 0.3s ease;
+}
+
+.game-mode .group-play {
+    display: flex;
+    flex-direction: column;
+}
+
+.game-mode .selected {
+    color: var(--cultured);
+    background-color: var(--onyx);
+    border: 1px solid var(--onyx);
 }
 
 .questions-box  {
