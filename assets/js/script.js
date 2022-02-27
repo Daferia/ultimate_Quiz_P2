@@ -426,6 +426,10 @@ const quickMode = document.querySelector('.quick-mode');
 const hardMode = document.querySelector('.hard-mode');
 const pubQuizMode = document.querySelector('.pubquiz-mode');
 
+// creating the new div tags which for icons
+let correctIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
+let incorrectIconTag = '<div class="icon cross"><i class="fas fa-times"></i></div>';
+
 // Declare the starting values for variables
 let randomNum = 0;
 let quesCount = 0;
@@ -547,11 +551,13 @@ let checkAnswers = userChoice => {
     let correctAnswer = findAnswer[randomNum];
     if(userSelect == correctAnswer){
         userChoice.classList.add('correct');
+        userChoice.insertAdjacentHTML('beforeend', correctIconTag);
         nextBtn.classList.add('show');
         points += 10;
         console.log('This is correct!');
     }else if(userSelect != correctAnswer){
         userChoice.classList.add('incorrect');
+        userChoice.insertAdjacentHTML('beforeend', incorrectIconTag);
         nextBtn.classList.add('show');
         incorrectAnswer(correctAnswer);
     }
@@ -583,8 +589,11 @@ let incorrectAnswer = val => {
 
     for(i = 0; i < checkOthers.length; i++){
         if (choiceBox.children[i].textContent == val ){
-            choiceBox.children[i].setAttribute('class', 'option correct'); 
+            choiceBox.children[i].setAttribute('class', 'option correct');
+            choiceBox.children[i].insertAdjacentHTML('beforeend', correctIconTag);
+
         }
+
     }
 }
 
