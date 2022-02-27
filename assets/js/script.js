@@ -399,7 +399,8 @@ const quizObj = [
     
     {question:"Who painted ‘Girl with a Pearl Earring’?",
     answers:["Johannes Vermeer","Vincent Van Gogh","Leonardo da Vinci","Sandro Botticelli"],
-    correct:"Johannes Vermeer"},];
+    correct:"Johannes Vermeer"}
+];
 
 const startBtn = document.querySelector('.start-btn');
 const rulesBox = document.querySelector('.rules-box');
@@ -418,14 +419,12 @@ const test = gameMode.querySelectorAll('.game');
 const timer = document.querySelector('.timer');
 let timeCounter = document.querySelector('.time');
 
-
-
-
-// sets game mode questions
+// Declare game mode questions
 const quickMode = document.querySelector('.quick-mode');
 const hardMode = document.querySelector('.hard-mode');
 const pubQuizMode = document.querySelector('.pubquiz-mode');
 
+// Declare the starting values for variables
 let randomNum = 0;
 let quesCount = 0;
 let quesNum = 1;
@@ -434,15 +433,15 @@ let userGameModeSelect = 0;
 let timeVal = 0;
 let counter;
 
-
+// Onclick Events
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 
-
-let gameSelect = (choice) => {
-
+// Game Selection Function
+function gameSelect(choice){
+    // disbales the continue button until user selects a game mode
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
     continue_btn.classList.remove('greyed');
@@ -463,20 +462,23 @@ let gameSelect = (choice) => {
 
     } else if(choice == 'pubQuiz'){
         quesCount = 50;
-        timer.style.display = 'none';
-
+        timeVal = 240;
         pubQuizMode.classList.add('class','selected');
         quickMode.classList.remove('class','selected');
         hardMode.classList.remove('class','selected');
     }
+    //sets  Question count based on user game mode choice
     userGameModeSelect = quesCount;
 }
 
-// Get Questions from Main Array Object
+
+// Get Questions from Questions Object
 let quesList = [];
 quesList = quizObj.map(ques => ques.question);
 let answerList = quizObj.map(answ => answ.answers)
 
+let findAnswer = [];
+findAnswer = quizObj.map(answer => answer.correct);
 
 // Onclick Event that display the Rules box after clicking Start
 startBtn.onclick = () => {
@@ -486,7 +488,7 @@ startBtn.onclick = () => {
     rulesBox.classList.add('activerules');
 }
 
-
+// Onclick Event to display Questions Box and run the game
 continue_btn.onclick = () => {
     quesBox.classList.add('activeQuiz');
     rulesBox.classList.remove('activerules');
@@ -497,6 +499,8 @@ exitBtn.onclick = () => {
     rulesBox.classList.remove('activerules');
 }
 
+
+// Function that generates the random questions
 function randomQues(){
     timeCount(timeVal);
     nextBtn.classList.remove('show');
@@ -507,6 +511,9 @@ function randomQues(){
         randomNum += 1;
     } else if( prevRandomNum == 99){
         randomNum -= 2;
+    } else if( randomNum == 0){
+        randomNum += 1;
+
     }
 
     // sets previous number value for next round
@@ -532,15 +539,10 @@ function randomQues(){
 
 }
 
+// Function that checkers users answer
 function checkAnswers(userChoice){
     let userSelect = userChoice.textContent;
-    let findAnswer = [];
-    findAnswer = quizObj.map(answer => answer.correct);
-
-    // Get the corresponding answer based on the random number to match the question
     let correctAnswer = findAnswer[randomNum];
-    
-    console.log(correctAnswer);
     if(userSelect == correctAnswer){
         userChoice.classList.add('correct');
         nextBtn.classList.add('show');
@@ -548,30 +550,22 @@ function checkAnswers(userChoice){
     }else {
         userChoice.classList.add('incorrect');
         nextBtn.classList.add('show');
-
+        incorrectAnswer(correctAnswer);
     }
-    
+
     clearInterval(counter);
 
-
-    console.log(prevRandomNum);
-    
-    // Stops the user from selecting another option
-    for(i= 0 ;i < 4; i++){ 
-        choiceBox.children[i].classList.add('disabled');
-    }
-
-    if (quesNum === quesCount){
+    if (quesNum != quesCount){
         console.log('print');
-        nextBtn.innerText = 'Finshed!';
-    } else{
         nextBtn.innerText = 'Next Question'
+    } else{
+        nextBtn.innerText = 'Finshed!';
     }
-}
+};
 
- // If user selects the wrong answer it will highlight the correct answer.
+// function if user selects the wrong answer it will highlight the correct answer.
 
-let incorrectAnswer = val => {
+function incorrectAnswer(val){
     let checkOthers = answerList[randomNum];
 
     for(i = 0; i < checkOthers.length; i++){
@@ -587,8 +581,30 @@ let incorrectAnswer = val => {
         }
 }
 
+// Function that sets a timer to Quick and Hard mode
+function timeCount(timeVal){
+    counter = setInterval(time, 1000);
+    function time(){
+        timeCounter.innerText = timeVal;
+        timeVal--;
 
-nextBtn.onclick = ()=>{
+        // adds a zero to the counter setting it as a double digit counter
+        if(timeVal < 9){
+            let addZero = timeCounter.innerText
+            timeCounter.innerText = '0' + addZero;
+
+        }
+        if(timeVal < 0){// Stops counter from counting down past zero
+            clearInterval(counter);
+            timeCounter.innerText = '--';
+            incorrectAnswer(findAnswer[randomNum]);
+            nextBtn.classList.add('show');
+        }
+    }
+}
+
+// Question Counter Onclick function that will add a number to the counter
+nextBtn.onclick = () => {
     if(quesNum < quesCount){
         quesNum ++;
         randomQues(quesCount);
@@ -600,6 +616,7 @@ nextBtn.onclick = ()=>{
     }
 }
 
+// REplay onlick function that will allow the user to restart the quiz using same choices
 replayBtn.onclick = () => {
     resultsBox.classList.remove('activeResult');
     quesBox.classList.add('activeQuiz');
@@ -610,27 +627,8 @@ replayBtn.onclick = () => {
     randomQues();
 }
 
+// Quit Function reloads window to Start Screen if they quit
 quitBtn.onclick = () => {
     window.location.reload();
-}
-
-
-function timeCount(timeVal){
-    counter = setInterval(time, 1000);
-    function time(){
-        timeCounter.innerText = timeVal;
-        timeVal--;
-
-        if(timeVal < 9){
-            let addZero = timeCounter.innerText
-            timeCounter.innerText = '0' + addZero;
-        }
-
-        if(timeVal < 0){
-            clearInterval(counter);
-            timeCounter.innerText = '--';
-            nextBtn.classList.add('show')
-        }
-    }
 }
 
