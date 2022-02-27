@@ -87,6 +87,7 @@ body {
     border-bottom: 1px solid lightgrey;
     display: flex;
     align-items: center;
+    justify-content: center;
     padding: 0 30px;
     border-radius: 5px 5px 0 0;
     font-size: 20px;
@@ -95,6 +96,8 @@ body {
 
 .rules-box .rules-list  {
     padding: 15px 30px;
+    border-bottom: 1px solid lightgrey;
+
 }
 
 .rules-box .rules-list .rules   {
@@ -136,9 +139,10 @@ body {
     justify-content: space-around;
 }
 .game-mode h2 {
-    height: 60px;
+    height: 40px;
     width: 100%;
-    /* display: flex; */
+    display: flex;
+    justify-content: center;
     align-items: center;
     padding: 0 30px;
     border-radius: 5px 5px 0 0;
