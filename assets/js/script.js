@@ -417,7 +417,8 @@ const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
 const test = gameMode.querySelectorAll('.game');
 const timer = document.querySelector('.timer');
-let timeCounter = document.querySelector('.time');
+const timeCounter = document.querySelector('.time');
+
 
 // Declare game mode questions
 const quickMode = document.querySelector('.quick-mode');
@@ -462,7 +463,7 @@ let gameSelect = choice => {
 
     } else if(choice == 'pubQuiz'){
         quesCount = 50;
-        timeVal = 240;
+        timeVal = 241;
         pubQuizMode.classList.add('class','selected');
         quickMode.classList.remove('class','selected');
         hardMode.classList.remove('class','selected');
@@ -509,7 +510,7 @@ let randomQues = () => {
     // Code to try stop duplicating a question on after another by checkiing previous number.
     if (prevRandomNum == randomNum){
         randomNum += 1;
-    } else if( prevRandomNum == 99){
+    } else if( prevRandomNum == 100){
         randomNum -= 2;
     } else if( randomNum == 0){
         randomNum += 1;
@@ -600,6 +601,11 @@ let timeCount = timeVal => {
             incorrectAnswer(findAnswer[randomNum]);
             nextBtn.classList.add('show');
         }
+        if(timeVal > 20){
+            let minutes = Math.floor(timeVal / 60);
+            let seconds = timeVal - minutes * 60;
+            timeCounter.innerText = `${minutes}:${seconds}`;
+        }
     }
 }
 
@@ -607,7 +613,7 @@ let timeCount = timeVal => {
 nextBtn.onclick = () => {
     if(quesNum < quesCount){
         quesNum ++;
-        randomQues(quesCount);
+        randomQues();
     } else {
         console.log('print');
         quesBox.classList.remove('activeQuiz');
