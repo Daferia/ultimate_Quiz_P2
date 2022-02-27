@@ -537,7 +537,7 @@ let randomQues = () => {
     }
 
     totalQues.innerHTML = 
-`<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
+    `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
 
 }
 
@@ -558,7 +558,8 @@ let checkAnswers = userChoice => {
     afterChoice();
 }
 
-//function to stop user selecting another option and next button text based on question number
+    //function to stop user selecting another option and next button text based on question number
+
     let afterChoice = () => {
     // Stops the user from selecting another option
     for(i= 0 ;i < 4; i++){ 
@@ -589,6 +590,7 @@ let incorrectAnswer = val => {
 
 
 // Function that sets a timer to Quick and Hard mode
+
 let timeCount = timeVal => {
     counter = setInterval(time, 1000);
     function time(){
@@ -596,18 +598,23 @@ let timeCount = timeVal => {
         timeVal--;
 
         // adds a zero to the counter setting it as a double digit counter
+
         if(timeVal < 9){
             let addZero = timeCounter.innerText
             timeCounter.innerText = '0' + addZero;
 
         }
-        if(timeVal < 0){// Stops counter from counting down past zero
+        // Stops counter from counting down past zero
+
+        if(timeVal < 0){
             clearInterval(counter);
             timeCounter.innerText = '--';
             incorrectAnswer(findAnswer[randomNum]);
             afterChoice();
             nextBtn.classList.add('show');
         }
+        // Converts the time to minutes and seconds for Pub Quiz Game Mode
+        
         if(timeVal > 20){
             let minutes = Math.floor(timeVal / 60);
             let seconds = timeVal - minutes * 60;
@@ -616,8 +623,13 @@ let timeCount = timeVal => {
     }
 }
 
+
 let scoreCard = () => {
     let userScore = points;
+    let totalPoints = quesCount * 10;
+    score.innerHTML = 
+    `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;    
+
     console.log(userScore);
 }
 
