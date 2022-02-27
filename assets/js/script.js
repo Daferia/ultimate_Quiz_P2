@@ -418,6 +418,7 @@ const gameMode = document.querySelector('.game-mode');
 const test = gameMode.querySelectorAll('.game');
 const timer = document.querySelector('.timer');
 const timeCounter = document.querySelector('.time');
+const score = resultsBox.querySelector('.score');
 
 
 // Declare game mode questions
@@ -431,6 +432,7 @@ let quesCount = 0;
 let quesNum = 1;
 let prevRandomNum = 0;
 let userGameModeSelect = 0;
+let points = 0;
 let timeVal = 0;
 let counter;
 
@@ -449,7 +451,7 @@ let gameSelect = choice => {
     
     if(choice == 'quick'){
         quesCount = 5;
-        timeVal = 15;
+        timeVal = 2;
         quickMode.classList.add('class','selected');
         hardMode.classList.remove('class','selected');
         pubQuizMode.classList.remove('class','selected');
@@ -510,11 +512,10 @@ let randomQues = () => {
     // Code to try stop duplicating a question on after another by checkiing previous number.
     if (prevRandomNum == randomNum){
         randomNum += 1;
-    } else if( prevRandomNum == 100){
-        randomNum -= 2;
+    } else if( randomNum == 100){
+        randomNum -= 1;
     } else if( randomNum == 0){
         randomNum += 1;
-
     }
 
     // sets previous number value for next round
@@ -547,21 +548,31 @@ let checkAnswers = userChoice => {
     if(userSelect == correctAnswer){
         userChoice.classList.add('correct');
         nextBtn.classList.add('show');
+        points += 10;
         console.log('This is correct!');
-    }else {
+    }else if(userSelect != correctAnswer){
         userChoice.classList.add('incorrect');
         nextBtn.classList.add('show');
         incorrectAnswer(correctAnswer);
     }
+    afterchoice();
+}
 
-    clearInterval(counter);
+//function to stop user selecting another option and next button appears after selction
+    let afterchoice = () => {
+ // Stops the user from selecting another option
+    for(i= 0 ;i < 4; i++){ 
+    choiceBox.children[i].classList.add('disabled');
+    }
+    console.log('this is running');
 
-    if (quesNum != quesCount){
+    if(quesNum < quesCount){
         console.log('print');
-        nextBtn.innerText = 'Next Question'
-    } else{
+        nextBtn.innerText = 'Next Question';
+    } else if(quesNum == quesCount){
         nextBtn.innerText = 'Finshed!';
     }
+    clearInterval(counter);
 };
 
 // function if user selects the wrong answer it will highlight the correct answer.
@@ -572,15 +583,10 @@ let incorrectAnswer = val => {
     for(i = 0; i < checkOthers.length; i++){
         if (choiceBox.children[i].textContent == val ){
             choiceBox.children[i].setAttribute('class', 'option correct'); 
-        console.log(choiceBox.children[i])
-    }}
-
-    console.log(prevRandomNum);
-    // Stops the user from selecting another option
-    for(i= 0 ;i < 4; i++){ 
-        choiceBox.children[i].classList.add('disabled');
         }
+    }
 }
+
 
 // Function that sets a timer to Quick and Hard mode
 let timeCount = timeVal => {
@@ -599,6 +605,7 @@ let timeCount = timeVal => {
             clearInterval(counter);
             timeCounter.innerText = '--';
             incorrectAnswer(findAnswer[randomNum]);
+            afterchoice();
             nextBtn.classList.add('show');
         }
         if(timeVal > 20){
@@ -607,6 +614,11 @@ let timeCount = timeVal => {
             timeCounter.innerText = `${minutes}:${seconds}`;
         }
     }
+}
+
+let scoreCard = () => {
+    let userScore = points;
+    console.log(userScore);
 }
 
 // Question Counter Onclick function that will add a number to the counter
@@ -618,6 +630,7 @@ nextBtn.onclick = () => {
         console.log('print');
         quesBox.classList.remove('activeQuiz');
         resultsBox.classList.add('activeResult');
+        scoreCard()
 
     }
 }
@@ -629,7 +642,8 @@ replayBtn.onclick = () => {
     randomNum = 0;
     quesCount = userGameModeSelect;
     quesNum = 1;
-    prevRandomNum = 0
+    prevRandomNum = 0;
+    points = 0;
     randomQues();
 }
 
