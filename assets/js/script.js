@@ -555,17 +555,17 @@ let checkAnswers = userChoice => {
         nextBtn.classList.add('show');
         incorrectAnswer(correctAnswer);
     }
-    afterchoice();
+    afterChoice();
 }
 
-//function to stop user selecting another option and next button appears after selction
-    let afterchoice = () => {
- // Stops the user from selecting another option
+//function to stop user selecting another option and next button text based on question number
+    let afterChoice = () => {
+    // Stops the user from selecting another option
     for(i= 0 ;i < 4; i++){ 
     choiceBox.children[i].classList.add('disabled');
     }
     console.log('this is running');
-
+    // 
     if(quesNum < quesCount){
         console.log('print');
         nextBtn.innerText = 'Next Question';
@@ -605,7 +605,7 @@ let timeCount = timeVal => {
             clearInterval(counter);
             timeCounter.innerText = '--';
             incorrectAnswer(findAnswer[randomNum]);
-            afterchoice();
+            afterChoice();
             nextBtn.classList.add('show');
         }
         if(timeVal > 20){
