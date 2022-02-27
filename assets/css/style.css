@@ -302,15 +302,15 @@ section .choices .option.disabled{
 }
 
 section .choices .option .icon{
-    height: 26px;
-    width: 26px;
+    height: 18px;
+    width: 18px;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;
-    font-size: 13px;
+    font-size: 8px;
     pointer-events: none;
     transition: all 0.3s ease;
-    line-height: 24px;
+    line-height: 16px;
 }
 .choices .option .icon.tick{
     color: #23903c;
