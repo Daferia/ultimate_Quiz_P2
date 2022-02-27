@@ -440,7 +440,7 @@ pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 
 // Game Selection Function
-function gameSelect(choice){
+let gameSelect = choice => {
     // disbales the continue button until user selects a game mode
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
@@ -501,7 +501,7 @@ exitBtn.onclick = () => {
 
 
 // Function that generates the random questions
-function randomQues(){
+let randomQues = () => {
     timeCount(timeVal);
     nextBtn.classList.remove('show');
     randomNum = Math.ceil(Math.random()*100);
@@ -540,7 +540,7 @@ function randomQues(){
 }
 
 // Function that checkers users answer
-function checkAnswers(userChoice){
+let checkAnswers = userChoice => {
     let userSelect = userChoice.textContent;
     let correctAnswer = findAnswer[randomNum];
     if(userSelect == correctAnswer){
@@ -565,7 +565,7 @@ function checkAnswers(userChoice){
 
 // function if user selects the wrong answer it will highlight the correct answer.
 
-function incorrectAnswer(val){
+let incorrectAnswer = val => {
     let checkOthers = answerList[randomNum];
 
     for(i = 0; i < checkOthers.length; i++){
@@ -582,7 +582,7 @@ function incorrectAnswer(val){
 }
 
 // Function that sets a timer to Quick and Hard mode
-function timeCount(timeVal){
+let timeCount = timeVal => {
     counter = setInterval(time, 1000);
     function time(){
         timeCounter.innerText = timeVal;
