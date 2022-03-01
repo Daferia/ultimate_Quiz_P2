@@ -448,31 +448,59 @@ pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 // Game Selection Function
 let gameSelect = choice => {
-    // disbales the continue button until user selects a game mode
+
+    let contBtnShow = () =>{
+    // enables the continue button when a user selects a game mode
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
     continue_btn.classList.remove('greyed');
+    };
+
+    let contBtnHide = () =>{
+        continue_btn.disabled = true;
+        continue_btn.classList.remove('restart');
+        continue_btn.classList.add('greyed');
+        };
     
     if(choice == 'quick'){
         quesCount = 5;
         timeVal = 15;
-        quickMode.classList.add('class','selected');
-        hardMode.classList.remove('class','selected');
-        pubQuizMode.classList.remove('class','selected');
+        if(quickMode.classList.contains('selected')){
+            quickMode.classList.remove('selected');
+            contBtnHide();
+        } else {
+            quickMode.classList.add('selected');
+            hardMode.classList.remove('selected');
+            pubQuizMode.classList.remove('selected');
+            contBtnShow();
+        }
+        
 
     } else if(choice == 'hard'){
         quesCount = 15;
         timeVal = 5;
-        hardMode.classList.add('class','selected');
-        pubQuizMode.classList.remove('class','selected');
-        quickMode.classList.remove('class','selected');
+        if(hardMode.classList.contains('selected')){
+            hardMode.classList.remove('selected');
+            contBtnHide();
+        }else {
+            hardMode.classList.add('selected');
+            pubQuizMode.classList.remove('selected');
+            quickMode.classList.remove('selected');
+            contBtnShow();
+        }
 
     } else if(choice == 'pubQuiz'){
         quesCount = 50;
         timeVal = 241;
-        pubQuizMode.classList.add('class','selected');
-        quickMode.classList.remove('class','selected');
-        hardMode.classList.remove('class','selected');
+        if(pubQuizMode.classList.contains('selected')){
+            pubQuizMode.classList.remove('selected');
+            contBtnHide();
+        } else {
+            pubQuizMode.classList.add('selected');
+            quickMode.classList.remove('selected');
+            hardMode.classList.remove('selected');
+            contBtnShow();
+        }
     }
     //sets  Question count based on user game mode choice
     userGameModeSelect = quesCount;
@@ -607,7 +635,7 @@ let timeCount = timeVal => {
         // adds a zero to the counter setting it as a double digit counter
 
         if(timeVal < 9){
-            let addZero = timeCounter.innerText
+            let addZero = timeCounter.innerText;
             timeCounter.innerText = '0' + addZero;
 
         }
