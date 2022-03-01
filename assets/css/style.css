@@ -94,18 +94,23 @@ body {
     font-weight: 600;
 }
 
-.rules-box .rules-list  {
+.rules-box .rules-list {
     padding: 15px 30px;
     border-bottom: 1px solid lightgrey;
 
 }
 
-.rules-box .rules-list .rules   {
+.rules-box .rules-list .games-select {
+    text-align: center;
+    font-weight: 700;
+}
+
+.rules-box .rules-list .rules {
     margin: 5px 0;
     font-size: 17px;
 }
 
-.rules-box .rules-list .rules span  {
+.rules-box .rules-list .rules span {
     font-weight: 600;
     color: var(--onyx);
 }
@@ -139,6 +144,8 @@ body {
     justify-content: space-around;
 }
 .game-mode h2 {
+    font-size: 18px;
+    font-weight: 600;
     height: 40px;
     width: 100%;
     display: flex;
@@ -146,8 +153,7 @@ body {
     align-items: center;
     padding: 0 30px;
     border-radius: 5px 5px 0 0;
-    font-size: 20px;
-    font-weight: 600;
+
 }
 
 .game-mode button{
