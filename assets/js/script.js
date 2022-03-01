@@ -476,13 +476,13 @@ let gameSelect = choice => {
     }
     //sets  Question count based on user game mode choice
     userGameModeSelect = quesCount;
-}
+};
 
 
 // Get Questions from Questions Object
 let quesList = [];
 quesList = quizObj.map(ques => ques.question);
-let answerList = quizObj.map(answ => answ.answers)
+let answerList = quizObj.map(answ => answ.answers);
 
 let findAnswer = [];
 findAnswer = quizObj.map(answer => answer.correct);
@@ -493,18 +493,18 @@ startBtn.onclick = () => {
     continue_btn.classList.remove('restart');
     continue_btn.classList.add('greyed');
     rulesBox.classList.add('activerules');
-}
+};
 
 // Onclick Event to display Questions Box and run the game
 continue_btn.onclick = () => {
     quesBox.classList.add('activeQuiz');
     rulesBox.classList.remove('activerules');
     randomQues();
-}
+};
 
 exitBtn.onclick = () => {
     rulesBox.classList.remove('activerules');
-}
+};
 
 
 // Function that generates the random questions
@@ -543,7 +543,7 @@ let randomQues = () => {
     totalQues.innerHTML = 
     `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
 
-}
+};
 
 // Function that checkers users answer
 let checkAnswers = userChoice => {
@@ -562,7 +562,7 @@ let checkAnswers = userChoice => {
         incorrectAnswer(correctAnswer);
     }
     afterChoice();
-}
+};
 
     //function to stop user selecting another option and next button text based on question number
 
@@ -593,7 +593,7 @@ let incorrectAnswer = val => {
             choiceBox.children[i].insertAdjacentHTML('beforeend', correctIconTag);
         }
     }
-}
+};
 
 
 // Function that sets a timer to Quick and Hard mode
@@ -628,7 +628,7 @@ let timeCount = timeVal => {
             timeCounter.innerText = `${minutes}:${seconds}`;
         }
     }
-}
+};
 
 
 let scoreCard = () => {
@@ -638,7 +638,7 @@ let scoreCard = () => {
     `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;    
 
     console.log(userScore);
-}
+};
 
 // Question Counter Onclick function that will add a number to the counter
 nextBtn.onclick = () => {
@@ -649,10 +649,10 @@ nextBtn.onclick = () => {
         console.log('print');
         quesBox.classList.remove('activeQuiz');
         resultsBox.classList.add('activeResult');
-        scoreCard()
+        scoreCard();
 
     }
-}
+};
 
 // REplay onlick function that will allow the user to restart the quiz using same choices
 replayBtn.onclick = () => {
@@ -664,10 +664,10 @@ replayBtn.onclick = () => {
     prevRandomNum = 0;
     points = 0;
     randomQues();
-}
+};
 
 // Quit Function reloads window to Start Screen if they quit
 quitBtn.onclick = () => {
     window.location.reload();
-}
+};
 
