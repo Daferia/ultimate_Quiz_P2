@@ -451,9 +451,9 @@ footer button.show{
 }
 
 .greyed {
-    color: #fff;
-    background: var(--davys-grey);
-    border:1px solid var(--davys-grey)!important;
+    color: var(--sonic-silver);
+    background: var(--cultured);
+    border:1px solid var(--sonic-silver)!important;
     pointer-events: none;
 }
 
