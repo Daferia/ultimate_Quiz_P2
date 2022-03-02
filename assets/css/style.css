@@ -1,5 +1,6 @@
 /* importing google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;700&family=Yellowtail&display=swap');
+
 /* Create root color variable so when clicked will use these variable */
 :root {
     --cultured: #f8f9faff;
@@ -92,7 +93,7 @@ h1 {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .rules-box .rules-title {
@@ -149,7 +150,7 @@ h1 {
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--sonic-silver);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .game-mode {
@@ -182,7 +183,7 @@ h1 {
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--sonic-silver);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .game-mode .group-play {
@@ -203,7 +204,7 @@ h1 {
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .questions-box header{
@@ -289,7 +290,7 @@ section .choices .option{
     font-size: 17px;
     margin-bottom: 15px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -329,7 +330,7 @@ section .choices .option .icon{
     text-align: center;
     font-size: 8px;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
     line-height: 16px;
 }
 .choices .option .icon.tick{
@@ -383,7 +384,7 @@ footer button{
     opacity: 0;
     pointer-events: none;
     transform: scale(0.95);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 footer button:hover{
@@ -409,7 +410,7 @@ footer button.show{
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .result-box .icon{
@@ -450,7 +451,7 @@ footer button.show{
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--light-gray);
-    transition: all 0.3s ease;
+    transition: all 0.6s ease;
 }
 
 .buttons button.restart{
