@@ -4,7 +4,7 @@
 
 # The Goal for this Project
 
-THe goal of the project is to keep users entertained and at the same time, getting them to test their general knowledge through a variety of different questions.
+THe goal of the project is to keep users entertained and at the same time, getting them to test their general knowledge through a variety of different questions. Project was inpiraed by our companies Pub Quiz evening and the struggle to find a good free application for the fun evenings.
 
 ![Responsive Displays](wireframes/amiresponsive.png)
 
@@ -143,8 +143,7 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 ## Future Features
 
 + I plan to continue to add more features as I learn new technologies throughout the course.
-+ I plan to add a Google Maps API so that the End user can easily navigate to the park at a click of a button.
-+ Add a modal in place of the embed form currently on the site.
++ 
 
 \
 &nbsp;
@@ -173,8 +172,8 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 + [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
 + [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
 + [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
-+ []()
-+ [Coolors](https://coolors.io/ "coolors")
++ [JSHint](https://jshint.com/ "JSHint")
++ [Coolors](https://coolors.io/ "Coolors")
 + [Font Awesome library](https://fontawesome.com/ "Font Awesome")
 + [Google Fonts](https://fonts.google.com/ "Google Fonts")
 + [Unsplash](https://unsplash.com/ "Unsplash")
