@@ -229,6 +229,7 @@ For code inspiration, help and advice. Thank you!
 + [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") - Code Institute Mentor.
 + [Christopher Rees](https://portfolio.christopher-rees.co.uk/ "Christopher Rees") - Colleague, friend and motivator.
 + [Sam Timmins](https://github.com/sam-timmins "Sam Timmins") - README Template help.
++ [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
 
 
 ## Image Credits
@@ -238,8 +239,8 @@ https://unsplash.com/@rudy_issa
 ## For content and style inspiration
 
 + [CSS-Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/ "CSS-Tricks - A Complete Guide to Flexbox")
-+ [W3 Schools](https://www.w3schools.com/ "W3 Schools")
-+ [Kevin Powell](https://www.youtube.com/kepowob "Kevin Powell")
++ [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Reference for HTML, CSS and JavaScript
++ [Kevin Powell](https://www.youtube.com/kepowob "Kevin Powell") - CSS ideas
 
 
 \
