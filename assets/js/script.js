@@ -424,7 +424,9 @@ const score = resultsBox.querySelector('.score');
 // Declare game mode questions
 const quickMode = document.querySelector('.quick-mode');
 const hardMode = document.querySelector('.hard-mode');
-const pubQuizMode = document.querySelector('.pubquiz-mode');
+const groupPlay = document.querySelector('.group-play');
+const pubQuizMode = groupPlay.querySelector('.pubquiz-mode');
+
 
 // creating the new div tags which for icons
 let correctIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>';
@@ -446,21 +448,25 @@ hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
 
-// Game Selection Function
-let gameSelect = choice => {
+// Enables the continue button when a user selects a game mode
 
-    let contBtnShow = () =>{
-    // enables the continue button when a user selects a game mode
+let contBtnShow = () =>{
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
     continue_btn.classList.remove('greyed');
     };
 
-    let contBtnHide = () =>{
-        continue_btn.disabled = true;
-        continue_btn.classList.remove('restart');
-        continue_btn.classList.add('greyed');
-        };
+// Disables the continue button when a user unselects a game mode
+
+let contBtnHide = () =>{
+    continue_btn.disabled = true;
+    continue_btn.classList.remove('restart');
+    continue_btn.classList.add('greyed');
+    };
+
+
+// Game Selection Function
+let gameSelect = choice => {
     
     if(choice == 'quick'){
         quesCount = 5;
@@ -517,9 +523,7 @@ findAnswer = quizObj.map(answer => answer.correct);
 
 // Onclick Event that display the Rules box after clicking Start
 startBtn.onclick = () => {
-    continue_btn.disabled = true;
-    continue_btn.classList.remove('restart');
-    continue_btn.classList.add('greyed');
+    contBtnHide();
     rulesBox.classList.add('activerules');
 };
 
