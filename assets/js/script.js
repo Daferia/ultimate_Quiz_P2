@@ -603,10 +603,9 @@ let checkAnswers = userChoice => {
     for(i= 0 ;i < 4; i++){ 
     choiceBox.children[i].classList.add('disabled');
     }
-    console.log('this is running');
-    // 
+
+    // Check the whether quiz must continue or end based on question count 
     if(quesNum < quesCount){
-        console.log('print');
         nextBtn.innerText = 'Next Question';
     } else if(quesNum == quesCount){
         nextBtn.innerText = 'Quiz Completed';
@@ -662,7 +661,7 @@ let timeCount = timeVal => {
     }
 };
 
-
+// function to work out and display score
 let scoreCard = () => {
     let userScore = points;
     let totalPoints = quesCount * 10;
