@@ -27,7 +27,9 @@
 }
 
 body {
-    background-color: var(--onyx);
+    background: rgb(2,0,36);
+    background: linear-gradient(312deg, rgba(2,0,36,1) 0%, rgba(9,60,121,1) 53%, rgba(0,164,255,1) 83%);
+    background-attachment: fixed;
 }
 
 .start-btn,
