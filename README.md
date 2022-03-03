@@ -13,7 +13,6 @@ THe goal of the project is to keep users entertained and at the same time, getti
 + [UX](#ux "UX")
     + [User Goals](#user-goals "User Goals")
     + [User Stories](#user-stories "User Stories")
-    + [App Owners Goals](#app-owners-goals)
     + [Requirements](#requirements)
     + [Expectations](#expectations)
     + [Design Choices](#design-choices)
@@ -37,24 +36,20 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 ## User Goals
 
-+ 
-+ 
-+ 
-+ 
-+ 
++ Provide a good amount of variety of questions
++ Easy to navigate and use
++ Provide different colour options
++ Get the user to learn while in the quiz by providing them with the correct answers
++ Create a quiz that is visually appealing to the user.
+
 
 ## User Stories
 
++ As a User, I want the user to be engage in the quiz
++ As a User, I want them to feel challenged as well as provide enjoyment during play
++ As a User, I want to be able to see my results after playing the game.
++ As a User, I want to play a quiz intuitively.
 + As a User, 
-+ As a User, 
-+ As a User, 
-+ As a User, 
-+ As a User, 
-
-## App Owners Goals
-
-+ 
-+ 
 
 ## Requirements
 
@@ -65,8 +60,8 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 ## Expectations
 
-+ 
-+ 
++ I expect the users to come back to improve their score
++ I 
 + 
 + 
 + 
@@ -209,12 +204,27 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 Following writing the code then committing and pushing to GitHub, this project was deployed using GitHub by the following steps.
 
+### GitHub Pages
+
 + Navigate to the repository on GitHub and click 'Settings'.
 + Then select 'Pages' on the side navigation.
 + Select the 'None' dropdown, and then click 'master'.
 + Click on the 'Save' button.
 + Now the website is live on 
 + If any changes are required, they can be done, committed and pushed to GitHub and the changes will be updated.
+
+### Cloning
+
+Too clone the project, the following steps are to be followed:
+
++ Log into GitHub.
++ Navigate to the repository.
++ Click on the 'Clone' button.
++ You will be provided with three options to choose from, HTTPS, SSH or GitHub CLI, click the clipboard icon to copy the URL.
++ Open Terminal.
++ Change the current working directory to the location where you want the cloned directory.
++ Type 'git clone' and paste the URL copied in step 3.
++ Click 'Enter'.
 
 \
 &nbsp;
