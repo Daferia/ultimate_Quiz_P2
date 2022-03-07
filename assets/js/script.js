@@ -415,7 +415,7 @@ const nextBtn = quesBox.querySelector('.next-ques');
 const replayBtn = resultsBox.querySelector('.restart');
 const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
-const test = gameMode.querySelectorAll('.game');
+const logo = document.getElementById('logo');
 const timer = document.querySelector('.timer');
 const timeCounter = document.querySelector('.time');
 const score = resultsBox.querySelector('.score');
@@ -467,7 +467,6 @@ let contBtnHide = () =>{
 
 // Game Selection Function
 let gameSelect = choice => {
-    
     if(choice == 'quick'){
         quesCount = 5;
         timeVal = 15;
@@ -480,8 +479,6 @@ let gameSelect = choice => {
             pubQuizMode.classList.remove('selected');
             contBtnShow();
         }
-        
-
     } else if(choice == 'hard'){
         quesCount = 15;
         timeVal = 5;
@@ -494,7 +491,6 @@ let gameSelect = choice => {
             quickMode.classList.remove('selected');
             contBtnShow();
         }
-
     } else if(choice == 'pubQuiz'){
         quesCount = 50;
         timeVal = 241;
@@ -529,6 +525,7 @@ startBtn.onclick = () => {
 
 // Onclick Event to display Questions Box and run the game
 continue_btn.onclick = () => {
+    logo.style.visibility = 'hidden';
     quesBox.classList.add('activeQuiz');
     rulesBox.classList.remove('activerules');
     randomQues();
@@ -688,13 +685,12 @@ nextBtn.onclick = () => {
 // REplay onlick function that will allow the user to restart the quiz using same choices
 replayBtn.onclick = () => {
     resultsBox.classList.remove('activeResult');
-    quesBox.classList.add('activeQuiz');
+    rulesBox.classList.add('activerules');
+    logo.style.visibility = 'visible';
     randomNum = 0;
-    quesCount = userGameModeSelect;
     quesNum = 1;
     prevRandomNum = 0;
     points = 0;
-    randomQues();
 };
 
 // Quit Function reloads window to Start Screen if they quit
