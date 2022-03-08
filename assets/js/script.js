@@ -456,14 +456,12 @@ let contBtnShow = () =>{
     continue_btn.classList.add('restart');
     continue_btn.classList.remove('greyed');
     gameRules.innerHTML =
-            `<div class="game-rules">
-            <ol>
+            `<ol>
             <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing <span></span> mode.</li>
             <li class='rules'>You cannot quit while playing.</li>
             <li class='rules'>Once a question is answered, it is final.</li>
             <li class='rules'>Points will be tallied up on the last question for a final score.</li>
-            </ol>
-        </div>`;
+            </ol>`;
     };
 
 // Disables the continue button when a user unselects a game mode
@@ -569,7 +567,7 @@ let randomQues = () => {
     question.innerHTML = `${quesNum}. ${quesList[randomNum]}`;
 
     choiceBox.innerHTML =
-    `<div class="option"><span>${answerList[randomNum][0]}</span></div>
+    `<div class="option">${answerList[randomNum][0]}</div>
     <div class="option">${answerList[randomNum][1]}</div>
     <div class="option">${answerList[randomNum][2]}</div>
     <div class="option">${answerList[randomNum][3]}</div>`;
