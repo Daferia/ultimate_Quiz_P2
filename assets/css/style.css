@@ -24,6 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 62.5%;
 }
 
 body {
@@ -70,7 +71,7 @@ h1 {
 }
 
 .start-btn button   {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 500;
     color: var(--cultured);
     padding: 1rem 2rem;
@@ -90,16 +91,21 @@ h1 {
 }
 
 .rules-box{
-    width: 60vw;
+    max-width: 80vw;
     background: var(--cultured);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
     transition: all 0.6s ease;
+
+    display: flex;
+    flex-direction: column;
 }
 
 .rules-box .rules-title {
+    font-size: 2rem;
+    font-weight: 600;
     height: 6.3vh;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -108,14 +114,14 @@ h1 {
     justify-content: center;
     padding: 0 30px;
     border-radius: 5px 5px 0 0;
-    font-size: 1.25rem;
-    font-weight: 600;
+
 }
 
 .rules-box .rules-list {
+    font-size: 2rem;
     padding: 15px 30px;
     border-bottom: 1px solid lightgrey;
-
+    margin: auto;
 }
 
 .rules-box .rules-list .games-select {
@@ -124,17 +130,18 @@ h1 {
 }
 
 .rules-box .rules-list .rules {
+    font-size: 1.5rem;
     margin: 5px 0;
-    font-size: 1.13rem;
 }
 
 .rules-box .rules-list .rules span {
-    font-weight: 600;
+    font-size: 1.5rem;
+    font-weight: 700;
     color: var(--onyx);
 }
 
 .rules-box .buttons {
-    height: 60px;
+    height: 6vh;
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -143,10 +150,11 @@ h1 {
 }
 
 .rules-box .buttons button {
-    margin: 0 5px;
-    height: 4.5vw;
-    width: 100px;
+    font-size: 1.4rem;
     font-weight: 500;
+    margin: 0 5px;
+    height: 4.5vh;
+    width: 7.5vw;
     cursor: pointer;
     border: none;
     outline: none;
@@ -158,10 +166,12 @@ h1 {
 .game-mode {
     display: flex;
     padding-bottom: 15px;
-    justify-content: space-around;
+    flex-direction: column;
+    text-align: center;
 }
+
 .game-mode h2 {
-    font-size: 1.125rem;
+    font-size: 1.8rem;
     font-weight: 600;
     height: 6.4vh;
     width: 100%;
@@ -174,12 +184,13 @@ h1 {
 }
 
 .game-mode button{
+    font-size: 1.4rem;
+    font-weight: 500;
     color: var(--light-gray);
     background-color: var(--sonic-silver);
-    margin: auto;
-    height: 4.5vw;
-    width: 100px;
-    font-weight: 500;
+    margin: 5px auto;
+    height: 4.5vh;
+    width: 7.5vw;
     cursor: pointer;
     outline: none;
     border-radius: 5px;
@@ -199,7 +210,7 @@ h1 {
 }
 
 .questions-box  {
-    width: 80.76vw;
+    width: 40vw;
     background: var(--cultured);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -209,21 +220,23 @@ h1 {
 }
 
 .questions-box header{
+    font-size: 3rem;
     position: relative;
     z-index: 2;
-    height: 70px;
-    padding: 0 30px;
+    height: auto;
+    padding: 5px 30px;
     background: #fff;
     border-radius: 5px 5px 0 0;
+    text-align: center;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
     box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.1);
 }
 
 .questions-box header .title{
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .questions-box header .timer{
@@ -239,14 +252,14 @@ h1 {
 }
 
 .questions-box header .timer .time-remain{
+    font-size: 1.2rem;
     font-weight: 400;
-    font-size: 1.125rem;
     user-select: none;
     margin-right: 5px;
 }
 
 .questions-box header .timer .time{
-    font-size: 1.125rem;
+    font-size: 1.2rem;
     font-weight: 500;
     height: 4.8vh;
     width: 12vw;
@@ -260,27 +273,29 @@ h1 {
 }
 
 section{
-    padding: 25px 30px 20px 30px;
+    padding: 25px 30px 0 30px;
     background: var(--cultured);
 }
 
 section .questions{
-    font-size: 20px;
+    font-size: 2rem;
     font-weight: 700;
     height: auto;
 }
 
 section .choices{
     padding: 20px 0px;
-    display: block;   
+    display: block;
+    border-bottom: 1px solid lightgrey;
+
 }
 
 section .choices .option{
+    font-size: 1.7rem;
     background: aliceblue;
     border: 1px solid #84c5fe;
     border-radius: 5px;
     padding: 8px 15px;
-    font-size: 17px;
     margin-bottom: 15px;
     cursor: pointer;
     transition: all 0.6s ease;
@@ -316,12 +331,12 @@ section .choices .option.disabled{
 }
 
 section .choices .option .icon{
+    font-size: 0.8rem;
     height: 18px;
     width: 18px;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;
-    font-size: 8px;
     pointer-events: none;
     transition: all 0.6s ease;
     line-height: 16px;
@@ -344,15 +359,16 @@ footer{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid lightgrey;
 }
 
 footer .total-ques p{
+    font-size: 1.4rem;
     display: flex;
     user-select: none;
 }
 
 footer .total-ques p span {
+    font-size: 1.4rem;
     font-weight: 700;
     padding: 0 5px;
 }
@@ -362,10 +378,10 @@ footer .total-ques p span:first-child{
 }
 
 footer button{
-    height: 40px;
-    padding: 0 13px;
-    font-size: 18px;
+    font-size: 1.6rem;
     font-weight: 400;
+    height: 4.5vh;
+    padding: 0 13px;
     cursor: pointer;
     border: none;
     outline: none;
@@ -396,7 +412,7 @@ footer button.show{
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
-    width: 450px;
+    /* width: fit-content; */
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -407,13 +423,12 @@ footer button.show{
 }
 
 .result-box .icon{
-    font-size: 6.25rem;
+    font-size: 4rem;
     color: #ffd700;
     margin-bottom: 10px;
 }
 
 .result-box .completed{
-    font-size: 20px;
     font-weight: 700;
     text-align: center;
 }
@@ -421,7 +436,7 @@ footer button.show{
 .result-box .score p{
     display: flex;
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 1.4rem;
     font-weight: 500;
 }
 
@@ -436,11 +451,11 @@ footer button.show{
 }
 
 .result-box .buttons button{
+    font-size: 1.8rem;
+    font-weight: 500;
     margin: 0 10px;
     height: 45px;
     padding: 0 20px;
-    font-size: 18px;
-    font-weight: 500;
     cursor: pointer;
     outline: none;
     border-radius: 5px;
@@ -479,11 +494,13 @@ footer button.show{
 
 .page-footer {
     border: none;
-    flex-direction: column;
-    justify-content: end;
-    height: 80vh;
     text-align: center;
     color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
 }
 
 .page-footer i {
@@ -504,5 +521,16 @@ footer button.show{
 
     .questions-box header .timer .time {
         max-width:4vw;
+    }
+
+    .result-box .icon{
+        font-size: 6.25rem;
+    }
+}
+
+@media screen and (max-width: 751px) {
+    footer {
+        flex-direction: column-reverse;
+        margin: 5px;
     }
 }
