@@ -171,9 +171,6 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 + [Coolors](https://coolors.io/ "Coolors")
 + [Font Awesome library](https://fontawesome.com/ "Font Awesome")
 + [Google Fonts](https://fonts.google.com/ "Google Fonts")
-+ [Unsplash](https://unsplash.com/ "Unsplash")
-+ [Pexels](https://www.pexels.com/ "Pexels")
-+ [iloveimg](https://www.iloveimg.com/resize-image#resize-options,percentage "iloveimg")
 
 \
 &nbsp;
@@ -182,6 +179,11 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 &nbsp;
 
 # Testing
+
++ 
++ 
++ 
++ 
 
 \
 &nbsp;
@@ -194,7 +196,8 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 + W3 CSS Validation
 ![W3 CSS Validation]()
 
-+
++ JSHint Testing
+![JSHint Testing]()
 
 ## Unfixed Bugs
 
