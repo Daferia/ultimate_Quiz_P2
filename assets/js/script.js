@@ -415,6 +415,7 @@ const nextBtn = quesBox.querySelector('.next-ques');
 const replayBtn = resultsBox.querySelector('.restart');
 const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
+const gameRules = document.querySelector('.game-rules');
 const logo = document.getElementById('logo');
 const timer = document.querySelector('.timer');
 const timeCounter = document.querySelector('.time');
@@ -454,6 +455,15 @@ let contBtnShow = () =>{
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
     continue_btn.classList.remove('greyed');
+    gameRules.innerHTML =
+            `<div class="game-rules">
+            <ol>
+            <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing <span></span> mode.</li>
+            <li class='rules'>You cannot quit while playing.</li>
+            <li class='rules'>Once a question is answered, it is final.</li>
+            <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+            </ol>
+        </div>`;
     };
 
 // Disables the continue button when a user unselects a game mode
@@ -462,6 +472,7 @@ let contBtnHide = () =>{
     continue_btn.disabled = true;
     continue_btn.classList.remove('restart');
     continue_btn.classList.add('greyed');
+    gameRules.innerHTML = ' ';
     };
 
 
