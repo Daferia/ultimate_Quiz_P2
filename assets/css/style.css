@@ -91,7 +91,7 @@ h1 {
 }
 
 .rules-box{
-    max-width: 80vw;
+    min-width: 80vw;
     background: var(--cultured);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -152,9 +152,9 @@ h1 {
 .rules-box .buttons button {
     font-size: 1.4rem;
     font-weight: 500;
+    padding: 5px;
     margin: 0 5px;
     height: 4.5vh;
-    width: 7.5vw;
     cursor: pointer;
     border: none;
     outline: none;
@@ -189,8 +189,8 @@ h1 {
     color: var(--light-gray);
     background-color: var(--sonic-silver);
     margin: 5px auto;
+    padding: 5px;
     height: 4.5vh;
-    width: 7.5vw;
     cursor: pointer;
     outline: none;
     border-radius: 5px;
@@ -210,7 +210,7 @@ h1 {
 }
 
 .questions-box  {
-    width: 40vw;
+    width: 80vw;
     background: var(--cultured);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -412,7 +412,6 @@ footer button.show{
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
-    /* width: fit-content; */
     align-items: center;
     flex-direction: column;
     justify-content: center;
@@ -521,6 +520,10 @@ footer button.show{
 
     .questions-box header .timer .time {
         max-width:4vw;
+    }
+
+    .questions-box {
+        width: 50vw;
     }
 
     .result-box .icon{
