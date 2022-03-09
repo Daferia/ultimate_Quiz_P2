@@ -332,9 +332,9 @@ section .choices .option.disabled{
 }
 
 section .choices .option .icon{
-    font-size: 0.8rem;
-    height: 18px;
-    width: 18px;
+    font-size: 1.8rem;
+    height: 3rem;
+    width: 3rem;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;
