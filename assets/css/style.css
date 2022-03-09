@@ -91,7 +91,7 @@ h1 {
 }
 
 .rules-box{
-    min-width: 80vw;
+    width: 80vw;
     background: var(--cultured);
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -121,7 +121,6 @@ h1 {
     font-size: 2rem;
     padding: 15px 30px;
     border-bottom: 1px solid lightgrey;
-    margin: auto;
 }
 
 .rules-box .rules-list .games-select {
@@ -154,7 +153,8 @@ h1 {
     font-weight: 500;
     padding: 5px;
     margin: 0 5px;
-    height: 4.5vh;
+    height: 3.5vh;
+    width: 50%;
     cursor: pointer;
     border: none;
     outline: none;
@@ -184,13 +184,14 @@ h1 {
 }
 
 .game-mode button{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 500;
     color: var(--light-gray);
     background-color: var(--sonic-silver);
     margin: 5px auto;
     padding: 5px;
-    height: 4.5vh;
+    height: 3.5vh;
+    width: 50%;
     cursor: pointer;
     outline: none;
     border-radius: 5px;
@@ -503,16 +504,26 @@ footer button.show{
 }
 
 .page-footer i {
-    font-size: 2rem;
+    font-size: 4rem;
     color: #fff;
     padding-bottom: 0.5rem;
 }
 
 .page-footer p {
+    font-size: 2rem;
     text-align: center;
 }
 
 @media screen and (min-width: 480px) {
+
+    .rules-box .buttons button,.game-mode button {
+        width: 30%;
+    }
+    
+    .rules-box {
+        width: 60vw;
+    }
+    
 
     .questions-box header .timer{
         min-width: 10vw;
@@ -529,6 +540,40 @@ footer button.show{
     .result-box .icon{
         font-size: 6.25rem;
     }
+}
+
+@media screen and (min-width: 575px) {
+.rules-box {
+    width: 54vw;
+}
+
+    .rules-box .buttons button, .game-mode button {
+        max-width: 60%;
+    }
+
+    .game-mode {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+
+    .individual{
+       display: flex;
+       flex-direction: row;
+       flex-wrap: wrap;
+    }
+
+    .group-play button {
+        width: 80%;
+    }
+
+}
+
+@media screen and (min-width: 751px) {
+    .rules-box, .questions-box {
+        width: 550px;
+    }
+
+
 }
 
 @media screen and (max-width: 751px) {
