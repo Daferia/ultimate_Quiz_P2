@@ -260,14 +260,13 @@ h1 {
 }
 
 .questions-box header .timer .time{
-    font-size: 1.2rem;
+    font-size: 2.2rem;
     font-weight: 500;
-    height: 4.8vh;
-    width: 12vw;
+    height: 2.8vh;
+    width: 35px;
     color: var(--cultured);
     border-radius: 5px;
-    line-height: 4.8vh;
-    text-align: center;
+    line-height: 2.8vh;
     background: #343a40;
     border: 1px solid #343a40;
     user-select: none;
