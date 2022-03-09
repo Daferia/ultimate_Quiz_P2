@@ -140,12 +140,12 @@ h1 {
 }
 
 .rules-box .buttons {
-    height: 6vh;
+    height: auto;
+    margin: 5px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding: 0 30px;
-    border-top: 1px solid lightgrey;
 }
 
 .rules-box .buttons button {
@@ -153,8 +153,8 @@ h1 {
     font-weight: 500;
     padding: 5px;
     margin: 0 5px;
-    height: 3.5vh;
-    width: 50%;
+    height: auto;
+    width: 30%;
     cursor: pointer;
     border: none;
     outline: none;
@@ -190,7 +190,7 @@ h1 {
     background-color: var(--sonic-silver);
     margin: 5px auto;
     padding: 5px;
-    height: 3.5vh;
+    height: auto;
     width: 50%;
     cursor: pointer;
     outline: none;
@@ -546,7 +546,7 @@ footer button.show{
     width: 54vw;
 }
 
-    .rules-box .buttons button, .game-mode button {
+    .group-play button {
         max-width: 60%;
     }
 
