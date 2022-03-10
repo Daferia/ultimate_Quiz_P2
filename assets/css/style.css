@@ -29,7 +29,7 @@
 
 body {
     background: rgb(2,0,36);
-    background: linear-gradient(312deg, rgba(2,0,36,1) 0%, rgba(9,60,121,1) 53%, rgba(0,164,255,1) 83%);
+    background: linear-gradient(312deg, #65dfc9, #6cdbeb);
     background-attachment: fixed;
     margin: auto;
     max-height: 100vh;
@@ -49,10 +49,91 @@ h1 {
                  0 36px 36px rgba(0,0,0,.15);
 }
 
+/* Inspiration from Dev Ed on youtube for glass effect, disc and triangle*/
+.disc,
+.triangle {
+  background: #fff;
+  background: linear-gradient(to right bottom,rgba(255, 255, 255, 0.6),rgba(255, 255, 255, 0.1));
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  z-index: 1;
+}
+
+.disc {
+  border-radius: 50%;
+  animation: discanimation 80s;
+  animation-iteration-count: infinite;
+
+
+}
+.triangle {
+  clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
+  animation: trianimation 60s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes trianimation
+{
+    0% {
+        left: 25%;
+        top:55%;
+        transform: rotate(90deg);
+    }
+    20% { 
+        left: 50%;
+        transform: rotate(45deg);
+    }
+    40% {
+        top:25%;
+        left: 30%;
+        transform: rotate(-65deg);
+    }
+    60% {
+        top: 55%;
+    }
+    80% {
+        left: 35%;
+        top: 0%;
+    }
+    100% {
+        transform: rotate(90deg);
+        left: 25%;
+        top: 55%;
+    }
+}
+
+@keyframes discanimation
+{
+    0% {
+        right: 25%;
+        bottom:55%;
+    }
+    20% { 
+        right: 50%;
+    }
+    40% {
+        bottom:25%;
+        right: 30%;
+    }
+    60% {
+        bottom: 55%;
+    }
+    80% {
+        right: 35%;
+        bottom: 0%;
+    }
+    100% {
+        right: 25%;
+        bottom: 55%;
+    }
+}
+
+
 .start-btn,
 .rules-box,
 .questions-box,
-.result-box{
+.result-box {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -68,6 +149,10 @@ h1 {
     z-index: 5;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(1);
+}
+
+.start-btn {
+    z-index: 5;
 }
 
 .start-btn button   {
@@ -92,7 +177,8 @@ h1 {
 
 .rules-box{
     width: 80vw;
-    background: var(--cultured);
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    /* background: var(--cultured); */
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -118,6 +204,7 @@ h1 {
 }
 
 .rules-box .rules-list {
+    /* background: var(--cultured); */
     font-size: 2rem;
     padding: 15px 30px;
     border-bottom: 1px solid lightgrey;
@@ -211,8 +298,10 @@ h1 {
 }
 
 .questions-box  {
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+
     width: 80vw;
-    background: var(--cultured);
+    /* background: var(--cultured); */
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -226,7 +315,7 @@ h1 {
     z-index: 2;
     height: auto;
     padding: 5px 30px;
-    background: #fff;
+    /* background: #fff; */
     border-radius: 5px 5px 0 0;
     text-align: center;
     display: flex;
@@ -274,7 +363,9 @@ h1 {
 
 section{
     padding: 25px 30px 0 30px;
-    background: var(--cultured);
+    /* background: var(--cultured); */
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+
 }
 
 section .questions{
@@ -331,15 +422,15 @@ section .choices .option.disabled{
 }
 
 section .choices .option .icon{
-    font-size: 1.8rem;
-    height: 3rem;
-    width: 3rem;
+    font-size: 1.4rem;
+    height: 2rem;
+    width: 2rem;
     border: 2px solid transparent;
     border-radius: 50%;
     text-align: center;
     pointer-events: none;
     transition: all 0.6s ease;
-    line-height: 16px;
+    line-height: 1.2rem;
 }
 .choices .option .icon.tick{
     color: #23903c;
@@ -503,13 +594,13 @@ footer button.show{
 }
 
 .page-footer i {
-    font-size: 4rem;
+    font-size: 2.5rem;
     color: #fff;
     padding-bottom: 0.5rem;
 }
 
 .page-footer p {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }
 
