@@ -315,7 +315,6 @@ h1 {
     z-index: 2;
     height: auto;
     padding: 5px 30px;
-    /* background: #fff; */
     border-radius: 5px 5px 0 0;
     text-align: center;
     display: flex;
@@ -445,7 +444,7 @@ section .choices .option .icon{
 }
 
 footer{
-    height: 60px;
+    height: 8vh;
     padding: 0 30px;
     display: flex;
     align-items: center;
@@ -666,7 +665,7 @@ footer button.show{
 
 }
 
-@media screen and (max-width: 751px) {
+@media screen and (max-width: 350px) {
     footer {
         flex-direction: column-reverse;
         margin: 5px;
