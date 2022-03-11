@@ -52,10 +52,9 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 ## Requirements
 
-+ 
-+ 
-+ 
-+ 
++ Needs to work on any device and browser
++ Able to generate the questions without fail or try not to duplicate questions
++ Allow the user to change to a dark theme or ligth theme
 
 \
 &nbsp;
