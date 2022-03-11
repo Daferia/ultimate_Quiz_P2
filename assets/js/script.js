@@ -539,7 +539,6 @@ let gameSelect = choice => {
 let contBtnShow = () =>{
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
-    continue_btn.classList.remove('greyed');
 };
 
 // Disables the continue button when a user unselects a game mode
@@ -547,7 +546,6 @@ let contBtnShow = () =>{
 let contBtnHide = () =>{
     continue_btn.disabled = true;
     continue_btn.classList.remove('restart');
-    continue_btn.classList.add('greyed');
     };
 
 // Get Questions from Questions Object
