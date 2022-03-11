@@ -14,7 +14,6 @@ THe goal of the project is to keep users entertained and at the same time, getti
     + [User Goals](#user-goals "User Goals")
     + [User Stories](#user-stories "User Stories")
     + [Requirements](#requirements)
-    + [Expectations](#expectations)
     + [Design Choices](#design-choices)
         + [Fonts](#fonts)
         + [Icons](#icons)
@@ -49,19 +48,11 @@ THe goal of the project is to keep users entertained and at the same time, getti
 + As a User, I want them to feel challenged as well as provide enjoyment during play
 + As a User, I want to be able to see my results after playing the game.
 + As a User, I want to play a quiz intuitively.
-+ As a User, 
++ As a User, I expect the users to come back to improve their score
 
 ## Requirements
 
 + 
-+ 
-+ 
-+ 
-
-## Expectations
-
-+ I expect the users to come back to improve their score
-+ I 
 + 
 + 
 + 
@@ -132,13 +123,15 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 + 
 + 
 + 
+
 \
 &nbsp;
 
 ## Future Features
 
 + I plan to continue to add more features as I learn new technologies throughout the course.
-+ 
++ I plan to add a phone app tht will allow pubquiz mode to be played by the different users as the questions come up for the Pub Quiz Master.
++ I want to save the ability to save score to a database as this app will be used during out pub quiz nights at work.
 
 \
 &nbsp;
@@ -180,10 +173,8 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 # Testing
 
-+ 
-+ 
-+ 
-+ 
++ During tsting the biggest issue is the duplication of the questions on the pubquiz mode and sometimes during the hard mode.
++ Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
 
 \
 &nbsp;
@@ -201,6 +192,7 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 ## Unfixed Bugs
 
++ Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
 + 
 
 ## Deployment
@@ -254,6 +246,8 @@ https://unsplash.com/@rudy_issa
 + [CSS-Tricks - A Complete Guide to Flexbox](https://css-tricks.com/snippets/css/a-guide-to-flexbox/ "CSS-Tricks - A Complete Guide to Flexbox")
 + [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Reference for HTML, CSS and JavaScript
 + [Kevin Powell](https://www.youtube.com/kepowob "Kevin Powell") - CSS ideas
++ [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
++ [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lost of great ideas including the glass effect i used came from Dev Ed.
 
 
 \
