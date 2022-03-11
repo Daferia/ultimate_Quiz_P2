@@ -402,6 +402,7 @@ const quizObj = [
     correct:"Johannes Vermeer"}
 ];
 
+
 const startBtn = document.querySelector('.start-btn');
 const rulesBox = document.querySelector('.rules-box');
 const exitBtn = rulesBox.querySelector('.buttons .quit');
@@ -425,8 +426,8 @@ const score = resultsBox.querySelector('.score');
 // Declare game mode questions
 const quickMode = document.querySelector('.quick-mode');
 const hardMode = document.querySelector('.hard-mode');
-const groupPlay = document.querySelector('.group-play');
-const pubQuizMode = groupPlay.querySelector('.pubquiz-mode');
+// const groupPlay = document.querySelector('.group-play');
+const pubQuizMode = document.querySelector('.pubquiz-mode');
 
 
 // creating the new div tags which for icons
@@ -442,45 +443,55 @@ let userGameModeSelect = 0;
 let points = 0;
 let timeVal = 0;
 let counter;
+let game = '';
 
 // Onclick Events
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
-
-// Enables the continue button when a user selects a game mode
-
-let contBtnShow = () =>{
-    continue_btn.disabled = false;
-    continue_btn.classList.add('restart');
-    continue_btn.classList.remove('greyed');
-    gameRules.innerHTML =
+let setRules = (e) =>{
+    if(e == 'quick'){
+        gameRules.innerHTML =
+                `<ol>
+                <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
+                <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
+                <li class='rules'>You cannot quit while playing.</li>
+                <li class='rules'>Once a question is answered, it is final.</li>
+                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+                </ol>`;
+    }else if(e == 'hard'){
+        gameRules.innerHTML =
+                `<ol>
+                <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
+                <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
+                <li class='rules'>You cannot quit while playing.</li>
+                <li class='rules'>Once a question is answered, it is final.</li>
+                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+                </ol>`;
+    }else if(e == 'pubQuiz'){
+        gameRules.innerHTML =
             `<ol>
-            <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing <span></span> mode.</li>
+            <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
+            <li class='rules'>You have <span>${Math.round(timeVal/60)} minutes</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
             <li class='rules'>You cannot quit while playing.</li>
-            <li class='rules'>Once a question is answered, it is final.</li>
-            <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+            <li class='rules'>Quiz Master will call out the question to the teams as well as play along for points.</li>
+            <li class='rules'>Team wil the most points WINS!</li>
             </ol>`;
-    };
-
-// Disables the continue button when a user unselects a game mode
-
-let contBtnHide = () =>{
-    continue_btn.disabled = true;
-    continue_btn.classList.remove('restart');
-    continue_btn.classList.add('greyed');
-    gameRules.innerHTML = ' ';
-    };
-
+    }else{
+        gameRules.innerHTML = '';
+    }
+};
 
 // Game Selection Function
 let gameSelect = choice => {
+    // let game1 = choice;
     if(choice == 'quick'){
         quesCount = 5;
         timeVal = 15;
         if(quickMode.classList.contains('selected')){
             quickMode.classList.remove('selected');
+            choice = 0;
             contBtnHide();
         } else {
             quickMode.classList.add('selected');
@@ -489,11 +500,13 @@ let gameSelect = choice => {
             contBtnShow();
         }
     } else if(choice == 'hard'){
-        quesCount = 15;
+        quesCount = 10;
         timeVal = 5;
         if(hardMode.classList.contains('selected')){
             hardMode.classList.remove('selected');
+            choice = 0;
             contBtnHide();
+
         }else {
             hardMode.classList.add('selected');
             pubQuizMode.classList.remove('selected');
@@ -505,6 +518,7 @@ let gameSelect = choice => {
         timeVal = 241;
         if(pubQuizMode.classList.contains('selected')){
             pubQuizMode.classList.remove('selected');
+            choice = 0;
             contBtnHide();
         } else {
             pubQuizMode.classList.add('selected');
@@ -513,10 +527,28 @@ let gameSelect = choice => {
             contBtnShow();
         }
     }
+
     //sets  Question count based on user game mode choice
     userGameModeSelect = quesCount;
+    setRules(choice);
+
 };
 
+// Enables the continue button when a user selects a game mode
+
+let contBtnShow = () =>{
+    continue_btn.disabled = false;
+    continue_btn.classList.add('restart');
+    continue_btn.classList.remove('greyed');
+};
+
+// Disables the continue button when a user unselects a game mode
+
+let contBtnHide = () =>{
+    continue_btn.disabled = true;
+    continue_btn.classList.remove('restart');
+    continue_btn.classList.add('greyed');
+    };
 
 // Get Questions from Questions Object
 let quesList = [];
@@ -530,6 +562,7 @@ findAnswer = quizObj.map(answer => answer.correct);
 startBtn.onclick = () => {
     contBtnHide();
     rulesBox.classList.add('activerules');
+    startBtn.style.visibility = 'hidden';
 };
 
 // Onclick Event to display Questions Box and run the game
@@ -542,6 +575,8 @@ continue_btn.onclick = () => {
 
 exitBtn.onclick = () => {
     rulesBox.classList.remove('activerules');
+    startBtn.style.visibility = 'visible';
+
 };
 
 
