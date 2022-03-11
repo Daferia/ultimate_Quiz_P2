@@ -37,8 +37,9 @@ body {
 }
 
 h1 {
+    margin-top: 55px;
     font-size: 5rem;
-    font-family: 'Yellowtail';
+    /* font-family: 'Yellowtail'; */
     color: #fff;
     text-align: center;
     -webkit-font-smoothing: antialiased;
@@ -129,8 +130,15 @@ h1 {
     }
 }
 
+.start-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.65), 
+                0 6px 20px 0 rgba(0, 0, 0, 0.75); */
+}
 
-.start-btn,
 .rules-box,
 .questions-box,
 .result-box {
@@ -140,6 +148,7 @@ h1 {
     transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.65), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.75);
+    background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
 }
 
 .rules-box.activerules,
@@ -177,7 +186,7 @@ h1 {
 
 .rules-box{
     width: 80vw;
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8));
+    /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8)); */
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -240,13 +249,13 @@ h1 {
     padding: 5px;
     margin: 0 5px;
     height: auto;
-    width: 30%;
+    width: 60px;
     cursor: pointer;
     border: none;
     outline: none;
     border-radius: 5px;
     border: 1px solid var(--sonic-silver);
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .game-mode {
@@ -297,13 +306,13 @@ h1 {
 }
 
 .questions-box  {
-    background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5));
+    /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)); */
     width: 80vw;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .questions-box header{
@@ -381,7 +390,7 @@ section .choices .option{
     padding: 8px 15px;
     margin-bottom: 15px;
     cursor: pointer;
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -491,7 +500,6 @@ footer button.show{
 }
 
 .result-box{
-    background: #fff;
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
@@ -501,7 +509,7 @@ footer button.show{
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
     pointer-events: none;
-    transition: all 0.6s ease;
+    transition: all 0.3s ease;
 }
 
 .result-box .icon{
@@ -511,6 +519,7 @@ footer button.show{
 }
 
 .result-box .completed{
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
 }
@@ -523,8 +532,10 @@ footer button.show{
 }
 
 .result-box .score p span {
-    padding: 0 4px;
+    font-size: 1.4rem;
     font-weight: 600;
+    padding: 0 4px;
+    
 }
 
 .result-box .buttons{
@@ -602,11 +613,6 @@ footer button.show{
         width: 30%;
     }
     
-    .rules-box {
-        width: 60vw;
-    }
-    
-
     .questions-box header .timer{
         min-width: 10vw;
     }
@@ -615,8 +621,8 @@ footer button.show{
         max-width:4vw;
     }
 
-    .questions-box {
-        width: 50vw;
+    .rules-box, .questions-box {
+        width: 450px;
     }
 
     .result-box .icon{
@@ -625,9 +631,6 @@ footer button.show{
 }
 
 @media screen and (min-width: 575px) {
-.rules-box {
-    width: 54vw;
-}
 
     .group-play button {
         max-width: 60%;
@@ -647,14 +650,6 @@ footer button.show{
     .group-play button {
         width: 80%;
     }
-
-}
-
-@media screen and (min-width: 751px) {
-    .rules-box, .questions-box {
-        width: 550px;
-    }
-
 
 }
 
