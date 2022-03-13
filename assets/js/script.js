@@ -305,7 +305,7 @@ const quizObj = [
     answers:["Winston Churchill","Charles de Gaulle","Julius Caesar","Alexander the Great"],
     correct:"Julius Caesar"},
     
-    {question:"Who discovered the tumb of Tutankhamun?",
+    {question:"Who discovered the tomb of Tutankhamun?",
     answers:["Howard Carter","Arthur Evans","Mortimer Wheeler","Kathleen Kenyon"],
     correct:"Howard Carter"},
     
@@ -672,32 +672,18 @@ let incorrectAnswer = val => {
 
 let timeCount = timeVal => {
     counter = setInterval(time, 1000);
+    timeCounter.innerText = '00:00';
+    let gameTime = timeVal;
     function time(){
-        timeCounter.innerText = timeVal;
+        let minutes = Math.floor(timeVal / 60);
+        let seconds = timeVal - minutes * 60;
         timeVal--;
-
-        // adds a zero to the counter setting it as a double digit counter
-
-        if(timeVal < 9){
-            let addZero = timeCounter.innerText;
-            timeCounter.innerText = '0' + addZero;
-
-        }
-        // Stops counter from counting down past zero
-
-        if(timeVal < 0){
-            clearInterval(counter);
-            timeCounter.innerText = '--';
-            incorrectAnswer(findAnswer[randomNum]);
-            afterChoice();
-            nextBtn.classList.add('show');
-        }
+console.log(timeVal);
         // Converts the time to minutes and seconds for Pub Quiz Game Mode
-        
-        if(timeVal > 20){
-            let minutes = Math.floor(timeVal / 60);
-            let seconds = timeVal - minutes * 60;
-            let totalTime = '';
+        if(timeVal == 241){
+
+        }
+        if(timeVal < 60){
             if (seconds <= 9){
                 totalTime = `0${minutes}:0${seconds}`;
             }else{
@@ -705,6 +691,30 @@ let timeCount = timeVal => {
             } 
                 timeCounter.innerText = totalTime;
         } 
+
+        // Stops counter from counting down past zero
+
+        if(timeVal < 0){
+            clearInterval(counter);
+            timeCounter.innerText = '00:00';
+            incorrectAnswer(findAnswer[randomNum]);
+            afterChoice();
+            nextBtn.classList.add('show');
+        }
+
+
+        let halfWay = Math.round(gameTime / 2);
+        let threeQuaters = Math.round(gameTime / 3);
+
+        if(timeVal >= halfWay){
+            timeCounter.classList.remove('red-countdown');
+            timeCounter.classList.add('green-countdown');
+        }
+
+        if(timeVal == threeQuaters){
+            timeCounter.classList.add('red-countdown');
+            timeCounter.classList.remove('green-countdown');
+        }
     }
 };
 
@@ -725,6 +735,7 @@ nextBtn.onclick = () => {
     if(quesNum < quesCount){
         quesNum ++;
         randomQues();
+        timeCounter.classList.remove('time-countdown');
     } else {
         console.log('print');
         quesBox.classList.remove('activeQuiz');
