@@ -185,7 +185,6 @@ h1 {
     opacity: 0;
     pointer-events: none;
     transition: all 0.6s ease;
-
     display: flex;
     flex-direction: column;
 }
@@ -195,8 +194,7 @@ h1 {
     font-weight: 600;
     height: 6.3vh;
     width: 100%;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
-    /* border-bottom: 1px solid lightgrey; */
+    border-bottom: 1px solid lightgrey;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -204,11 +202,21 @@ h1 {
     border-radius: 5px 5px 0 0;
 
 }
+.rules-list h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    height: 4vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
 
 .rules-box .rules-list {
-    font-size: 2rem;
     padding: 15px 30px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    border-bottom: 1px solid lightgrey;
+
 }
 
 .rules-box .rules-list .games-select {
@@ -229,20 +237,23 @@ h1 {
 
 .rules-box .buttons {
     height: auto;
-    margin: 5px;
+    margin: 10px 5px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 0 30px;
 }
 
-.rules-box .buttons button {
+button {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #fff;
+    background-color: var(--sonic-silver);
     font-size: 1.4rem;
     font-weight: 500;
     padding: 5px;
     margin: 0 5px;
     height: auto;
-    width: 60px;
+    width: 100px;
     cursor: pointer;
     border: none;
     outline: none;
@@ -258,38 +269,17 @@ h1 {
     text-align: center;
 }
 
-.game-mode h2 {
-    font-size: 1.8rem;
-    font-weight: 600;
-    height: 6.4vh;
-    width: 100%;
+.game-mode .individual, .game-mode .group-play{
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    padding: 0 30px;
-    border-radius: 5px 5px 0 0;
+ }
 
-}
-
-.game-mode button {
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: #fff;
-    background-color: var(--sonic-silver);
-    margin: 5px auto;
-    padding: 5px;
-    height: auto;
-    width: 50%;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--sonic-silver);
-    transition: all 0.6s ease;
-}
-
-.game-mode .group-play {
-    display: flex;
-    flex-direction: column;
+ .game-mode .individual h2,
+.game-mode .group-play h2{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 .game-mode .selected {
@@ -320,10 +310,11 @@ h1 {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    border-bottom: 1px solid lightgrey;
 }
 
 .questions-box header .title{
+    font-size: 3.5rem;
     font-weight: 700;
 }
 
@@ -335,13 +326,12 @@ h1 {
 }
 
 .questions-box header .timer .time{
+    color: #fff;
     font-size: 2.2rem;
     font-weight: 500;
-    height: 2.8vh;
-    width: 35px;
-    color: var(--cultured);
+    padding: 5px;
+    width: 60px;
     border-radius: 5px;
-    line-height: 2.8vh;
     background: #343a40;
     border: 1px solid #343a40;
     user-select: none;
@@ -349,7 +339,7 @@ h1 {
 
 section{
     padding: 25px 30px 0 30px;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1);
+    border-bottom: 1px solid lightgrey;
 }
 
 section .questions{
@@ -451,22 +441,8 @@ footer .total-ques p span:first-child{
 }
 
 footer button{
-    font-size: 1.6rem;
-    font-weight: 400;
-    height: 4.5vh;
-    padding: 0 13px;
-    cursor: pointer;
-    border: none;
-    outline: none;
-    color: #fff;
-    border-radius: 5px;
     background: var(--sonic-silver);
     border: 1px solid var(--sonic-silver);
-    line-height: 10px;
-    opacity: 0;
-    pointer-events: none;
-    transform: scale(0.95);
-    transition: all 0.6s ease;
 }
 
 footer button:hover{
@@ -525,18 +501,6 @@ footer button.show{
     margin: 20px 0;
 }
 
-.result-box .buttons button{
-    font-size: 1.8rem;
-    font-weight: 500;
-    margin: 0 10px;
-    height: 45px;
-    padding: 0 20px;
-    /* cursor: pointer; */
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid var(--light-gray);
-    transition: all 0.6s ease;
-}
 
 .buttons button.restart{
     color: var(--light-gray);
@@ -588,10 +552,6 @@ footer button.show{
         font-size: 5rem;
     }
 
-    .rules-box .buttons button,.game-mode button {
-        width: 30%;
-    }
-
     .rules-box, .questions-box {
         width: 450px;
     }
@@ -615,25 +575,10 @@ footer button.show{
 
 @media screen and (min-width: 575px) {
 
-    .group-play button {
-        max-width: 60%;
-    }
-
     .game-mode {
         justify-content: space-evenly;
         flex-direction: row;
     }
-
-    .individual{
-       display: flex;
-       flex-direction: row;
-       flex-wrap: wrap;
-    }
-
-    .group-play button {
-        width: 80%;
-    }
-
 }
 
 @media screen and (max-width: 350px) {
