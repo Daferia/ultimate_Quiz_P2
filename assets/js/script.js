@@ -408,6 +408,7 @@ const rulesBox = document.querySelector('.rules-box');
 const exitBtn = rulesBox.querySelector('.buttons .quit');
 const continue_btn = rulesBox.querySelector('.restart');
 const quesBox = document.querySelector('.questions-box');
+const userSelection = quesBox.querySelector('.user-selection');
 const choiceBox = quesBox.querySelector('.choices');
 const resultsBox = document.querySelector('.result-box');
 const question = quesBox.querySelector('.questions');
@@ -481,6 +482,7 @@ let setRules = (e) =>{
     }else{
         gameRules.innerHTML = '';
     }
+    userSelection.innerText = `${e} Mode`;
 };
 
 // Game Selection Function
