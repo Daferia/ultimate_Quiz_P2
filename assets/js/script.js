@@ -451,38 +451,38 @@ quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
 
-let setRules = (e) =>{
-    if(e == 'quick'){
-        gameRules.innerHTML =
-                `<ol>
-                <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
-                <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
-                <li class='rules'>You cannot quit while playing.</li>
-                <li class='rules'>Once a question is answered, it is final.</li>
-                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
-                </ol>`;
-    }else if(e == 'hard'){
-        gameRules.innerHTML =
-                `<ol>
-                <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
-                <li class='rules'>You have <span>${timeVal} seconds</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
-                <li class='rules'>You cannot quit while playing.</li>
-                <li class='rules'>Once a question is answered, it is final.</li>
-                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
-                </ol>`;
-    }else if(e == 'pubQuiz'){
-        gameRules.innerHTML =
-                `<ol>
-                <li class='rules'>You have a total of <span>${quesCount}</span> questions.</li>
-                <li class='rules'>You have <span>${Math.round(timeVal/60)} minutes</span> per question when playing in <span>${e.toUpperCase()}</span> mode.</li>
-                <li class='rules'>You cannot quit while playing.</li>
-                <li class='rules'>Quiz Master will call out the question to the teams as well as play along for points.</li>
-                <li class='rules'>Team wil the most points WINS!</li>
-                </ol>`;
-    }else{
-        gameRules.innerHTML = '';
-    }
+
+// sets rules text based on selection of game mode
+
+let setRules = e =>{
+    let numOfQues = quesCount;
+    let timeToPlay = timeVal;
+
+    if(e == 'pubQuiz'){
+        timeToPlay = `${Math.round(timeVal/60)} mintues`;
+    }else if(e == 'quick' || 'hard'){
+        timeToPlay = `${timeVal} seconds`;
+    };
+
+    // displays the users game mode in the title header of the quetions box
+
+    if(e){
     userSelection.innerText = `${e} Mode`;
+    gameRules.innerHTML =
+                `<ol>
+                <li class='rules'>You have a total of <span>${numOfQues}</span> questions.</li>
+                <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span></span> mode.</li>
+                <li class='rules'>You cannot quit while playing.</li>
+                <li class='rules'>Once a question is answered, it is final.</li>
+                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+                </ol>`;
+    gameRules.classList.add('rules-tile');
+    } else{
+        gameRules.innerHTML = '';
+        gameRules.classList.remove('rules-tile');
+    }
+
+
 };
 
 // Game Selection Function
