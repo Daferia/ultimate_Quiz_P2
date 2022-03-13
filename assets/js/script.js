@@ -695,8 +695,15 @@ let timeCount = timeVal => {
         if(timeVal > 20){
             let minutes = Math.floor(timeVal / 60);
             let seconds = timeVal - minutes * 60;
-            timeCounter.innerText = `${minutes}:${seconds}`;
+            let totalTime = '';
+            if (seconds <= 9){
+                totalTime = `0${minutes}:0${seconds}`;
+            }else{
+                totalTime = `0${minutes}:${seconds}`;
+            } 
+                timeCounter.innerText = totalTime;
         }
+            
     }
 };
 
