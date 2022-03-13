@@ -413,7 +413,7 @@ const resultsBox = document.querySelector('.result-box');
 const question = quesBox.querySelector('.questions');
 const totalQues = quesBox.querySelector('.total-ques');
 const nextBtn = quesBox.querySelector('.next-ques');
-const replayBtn = resultsBox.querySelector('.restart');
+const replayBtn = resultsBox.querySelector('.replay-btn');
 const quitBtn = resultsBox.querySelector('.buttons .quit');
 const gameMode = document.querySelector('.game-mode');
 const gameRules = document.querySelector('.game-rules');
@@ -485,7 +485,6 @@ let setRules = (e) =>{
 
 // Game Selection Function
 let gameSelect = choice => {
-    // let game1 = choice;
     if(choice == 'quick'){
         quesCount = 5;
         timeVal = 15;
@@ -539,6 +538,7 @@ let gameSelect = choice => {
 let contBtnShow = () =>{
     continue_btn.disabled = false;
     continue_btn.classList.add('restart');
+    continue_btn.classList.remove('greyed');
 };
 
 // Disables the continue button when a user unselects a game mode
@@ -546,6 +546,7 @@ let contBtnShow = () =>{
 let contBtnHide = () =>{
     continue_btn.disabled = true;
     continue_btn.classList.remove('restart');
+    continue_btn.classList.add('greyed');
     };
 
 // Get Questions from Questions Object
@@ -581,7 +582,6 @@ exitBtn.onclick = () => {
 // Function that generates the random questions
 let randomQues = () => {
     timeCount(timeVal);
-    nextBtn.classList.remove('show');
     randomNum = Math.ceil(Math.random()*100);
     
     // Code to try stop duplicating a question on after another by checkiing previous number.
@@ -632,22 +632,23 @@ let checkAnswers = userChoice => {
         nextBtn.classList.add('show');
         incorrectAnswer(correctAnswer);
     }
-    afterChoice();
+    afterChoice(correctAnswer);
 };
 
     //function to stop user selecting another option and next button text based on question number
 
     let afterChoice = () => {
     // Stops the user from selecting another option
-    for(i= 0 ;i < 4; i++){ 
-    choiceBox.children[i].classList.add('disabled');
+    for(i= 0 ;i < choiceBox.children.length; i++){ 
+        choiceBox.children[i].classList.add('disabled');
+
     }
 
     // Check the whether quiz must continue or end based on question count 
     if(quesNum < quesCount){
         nextBtn.innerText = 'Next Question';
     } else if(quesNum == quesCount){
-        nextBtn.innerText = 'Quiz Completed';
+        nextBtn.innerText = 'Completed!';
     }
     clearInterval(counter);
 };
@@ -661,6 +662,7 @@ let incorrectAnswer = val => {
         if (choiceBox.children[i].textContent == val ){
             choiceBox.children[i].setAttribute('class', 'option correct');
             choiceBox.children[i].insertAdjacentHTML('beforeend', correctIconTag);
+
         }
     }
 };
@@ -702,8 +704,7 @@ let timeCount = timeVal => {
                 totalTime = `0${minutes}:${seconds}`;
             } 
                 timeCounter.innerText = totalTime;
-        }
-            
+        } 
     }
 };
 
@@ -719,6 +720,8 @@ let scoreCard = () => {
 
 // Question Counter Onclick function that will add a number to the counter
 nextBtn.onclick = () => {
+    clearInterval(counter)
+    nextBtn.classList.remove('show');   
     if(quesNum < quesCount){
         quesNum ++;
         randomQues();
@@ -727,7 +730,6 @@ nextBtn.onclick = () => {
         quesBox.classList.remove('activeQuiz');
         resultsBox.classList.add('activeResult');
         scoreCard();
-
     }
 };
 
@@ -736,6 +738,7 @@ replayBtn.onclick = () => {
     resultsBox.classList.remove('activeResult');
     rulesBox.classList.add('activerules');
     logo.style.visibility = 'visible';
+    nextBtn.classList.remove('show');
     randomNum = 0;
     quesNum = 1;
     prevRandomNum = 0;
