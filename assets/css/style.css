@@ -131,8 +131,6 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.65), 
-                0 6px 20px 0 rgba(0, 0, 0, 0.75); */
 }
 
 .rules-box,
@@ -182,7 +180,6 @@ h1 {
 
 .rules-box{
     width: 80vw;
-    /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.8)); */
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -274,10 +271,10 @@ h1 {
 
 }
 
-.game-mode button{
+.game-mode button {
     font-size: 1.8rem;
     font-weight: 500;
-    color: var(--light-gray);
+    color: #fff;
     background-color: var(--sonic-silver);
     margin: 5px auto;
     padding: 5px;
@@ -331,22 +328,10 @@ h1 {
 }
 
 .questions-box header .timer{
-    color: #004085;
-    background: var(--cultured);
+    background: #fff;
     border: 1px solid var(--light-gray);
-    height: 7.2vh;
-    padding: 0 8px;
+    padding: 8px;
     border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.questions-box header .timer .time-remain{
-    font-size: 1.2rem;
-    font-weight: 400;
-    user-select: none;
-    margin-right: 5px;
 }
 
 .questions-box header .timer .time{
@@ -509,7 +494,7 @@ footer button.show{
 }
 
 .result-box .icon{
-    font-size: 4rem;
+    font-size: 8rem;
     color: #ffd700;
     margin-bottom: 10px;
 }
@@ -521,14 +506,15 @@ footer button.show{
 }
 
 .result-box .score p{
+    font-size: 1.6rem;
+    font-weight: 500;
     display: flex;
     margin: 10px 0;
-    font-size: 1.4rem;
-    font-weight: 500;
+
 }
 
 .result-box .score p span {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 600;
     padding: 0 4px;
     
@@ -605,21 +591,25 @@ footer button.show{
     .rules-box .buttons button,.game-mode button {
         width: 30%;
     }
-    
-    .questions-box header .timer{
-        min-width: 10vw;
-    }
-
-    .questions-box header .timer .time {
-        max-width:4vw;
-    }
 
     .rules-box, .questions-box {
         width: 450px;
     }
 
     .result-box .icon{
-        font-size: 6.25rem;
+        font-size: 15rem;
+    }
+
+    .result-box .completed{
+        font-size: 3rem;
+    }
+
+    .result-box .score p{
+        font-size: 1.8rem;
+    }
+
+    .result-box .score p span {
+        font-size: 1.8rem;
     }
 }
 
