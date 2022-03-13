@@ -190,7 +190,7 @@ h1 {
 }
 
 .rules-box .rules-title {
-    font-size: 4rem;
+    font-size: 5rem;
     font-weight: 600;
     width: 100%;
     border-bottom: 1px solid lightgrey;
@@ -202,7 +202,7 @@ h1 {
 
 }
 .rules-list h2 {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: 600;
     width: 100%;
     display: flex;
@@ -281,6 +281,14 @@ button {
 .rules-box .buttons .restart  {
     background-color: var(--onyx);
     border: 1px solid var(--onyx);
+}
+
+.rules-tile {
+    border: 1px solid lightgrey;
+    padding: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    background: rgb(255 255 255 / 40%);
 }
 
 .questions-box  {
@@ -443,13 +451,13 @@ footer{
 }
 
 footer .total-ques p{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     display: flex;
     user-select: none;
 }
 
 footer .total-ques p span {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 700;
     padding: 0 5px;
 }
