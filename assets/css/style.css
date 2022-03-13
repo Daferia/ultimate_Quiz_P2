@@ -283,10 +283,7 @@ button {
     border: 1px solid var(--onyx);
 }
 
-
-
 .questions-box  {
-    /* background: linear-gradient(to right bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5)); */
     width: 80vw;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
@@ -308,6 +305,10 @@ button {
     align-items: center;
     justify-content: space-evenly;
     border-bottom: 2px solid rgb(211, 211, 211,0.5);
+}
+
+.user-selection {
+    text-transform: capitalize;
 }
 
 .questions-box header .title{
@@ -404,8 +405,8 @@ section .choices .option.incorrect{
 }
 
 .greyed {
-    border: 1px solid #999999;
-    background-color: #cccccc;
+    border: 1px solid rgb(153, 153, 153, 0.5);
+    background-color: rgb(204, 204, 204, 0.5);
     color: #666666;
     cursor: not-allowed;
 }
@@ -463,6 +464,8 @@ footer button{
 }
 
 footer button:hover{
+    color:var(--onyx);
+    font-weight: 500;
     background: var(--light-gray);
     border: 1px solid var(--light-gray);
 }
@@ -471,7 +474,7 @@ footer button:hover{
     display: none;
 }
 
-.show{
+.show {
     display:inline;
 }
 
