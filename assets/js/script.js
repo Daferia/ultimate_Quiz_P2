@@ -411,6 +411,7 @@ const quesBox = document.querySelector('.questions-box');
 const userSelection = quesBox.querySelector('.user-selection');
 const choiceBox = quesBox.querySelector('.choices');
 const resultsBox = document.querySelector('.result-box');
+const trophy = resultsBox.querySelector('.trophy');
 const question = quesBox.querySelector('.questions');
 const totalQues = quesBox.querySelector('.total-ques');
 const nextBtn = quesBox.querySelector('.next-ques');
@@ -742,6 +743,7 @@ nextBtn.onclick = () => {
         console.log('print');
         quesBox.classList.remove('activeQuiz');
         resultsBox.classList.add('activeResult');
+        trophy.classList.add('animate__bounceIn');
         scoreCard();
     }
 };
