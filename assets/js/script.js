@@ -463,14 +463,9 @@ themeToggler.onclick = () =>{
         if (themeToggler.checked) {
             document.body.classList.add("dark-theme");
             document.getElementById('theme-toggle').checked = true;
-            localStorage.setItem("data-theme", "dark");
-            console.log('hello')
           } else {
             document.body.classList.remove("dark-theme");
             document.getElementById('theme-toggle').checked = false;
-            localStorage.removeItem('data-theme', 'dark');
-            localStorage.setItem("data-theme", 'light');
-            console.log('priny')
           }
         };
 
