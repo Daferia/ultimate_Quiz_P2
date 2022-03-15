@@ -1,3 +1,13 @@
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (prefersDarkScheme.matches) {
+  document.body.classList.add("dark-theme");
+  document.getElementById('theme-toggle').checked = true;
+} else {
+  document.body.classList.remove("dark-theme");
+  document.getElementById('theme-toggle').checked = false;
+}
+
 const quizObj = [
     
     {question:"In which Italian city can you find the Colosseum?",
@@ -402,7 +412,7 @@ const quizObj = [
     correct:"Johannes Vermeer"}
 ];
 
-
+let themeToggler = document.getElementById('theme-toggle');
 const startBtn = document.querySelector('.start-btn');
 const rulesBox = document.querySelector('.rules-box');
 const exitBtn = rulesBox.querySelector('.buttons .quit');
@@ -448,6 +458,15 @@ let counter;
 let game = '';
 
 // Onclick Events
+themeToggler.onclick = () =>{
+    if (themeToggler.checked) {
+        document.body.classList.add("dark-theme");
+        document.getElementById('theme-toggle').checked = true;
+      } else {
+        document.body.classList.remove("dark-theme");
+        document.getElementById('theme-toggle').checked = false;
+      }
+}
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
