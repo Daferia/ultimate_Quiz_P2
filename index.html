@@ -11,12 +11,18 @@
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'/>
 </head>
 <body>
+    <div class="theme-toggle">
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
   <header id='logo'>
       <h1 class="animate__animated animate__jackInTheBox">The Ultimate Quiz</h1>
   </header>
 <!-- Start and Quiz Topic -->
   <div class='start-btn'>
-      <button>Start</button>
+      <button class="btn">Start</button>
     </div>
 
     <!-- Rules and Game Mode Box -->
@@ -27,12 +33,12 @@
             <div class='game-mode'>
                 <div class="individual">
                     <h2>Single Player</h2>
-                <button class='quick-mode'>Quick</button>
-                <button class='hard-mode'>Hard</button>
+                <button class='btn quick-mode'>Quick</button>
+                <button class='btn hard-mode'>Hard</button>
             </div> 
             <div class="group-play">
                 <h2>Group Mode</h2>
-                <button class='pubquiz-mode'>Pub Quiz</button>
+                <button class='btn pubquiz-mode'>Pub Quiz</button>
             </div>
             </div>
             <div class="game-rules">
@@ -41,8 +47,8 @@
         </div>
 
         <div class='buttons'>
-            <button class='quit'>Exit</button>
-            <button class='greyed restart'>Continue</button>
+            <button class='btn quit'>Exit</button>
+            <button class='btn greyed restart'>Continue</button>
         </div>
     </div>
 
@@ -61,6 +67,10 @@
             </div>
             <div class='choices'>
                 <!-- Insert 4 different possible answers using JS -->
+                <div class="option choice-one"></div>
+                <div class="option choice-two"></div>
+                <div class="option choice-three"></div>
+                <div class="option choice-four"></div>
             </div>
         </section>
 
@@ -69,7 +79,7 @@
             <div class='total-ques'>
                 <!-- Counter goes here from JS -->
             </div>
-            <button class='next-ques'></button>
+            <button class='btn next-ques'></button>
         </footer>
     </div>
 
@@ -83,8 +93,8 @@
             <!-- Insert the score using JS -->
         </div>
         <div class="buttons">
-            <button class="replay-btn">Replay</button>
-            <button class="quit">Exit</button>
+            <button class="btn replay-btn">Replay</button>
+            <button class="btn quit">Exit</button>
         </div>
     </div>
 
