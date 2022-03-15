@@ -30,23 +30,29 @@
 body {
     /*set in case browser does not support the linear-gradient property*/
     background: rgb(2,0,36);
-    background: linear-gradient(312deg, #65dfc9, #6cdbeb);
+    background: linear-gradient(312deg, rgb(101, 223, 201),rgb(108, 219, 235));
     background-attachment: fixed;
     margin: auto;
     max-height: 100vh;
     width: 90vw;
 }
 
+/* For dark mode theme*/
+
+body.dark-theme {
+    background: rgb(30, 31, 30);
+    color: rgb(255, 255, 255);
+}
+
 h1 {
-    margin-top: 55px;
-    font-size: 6rem;
-    color: #fff;
+    margin-top: 10px;
+    font-size: 5rem;
+    color: rgb(255, 255, 255);
     text-align: center;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Inspiration from Dev Ed on youtube for glass effect, disc and triangle*/
+
 .disc,
 .triangle {
   background: #fff;
@@ -59,18 +65,18 @@ h1 {
 
 .disc {
   border-radius: 50%;
-  animation: discanimation 80s;
+  animation: disc-animation 80s;
   animation-iteration-count: infinite;
 
 
 }
 .triangle {
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
-  animation: trianimation 60s;
+  animation: tri-animation 60s;
   animation-iteration-count: infinite;
 }
 
-@keyframes trianimation
+@keyframes tri-animation
 {
     0% {
         left: 25%;
@@ -100,7 +106,7 @@ h1 {
     }
 }
 
-@keyframes discanimation
+@keyframes disc-animation
 {
     0% {
         right: 25%;
@@ -145,6 +151,12 @@ h1 {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
 }
 
+body.dark-theme .rules-box,
+body.dark-theme .questions-box,
+body.dark-theme .result-box{
+    background: rgba(148, 147, 147, 0.7);
+}
+
 .rules-box.activerules,
 .questions-box.activeQuiz,
 .result-box.activeResult{
@@ -179,7 +191,7 @@ h1 {
 }
 
 .rules-box{
-    width: 80vw;
+    width: 95vw;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -190,10 +202,10 @@ h1 {
 }
 
 .rules-box .rules-title {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 600;
     width: 100%;
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 1px solid rgb(211, 211, 211);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -202,13 +214,12 @@ h1 {
 
 }
 .rules-list h2 {
-    font-size: 4rem;
+    font-size: 3rem;
     font-weight: 600;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 20px;
 }
 
 .rules-box .rules-list {
@@ -232,6 +243,10 @@ h1 {
     color: var(--onyx);
 }
 
+body.dark-theme .rules-box .rules-list .rules span {
+    color: rgb(255, 255, 255);
+}
+
 .rules-box .buttons {
     height: auto;
     margin: 10px 5px;
@@ -241,10 +256,10 @@ h1 {
 
 }
 
-button {
+.btn {
     font-size: 1.8rem;
     font-weight: 500;
-    color: #fff;
+    color: rgb(255, 255, 255);
     background-color: var(--sonic-silver);
     padding: 5px;
     margin: 5px;
@@ -259,7 +274,7 @@ button {
 
 .game-mode {
     display: flex;
-    padding-bottom: 15px;
+    padding: 15px 0;
     flex-direction: column;
     text-align: center;
 }
@@ -284,15 +299,20 @@ button {
 }
 
 .rules-tile {
-    border: 1px solid lightgrey;
+    background: rgb(255 255 255 / 40%);
     padding: 20px;
     text-align: justify;
+    border: 1px solid rgb(211, 211, 211);
     border-radius: 5px;
-    background: rgb(255 255 255 / 40%);
+}
+
+body.dark-theme .game-rules {
+    background: rgba(80, 79, 79, 0.4);
+    border: 1px solid rgb(41, 41, 41);
 }
 
 .questions-box  {
-    width: 80vw;
+    width: 95vw;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -325,35 +345,34 @@ button {
 }
 
 .questions-box header .timer{
-    background: #fff;
-    border-bottom: 2px solid rgb(211, 211, 211,0.5);
-    padding: 8px;
+    background: rgb(255, 255, 255);
+    border: 3px solid rgb(211, 211, 211,0.5);
     margin: 5px;
     border-radius: 5px;
 }
 
 .questions-box header .timer .time{
-    color: #fff;
+    color: rgb(255, 255, 255);
     font-size: 1.6rem;
     font-weight: 500;
     width: 45px;
     padding: 5px;
     border-radius: 5px;
-    background: #343a40;
-    border: 1px solid #343a40;
+    background: rgb(52, 58, 64);
+    border: 1px solid rgb(52, 58, 64);
     user-select: none;
 }
 
 .red-countdown{
-    color: #a42834 !important; 
-    background: #f8d7da !important;
-    border-color: #a42834 !important;
+    color: rgb(164, 40, 52) !important; 
+    background: rgb(248, 215, 218) !important;
+    border-color: rgb(164, 40, 52) !important;
 }
 
 .green-countdown{
-    color: #155724 !important; 
-    background: #d4edda !important;
-    border-color: #c3e6cb !important;
+    color: rgb(21, 87, 36) !important; 
+    background: rgb(212, 237, 218) !important;
+    border-color: rgb(195, 230, 203) !important;
 }
 
 section{
@@ -374,8 +393,8 @@ section .choices{
 
 section .choices .option{
     font-size: 1.7rem;
-    background: aliceblue;
-    border: 1px solid #84c5fe;
+    background: rgb(240, 248, 255);
+    border: 1px solid rgb(132, 197, 254);
     border-radius: 5px;
     padding: 8px 15px;
     margin-bottom: 15px;
@@ -386,26 +405,50 @@ section .choices .option{
     justify-content: space-between;
 }
 
+body.dark-theme section .choices .option{
+    background: rgb(64, 64, 65);
+    border: 1px solid rgb(62, 64, 66);
+}
+
 section .choices .option:last-child{
     margin-bottom: 0px;
 }
 
 section .choices .option:hover{
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
+    color: rgb(0, 64, 133);
+    background: rgb(204, 229, 255);
+    border: 1px solid rgb(184, 218, 255);
 }
 
+body.dark-theme section .choices .option:hover{
+    background: #949596;
+    color: rgb(255, 255, 255);
+    border: 1px solid rgb(69, 69, 70);
+}
+
+
 section .choices .option.correct{
-    color: #155724;
-    background: #d4edda;
-    border: 1px solid #c3e6cb;
+    color: rgb(21, 87, 36);
+    background: rgb(212, 237, 218);
+    border: 1px solid rgb(195, 230, 203);
 }
 
 section .choices .option.incorrect{
-    color: #721c24;
-    background: #f8d7da;
-    border: 1px solid #f5c6cb;
+    color: rgb(114, 28, 36);
+    background: rgb(248, 215, 218);
+    border: 1px solid rgb(245, 198, 203);
+}
+
+body.dark-theme section .choices .option.correct{
+    color: rgb(21, 87, 36);
+    background: rgb(212, 237, 218);
+    border: 1px solid rgb(195, 230, 203);
+}
+
+body.dark-theme section .choices .option.incorrect{
+    color: rgb(114, 28, 36);
+    background: rgb(248, 215, 218);
+    border: 1px solid rgb(245, 198, 203);
 }
 
 .disabled{
@@ -415,7 +458,7 @@ section .choices .option.incorrect{
 .greyed {
     border: 1px solid rgb(153, 153, 153, 0.5);
     background-color: rgb(204, 204, 204, 0.5);
-    color: #666666;
+    color: rgb(102, 102, 102);
     cursor: not-allowed;
 }
 
@@ -431,15 +474,15 @@ section .choices .option .icon{
 }
 
 .tick{
-    color: #23903c;
-    border-color: #23903c;
-    background: #d4edda;
+    color: rgb(35, 144, 60);
+    border-color: rgb(35, 144, 60);
+    background: rgb(212, 237, 218);
 }
 
 .cross {
-    color: #a42834 !important; 
-    background: #f8d7da !important;
-    border-color: #a42834 !important;
+    color: rgb(164, 40, 52); 
+    background: rgb(248, 215, 218);
+    border-color: rgb(164, 40, 52);
 }
 
 footer{
@@ -486,28 +529,29 @@ footer button:hover{
     display:inline;
 }
 
-.result-box{
-    border-radius: 5px;
-    display: flex;
+.result-box{ 
+    width:90vw;
     padding: 25px 30px;
     align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    transform: translate(-50%, -50%) scale(0.9);
+    border-radius: 5px;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    transform: translate(-50%, -50%) scale(0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .result-box .trophy{
-    font-size: 6rem;
-    color: #ffd700;
+    font-size: 15rem;
+    color: rgb(255, 215, 0);
     background-color: rgb(255 215 0 / 20%);
     padding: 8.5%;
     border: 6px solid;
     border-radius: 50%;
     line-height: 1rem;
-    transition: all 0.6s ease;
+    animation-duration: 2s;
 }
 
 .result-box .completed{
@@ -557,7 +601,7 @@ footer button:hover{
 .page-footer {
     border: none;
     text-align: center;
-    color: #fff;
+    color: rgb(255, 255, 255);
     position: absolute;
     left: 0;
     right: 0;
@@ -586,12 +630,8 @@ footer button:hover{
         justify-content: flex-end;
     }
 
-    .rules-box, .questions-box {
+    .rules-box, .questions-box, .result-box {
         width: 450px;
-    }
-
-    .result-box .trophy{
-        font-size: 15em;
     }
 }
 
@@ -636,10 +676,65 @@ footer button:hover{
     .rules-box.activerules, .questions-box.activeQuiz, .result-box.activeResult {
         transform: translate(-50%, -50%) scale(1);
         }
-        .rules-box, .questions-box {
-            width:60vw;
-        }
-
-}
+}		
 
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
