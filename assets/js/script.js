@@ -491,7 +491,7 @@ let setRules = e =>{
     gameRules.innerHTML =
                 `<ol>
                 <li class='rules'>You have a total of <span>${numOfQues}</span> questions.</li>
-                <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span></span> mode.</li>
+                <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span>${e}</span> mode.</li>
                 <li class='rules'>You cannot quit while playing.</li>
                 <li class='rules'>Once a question is answered, it is final.</li>
                 <li class='rules'>Points will be tallied up on the last question for a final score.</li>
