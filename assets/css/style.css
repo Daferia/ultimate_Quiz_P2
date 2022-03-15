@@ -246,7 +246,7 @@ h1 {
     padding: 5px;
     margin: 5px;
     height: auto;
-    width: 100px;
+    min-width: 100px;
     cursor: pointer;
     outline: none;
     border-radius: 5px;
@@ -282,7 +282,7 @@ button.selected,
 
 .rules-tile {
     background: rgb(255 255 255 / 40%);
-    padding: 20px;
+    padding: 20px 30px;
     text-align: justify;
     border: 1px solid rgb(211, 211, 211);
     border-radius: 5px;
@@ -323,7 +323,7 @@ button.selected,
 
 .questions-box header .timer{
     background: rgb(255, 255, 255);
-    border: 3px solid rgb(211, 211, 211,0.5);
+    border: 2px solid rgb(255, 255, 255);
     margin: 5px;
     border-radius: 5px;
 }
@@ -332,7 +332,7 @@ button.selected,
     color: rgb(255, 255, 255);
     font-size: 1.6rem;
     font-weight: 500;
-    width: 45px;
+    width: 55px;
     padding: 5px;
     border-radius: 5px;
     background: rgb(52, 58, 64);
@@ -685,8 +685,8 @@ body.dark-theme .buttons .quit:hover {
 
 @media screen and (min-width: 700px) {
 
-.rules-box.activerules, .questions-box.activeQuiz, .result-box.activeResult {
-    transform: translate(-50%, -50%) scale(1.4);
+.rules-box, .questions-box, .result-box {
+    width:700px
     }
 
     h1 {
@@ -748,7 +748,7 @@ body.dark-theme .buttons .quit:hover {
     content: '\f186';
     font-family: "Font Awesome 5 Free";
     transform: rotate(360deg);
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight:700 ;
     display: flex;
     justify-content: center;
