@@ -1,13 +1,3 @@
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
-
-if (prefersDarkScheme.matches) {
-  document.body.classList.add("dark-theme");
-  document.getElementById('theme-toggle').checked = true;
-} else {
-  document.body.classList.remove("dark-theme");
-  document.getElementById('theme-toggle').checked = false;
-}
-
 const quizObj = [
     
     {question:"In which Italian city can you find the Colosseum?",
@@ -412,6 +402,16 @@ const quizObj = [
     correct:"Johannes Vermeer"}
 ];
 
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+if (prefersDarkScheme.matches) {
+  document.body.classList.add("dark-theme");
+  document.getElementById('theme-toggle').checked = true;
+} else {
+  document.body.classList.remove("dark-theme");
+  document.getElementById('theme-toggle').checked = false;
+}
+
 let themeToggler = document.getElementById('theme-toggle');
 const startBtn = document.querySelector('.start-btn');
 const rulesBox = document.querySelector('.rules-box');
@@ -457,16 +457,23 @@ let timeVal = 0;
 let counter;
 let game = '';
 
+
 // Onclick Events
 themeToggler.onclick = () =>{
-    if (themeToggler.checked) {
-        document.body.classList.add("dark-theme");
-        document.getElementById('theme-toggle').checked = true;
-      } else {
-        document.body.classList.remove("dark-theme");
-        document.getElementById('theme-toggle').checked = false;
-      }
-}
+        if (themeToggler.checked) {
+            document.body.classList.add("dark-theme");
+            document.getElementById('theme-toggle').checked = true;
+            localStorage.setItem("data-theme", "dark");
+            console.log('hello')
+          } else {
+            document.body.classList.remove("dark-theme");
+            document.getElementById('theme-toggle').checked = false;
+            localStorage.removeItem('data-theme', 'dark');
+            localStorage.setItem("data-theme", 'light');
+            console.log('priny')
+          }
+        };
+
 quickMode.onclick = () => gameSelect('quick');
 hardMode.onclick = () => gameSelect('hard');
 pubQuizMode.onclick = () => gameSelect('pubQuiz');
