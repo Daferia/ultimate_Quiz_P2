@@ -37,13 +37,6 @@ body {
     width: 90vw;
 }
 
-/* For dark mode theme*/
-
-body.dark-theme {
-    background: rgb(30, 31, 30);
-    color: rgb(255, 255, 255);
-}
-
 h1 {
     margin-top: 10px;
     font-size: 5rem;
@@ -151,12 +144,6 @@ h1 {
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
 }
 
-body.dark-theme .rules-box,
-body.dark-theme .questions-box,
-body.dark-theme .result-box{
-    background: rgba(148, 147, 147, 0.7);
-}
-
 .rules-box.activerules,
 .questions-box.activeQuiz,
 .result-box.activeResult{
@@ -173,17 +160,16 @@ body.dark-theme .result-box{
 .start-btn button   {
     font-size: 2rem;
     font-weight: 500;
-    color: var(--cultured);
     padding: 1rem 2rem;
     outline: none;
     border: none;
     border-radius: 5px;
-    background: var(--sonic-silver);
     cursor: pointer;
 }
 
 .start-btn button:hover,
-.game-mode button:hover{
+.game-mode button:hover,
+.rules-box .buttons .restart:hover {
     color:var(--onyx);
     font-weight: 500;
     background: var(--light-gray);
@@ -243,17 +229,12 @@ body.dark-theme .result-box{
     color: var(--onyx);
 }
 
-body.dark-theme .rules-box .rules-list .rules span {
-    color: rgb(255, 255, 255);
-}
-
 .rules-box .buttons {
     height: auto;
     margin: 10px 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .btn {
@@ -286,13 +267,13 @@ body.dark-theme .rules-box .rules-list .rules span {
     justify-content: center;
  }
 
- .game-mode .individual h2,
+.game-mode .individual h2,
 .game-mode .group-play h2{
     font-size: 2rem;
     font-weight: 600;
 }
 
-.game-mode .selected,
+button.selected,
 .rules-box .buttons .restart  {
     background-color: var(--onyx);
     border: 1px solid var(--onyx);
@@ -304,11 +285,6 @@ body.dark-theme .rules-box .rules-list .rules span {
     text-align: justify;
     border: 1px solid rgb(211, 211, 211);
     border-radius: 5px;
-}
-
-body.dark-theme .game-rules {
-    background: rgba(80, 79, 79, 0.4);
-    border: 1px solid rgb(41, 41, 41);
 }
 
 .questions-box  {
@@ -405,11 +381,6 @@ section .choices .option{
     justify-content: space-between;
 }
 
-body.dark-theme section .choices .option{
-    background: rgb(64, 64, 65);
-    border: 1px solid rgb(62, 64, 66);
-}
-
 section .choices .option:last-child{
     margin-bottom: 0px;
 }
@@ -420,13 +391,6 @@ section .choices .option:hover{
     border: 1px solid rgb(184, 218, 255);
 }
 
-body.dark-theme section .choices .option:hover{
-    background: #949596;
-    color: rgb(255, 255, 255);
-    border: 1px solid rgb(69, 69, 70);
-}
-
-
 section .choices .option.correct{
     color: rgb(21, 87, 36);
     background: rgb(212, 237, 218);
@@ -434,18 +398,6 @@ section .choices .option.correct{
 }
 
 section .choices .option.incorrect{
-    color: rgb(114, 28, 36);
-    background: rgb(248, 215, 218);
-    border: 1px solid rgb(245, 198, 203);
-}
-
-body.dark-theme section .choices .option.correct{
-    color: rgb(21, 87, 36);
-    background: rgb(212, 237, 218);
-    border: 1px solid rgb(195, 230, 203);
-}
-
-body.dark-theme section .choices .option.incorrect{
     color: rgb(114, 28, 36);
     background: rgb(248, 215, 218);
     border: 1px solid rgb(245, 198, 203);
@@ -582,18 +534,19 @@ footer button:hover{
 }
 
 .buttons button.restart:hover{
-    color: var(--onyx);
+    color: rgb(255, 255, 255);
     background: var(--light-gray);
     border: 1px solid var(--light-gray);
 }
 
-.buttons button.quit{
+.buttons .quit,
+body.dark-theme .buttons .quit {
     color: var(--sonic-silver);
-    background: var(--cultured);
+    background: rgb(255, 255, 255);
 }
 
-.buttons button.quit:hover{
-    color: var(--cultured);
+.buttons .quit:hover {
+    color: rgb(255, 255, 255);
     background: var(--sonic-silver);
     border: 1px solid var(--sonic-silver);
 }
@@ -619,6 +572,76 @@ footer button:hover{
     font-size: 1.5rem;
     text-align: center;
 }
+
+/* Dark Theme Code */
+
+body.dark-theme {
+    background: var(--eerie-black);
+    color: rgb(255, 255, 255);
+}
+
+body.dark-theme .btn {
+    color: rgb(255, 255, 255);
+    background-color: var(--davys-grey);
+    border: 1px solid var(--davys-grey);
+}
+
+body.dark-theme .rules-box,
+body.dark-theme .questions-box,
+body.dark-theme .result-box{
+    background: rgb(46, 46, 46,0.7);
+}
+
+body.dark-theme .rules-box .rules-list .rules span {
+    color: rgb(255, 255, 255);
+}
+
+body.dark-theme :is(.start-btn>button,button.selected,.rules-box .buttons .restart,.next-ques){
+    color: rgb(255, 255, 255);
+    background-color: var(--onyx);
+    border: 1px solid rgb(255, 255, 255);
+}
+
+body.dark-theme :is(.start-btn>button, .game-mode button, .selected,.rules-box .buttons .restart,.next-ques, section .choices .option, .buttons .replay-btn):hover{
+    color: var(--onyx);
+    background-color: var(--light-gray);
+    border: 1px solid var(--light-gray);
+}
+
+body.dark-theme .game-rules {
+    background: rgba(80, 79, 79, 0.4);
+}
+
+body.dark-theme .buttons .greyed{
+    border: 1px solid rgb(153, 153, 153, 0.5);
+    background-color: rgb(204, 204, 204, 0.5);
+    color: rgb(255, 255, 255,0.5);
+    cursor: not-allowed;
+}
+
+body.dark-theme section .choices .option{
+    background: var(--onyx);
+    border: 1px solid rgb(62, 64, 66);
+}
+
+body.dark-theme section .choices .option.correct{
+    color: rgb(21, 87, 36);
+    background: rgb(212, 237, 218);
+    border: 1px solid rgb(195, 230, 203);
+}
+
+body.dark-theme section .choices .option.incorrect{
+    color: rgb(114, 28, 36);
+    background: rgb(248, 215, 218);
+    border: 1px solid rgb(245, 198, 203);
+}
+
+body.dark-theme .buttons .quit:hover {
+    color: rgb(255, 255, 255);
+    background: var(--davys-grey);
+    border: 1px solid rgb(255, 255, 255);
+}
+
 
 @media screen and (min-width: 480px) {
 
@@ -678,6 +701,12 @@ footer button:hover{
         }
 }		
 
+/* Theme toggler code*/
+
+.theme-toggle {
+    margin: 10px;
+    text-align: center;
+}
 
 .switch {
     position: relative;
@@ -693,41 +722,56 @@ footer button:hover{
   }
   
   .slider {
+    color: #000;
     position: absolute;
     cursor: pointer;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ccc;
+    background-color: rgb(84, 176, 189);
     -webkit-transition: .4s;
     transition: .4s;
+
   }
   
   .slider:before {
     position: absolute;
-    content: "";
     height: 26px;
     width: 26px;
     left: 4px;
     bottom: 4px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     -webkit-transition: .4s;
-    transition: .4s;
+    transition: 0.7s;
+    content: '\f186';
+    font-family: "Font Awesome 5 Free";
+    transform: rotate(360deg);
+    font-size: 2.5rem;
+    font-weight:700 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(109, 108, 108);
+  }
+
+  body.dark-theme .slider:before {
+    content: '\f185';
+    font-family: "Font Awesome 5 Free";
   }
   
   input:checked + .slider {
-    background-color: #2196F3;
+    background-color: var(--sonic-silver);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px var(--sonic-silver);
   }
   
   input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
-    transform: translateX(26px);
+    transform: translateX(26px) rotate(-180deg);
   }
   
   /* Rounded sliders */
