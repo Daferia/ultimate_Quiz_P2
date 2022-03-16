@@ -763,387 +763,409 @@ const quizObj = [
     }
   ];
   
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+let themeToggler = document.getElementById("theme-toggle");
+const startBtn = document.querySelector(".start-btn");
+const rulesBox = document.querySelector(".rules-box");
+const exitBtn = rulesBox.querySelector(".buttons .quit");
+const continue_btn = rulesBox.querySelector(".restart");
+const quesBox = document.querySelector(".questions-box");
+const userSelection = quesBox.querySelector(".user-selection");
+const choiceBox = quesBox.querySelector(".choices");
+const resultsBox = document.querySelector(".result-box");
+const trophy = resultsBox.querySelector(".trophy");
+const question = quesBox.querySelector(".questions");
+const totalQues = quesBox.querySelector(".total-ques");
+const nextBtn = quesBox.querySelector(".next-ques");
+const replayBtn = resultsBox.querySelector(".replay-btn");
+const quitBtn = resultsBox.querySelector(".buttons .quit");
+const gameRules = document.querySelector(".game-rules");
+const logo = document.getElementById("logo");
+const timeCounter = document.querySelector(".time");
+const score = resultsBox.querySelector(".score");
   
-  if (prefersDarkScheme.matches) {
-    document.body.classList.add("dark-theme");
-    document.getElementById("theme-toggle").checked = true;
-  } else {
-    document.body.classList.remove("dark-theme");
-  }
-  
-  let themeToggler = document.getElementById("theme-toggle");
-  const startBtn = document.querySelector(".start-btn");
-  const rulesBox = document.querySelector(".rules-box");
-  const exitBtn = rulesBox.querySelector(".buttons .quit");
-  const continue_btn = rulesBox.querySelector(".restart");
-  const quesBox = document.querySelector(".questions-box");
-  const userSelection = quesBox.querySelector(".user-selection");
-  const choiceBox = quesBox.querySelector(".choices");
-  const resultsBox = document.querySelector(".result-box");
-  const trophy = resultsBox.querySelector(".trophy");
-  const question = quesBox.querySelector(".questions");
-  const totalQues = quesBox.querySelector(".total-ques");
-  const nextBtn = quesBox.querySelector(".next-ques");
-  const replayBtn = resultsBox.querySelector(".replay-btn");
-  const quitBtn = resultsBox.querySelector(".buttons .quit");
-  const gameRules = document.querySelector(".game-rules");
-  const logo = document.getElementById("logo");
-  const timeCounter = document.querySelector(".time");
-  const score = resultsBox.querySelector(".score");
-  
-  // Declare game mode questions
+// Declare game mode questions
 
-  const quickMode = document.querySelector(".quick-mode");
-  const hardMode = document.querySelector(".hard-mode");
+const quickMode = document.querySelector(".quick-mode");
+const hardMode = document.querySelector(".hard-mode");
 
-  // const groupPlay = document.querySelector('.group-play');
+// const groupPlay = document.querySelector('.group-play');
 
-  const pubQuizMode = document.querySelector(".pubquiz-mode");
-  
-  // creating the new div tags which for icons
+const pubQuizMode = document.querySelector(".pubquiz-mode");
 
-  let correctIconTag =
-    '<div class="icon tick"><i class="fas fa-check"></i></div>';
-  let incorrectIconTag =
-    '<div class="icon cross"><i class="fas fa-times"></i></div>';
-  
-  // Declare the starting values for variables
+// creating the new div tags which for icons
 
-  let randomNum = 0;
-  let quesCount = 0;
-  let quesNum = 1;
-  let prevRandomNum = 0;
-  let userGameModeSelect = 0;
-  let points = 0;
-  let timeVal = 0;
-  let counter;
-  
+let correctIconTag =
+'<div class="icon tick"><i class="fas fa-check"></i></div>';
+let incorrectIconTag =
+'<div class="icon cross"><i class="fas fa-times"></i></div>';
+
+// Declare the starting values for variables
+
+let randomNum = 0;
+let quesCount = 0;
+let quesNum = 1;
+let prevRandomNum = 0;
+let userGameModeSelect = 0;
+let points = 0;
+let timeVal = 0;
+let counter;
+
+  //theme set on load from stack overflow
+
+let detectColorScheme = () =>{
+    let userTheme="light";    //default to light
+
+    //local storage is used to override OS theme settings
+    if(localStorage.getItem("theme")){
+        if(localStorage.getItem("theme") == "dark"){
+            userTheme = "dark";
+        }
+    } else if(!window.matchMedia) {
+        //matchMedia method not supported
+        return false;
+    } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        //OS theme setting detected as dark
+        userTheme = "dark";
+    }
+
+    //dark theme preferred, set document with a `data-theme` attribute
+    if (userTheme == "dark") {
+        document.body.classList.add("dark-theme");
+    }
+};
+
+detectColorScheme();
+
+if (localStorage.getItem("theme") == "dark"){
+    themeToggler.checked = true;
+}
+
+let switchTheme = e =>{
+    if (e.checked) {
+        localStorage.setItem('theme', 'dark');
+        document.body.classList.add("dark-theme");
+    } else {
+        localStorage.setItem('theme', 'light');
+        document.body.classList.remove("dark-theme");
+    }    
+};
+
   // Onclick Events
 
-  themeToggler.onclick = () => {
-    if (themeToggler.checked) {
-      document.body.classList.add("dark-theme");
-      localStorage.setItem("theme", "dark");
-    } else {
-      document.body.classList.remove("dark-theme");
-      localStorage.setItem("theme", "light");
-    }
-  };
-  
-  quickMode.onclick = () => gameSelect("quick");
-  hardMode.onclick = () => gameSelect("hard");
-  pubQuizMode.onclick = () => gameSelect("pubQuiz");
-  
-  // sets rules text based on selection of game mode
-  
-  let setRules = (e) => {
-    let numOfQues = quesCount;
-    let timeToPlay = timeVal;
-  
-    if (e == "pubQuiz") {
-      timeToPlay = `${Math.round(timeVal / 60)} mintues`;
-    } else if (e == "quick" || "hard") {
-      timeToPlay = `${timeVal} seconds`;
-    }
-  
-    // displays the users game mode in the title header of the quetions box
-  
-    if (e) {
-      userSelection.innerText = `${e} Mode`;
-      gameRules.innerHTML = `<ol>
-                  <li class='rules'>You have a total of <span>${numOfQues}</span> questions.</li>
-                  <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span>${e}</span> mode.</li>
-                  <li class='rules'>You cannot quit while playing.</li>
-                  <li class='rules'>Once a question is answered, it is final.</li>
-                  <li class='rules'>Points will be tallied up on the last question for a final score.</li>
-                  </ol>`;
-      gameRules.classList.add("rules-tile");
-    } else {
-      gameRules.innerHTML = "";
-      gameRules.classList.remove("rules-tile");
-    }
-  };
-  
-  // Game Selection Function
+themeToggler.onclick = () => switchTheme(themeToggler);
 
-  let gameSelect = (choice) => {
-    if (choice == "quick") {
-      quesCount = 5;
-      timeVal = 15;
-      if (quickMode.classList.contains("selected")) {
-        quickMode.classList.remove("selected");
-        choice = 0;
-        contBtnHide();
-      } else {
-        quickMode.classList.add("selected");
-        hardMode.classList.remove("selected");
-        pubQuizMode.classList.remove("selected");
-        contBtnShow();
-      }
-    } else if (choice == "hard") {
-      quesCount = 10;
-      timeVal = 5;
-      if (hardMode.classList.contains("selected")) {
-        hardMode.classList.remove("selected");
-        choice = 0;
-        contBtnHide();
-      } else {
-        hardMode.classList.add("selected");
-        pubQuizMode.classList.remove("selected");
-        quickMode.classList.remove("selected");
-        contBtnShow();
-      }
-    } else if (choice == "pubQuiz") {
-      quesCount = 50;
-      timeVal = 241;
-      if (pubQuizMode.classList.contains("selected")) {
-        pubQuizMode.classList.remove("selected");
-        choice = 0;
-        contBtnHide();
-      } else {
-        pubQuizMode.classList.add("selected");
-        quickMode.classList.remove("selected");
-        hardMode.classList.remove("selected");
-        contBtnShow();
-      }
-    }
-  
-    //sets  Question count based on user game mode choice
+quickMode.onclick = () => gameSelect("quick");
+hardMode.onclick = () => gameSelect("hard");
+pubQuizMode.onclick = () => gameSelect("pubQuiz");
 
-    userGameModeSelect = quesCount;
-    setRules(choice);
-  };
-  
-  // Enables the continue button when a user selects a game mode
-  
-  let contBtnShow = () => {
-    continue_btn.disabled = false;
-    continue_btn.classList.add("restart");
-    continue_btn.classList.remove("greyed");
-  };
-  
-  // Disables the continue button when a user unselects a game mode
-  
-  let contBtnHide = () => {
-    continue_btn.disabled = true;
-    continue_btn.classList.remove("restart");
-    continue_btn.classList.add("greyed");
-  };
-  
-  // Get Questions from Questions Object
+// sets rules text based on selection of game mode
 
-  let quesList = [];
-  quesList = quizObj.map((ques) => ques.question);
-  let answerList = quizObj.map((answ) => answ.answers);
-  
-  let findAnswer = [];
-  findAnswer = quizObj.map((answer) => answer.correct);
-  
-  // Onclick Event that display the Rules box after clicking Start
+let setRules = (e) => {
+let numOfQues = quesCount;
+let timeToPlay = timeVal;
 
-  startBtn.onclick = () => {
+if (e == "pubQuiz") {
+    timeToPlay = `${Math.round(timeVal / 60)} mintues`;
+} else if (e == "quick" || "hard") {
+    timeToPlay = `${timeVal} seconds`;
+}
+
+// displays the users game mode in the title header of the quetions box
+
+if (e) {
+    userSelection.innerText = `${e} Mode`;
+    gameRules.innerHTML = `<ol>
+                <li class='rules'>You have a total of <span>${numOfQues}</span> questions.</li>
+                <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span>${e}</span> mode.</li>
+                <li class='rules'>You cannot quit while playing.</li>
+                <li class='rules'>Once a question is answered, it is final.</li>
+                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+                </ol>`;
+    gameRules.classList.add("rules-tile");
+} else {
+    gameRules.innerHTML = "";
+    gameRules.classList.remove("rules-tile");
+}
+};
+
+// Game Selection Function
+
+let gameSelect = (choice) => {
+if (choice == "quick") {
+    quesCount = 5;
+    timeVal = 15;
+    if (quickMode.classList.contains("selected")) {
+    quickMode.classList.remove("selected");
+    choice = 0;
     contBtnHide();
-    rulesBox.classList.add("activerules");
-    startBtn.style.visibility = "hidden";
-    logo.style.visibility = "hidden";
-  };
-  
-  // Onclick Event to display Questions Box and run the game
-
-  continue_btn.onclick = () => {
-    quesBox.classList.add("activeQuiz");
-    rulesBox.classList.remove("activerules");
-    randomQues();
-  };
-  
-  exitBtn.onclick = () => {
-    logo.style.visibility = "visible";
-    rulesBox.classList.remove("activerules");
-    startBtn.style.visibility = "visible";
-  };
-  
-  // Function that generates the random questions
-
-  let randomQues = () => {
-    timeCount(timeVal);
-    randomNum = Math.ceil(Math.random() * 100);
-  
-    // Code to try stop duplicating a question on after another by checkiing previous number.
-
-    if (prevRandomNum == randomNum) {
-      randomNum += 1;
-    } else if (randomNum == 100) {
-      randomNum -= 1;
-    } else if (randomNum == 0) {
-      randomNum += 1;
-    }
-  
-    // sets previous number value for next round
-
-    prevRandomNum = randomNum;
-  
-    // Set Question Number and the corresponding question
-
-    question.innerHTML = `${quesNum}. ${quesList[randomNum]}`;
-  
-    choiceBox.innerHTML = `<div class="option">${answerList[randomNum][0]}</div>
-      <div class="option">${answerList[randomNum][1]}</div>
-      <div class="option">${answerList[randomNum][2]}</div>
-      <div class="option">${answerList[randomNum][3]}</div>`;
-  
-    let option = choiceBox.querySelectorAll(".option");
-  
-    for (i = 0; i < option.length; i++) {
-      option[i].setAttribute("onclick", "checkAnswers(this)");
-    }
-  
-    totalQues.innerHTML = `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
-  };
-  
-  // Function that checkers users answer
-
-  let checkAnswers = (userChoice) => {
-    let userSelect = userChoice.textContent;
-    let correctAnswer = findAnswer[randomNum];
-    if (userSelect == correctAnswer) {
-      userChoice.classList.add("correct");
-      userChoice.insertAdjacentHTML("beforeend", correctIconTag);
-      nextBtn.classList.add("show");
-      points += 10;
-    } else if (userSelect != correctAnswer) {
-      userChoice.classList.add("incorrect");
-      userChoice.insertAdjacentHTML("beforeend", incorrectIconTag);
-      nextBtn.classList.add("show");
-      incorrectAnswer(correctAnswer);
-    }
-    afterChoice(correctAnswer);
-  };
-  
-  //function to stop user selecting another option and next button text based on question number
-  
-  let afterChoice = () => {
-
-    // Stops the user from selecting another option
-
-    for (i = 0; i < choiceBox.children.length; i++) {
-      choiceBox.children[i].classList.add("disabled");
-    }
-  
-    // Check the whether quiz must continue or end based on question count
-
-    if (quesNum < quesCount) {
-      nextBtn.innerText = "Next Question";
-    } else if (quesNum == quesCount) {
-      nextBtn.innerText = "Completed!";
-    }
-    clearInterval(counter);
-  };
-  
-  // function if user selects the wrong answer it will highlight the correct answer.
-  
-  let incorrectAnswer = (val) => {
-    let checkOthers = answerList[randomNum];
-  
-    for (i = 0; i < checkOthers.length; i++) {
-      if (choiceBox.children[i].textContent == val) {
-        choiceBox.children[i].setAttribute("class", "option correct");
-        choiceBox.children[i].insertAdjacentHTML("beforeend", correctIconTag);
-      }
-    }
-  };
-  
-  // Function that sets a timer to Quick and Hard mode
-  
-  let timeCount = (timeVal) => {
-    counter = setInterval(time, 1000);
-    timeCounter.innerText = "00:00";
-    let gameTime = timeVal;
-    function time() {
-      let minutes = Math.floor(timeVal / 60);
-      let seconds = timeVal - minutes * 60;
-      timeVal--;
-
-      // Converts the time to minutes and seconds for Pub Quiz Game Mode
-
-      if (timeVal == 241) {
-      }
-      if (timeVal < 60) {
-        let totalTime;
-        if (seconds <= 9) {
-          totalTime = `0${minutes}:0${seconds}`;
-        } else {
-          totalTime = `0${minutes}:${seconds}`;
-        }
-        timeCounter.innerText = totalTime;
-      }
-  
-      // Stops counter from counting down past zero
-  
-      if (timeVal < 0) {
-        clearInterval(counter);
-        timeCounter.innerText = "00:00";
-        incorrectAnswer(findAnswer[randomNum]);
-        afterChoice();
-        nextBtn.classList.add("show");
-      }
-  
-      let halfWay = Math.round(gameTime / 2);
-      let threeQuaters = Math.round(gameTime / 3);
-  
-      if (timeVal >= halfWay) {
-        timeCounter.classList.remove("red-countdown");
-        timeCounter.classList.add("green-countdown");
-      }
-  
-      if (timeVal == threeQuaters) {
-        timeCounter.classList.add("red-countdown");
-        timeCounter.classList.remove("green-countdown");
-      }
-    }
-  };
-  
-  // function to work out and display score
-
-  let scoreCard = () => {
-    let userScore = points;
-    let totalPoints = quesCount * 10;
-    score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
-  };
-  
-  // Question Counter Onclick function that will add a number to the counter
-
-  nextBtn.onclick = () => {
-    clearInterval(counter);
-    nextBtn.classList.remove("show");
-    if (quesNum < quesCount) {
-      quesNum++;
-      randomQues();
-      timeCounter.classList.remove("time-countdown");
     } else {
-      quesBox.classList.remove("activeQuiz");
-      resultsBox.classList.add("activeResult");
-      trophy.classList.add("animate__bounceIn");
-      scoreCard();
+    quickMode.classList.add("selected");
+    hardMode.classList.remove("selected");
+    pubQuizMode.classList.remove("selected");
+    contBtnShow();
     }
-  };
-  
-  // REplay onlick function that will allow the user to restart the quiz using same choices
+} else if (choice == "hard") {
+    quesCount = 10;
+    timeVal = 5;
+    if (hardMode.classList.contains("selected")) {
+    hardMode.classList.remove("selected");
+    choice = 0;
+    contBtnHide();
+    } else {
+    hardMode.classList.add("selected");
+    pubQuizMode.classList.remove("selected");
+    quickMode.classList.remove("selected");
+    contBtnShow();
+    }
+} else if (choice == "pubQuiz") {
+    quesCount = 50;
+    timeVal = 241;
+    if (pubQuizMode.classList.contains("selected")) {
+    pubQuizMode.classList.remove("selected");
+    choice = 0;
+    contBtnHide();
+    } else {
+    pubQuizMode.classList.add("selected");
+    quickMode.classList.remove("selected");
+    hardMode.classList.remove("selected");
+    contBtnShow();
+    }
+}
 
-  replayBtn.onclick = () => {
-    resultsBox.classList.remove("activeResult");
-    rulesBox.classList.add("activerules");
-    logo.style.visibility = "visible";
-    nextBtn.classList.remove("show");
-    randomNum = 0;
-    quesNum = 1;
-    prevRandomNum = 0;
-    points = 0;
-  };
-  
-  // Quit Function reloads window to Start Screen if they quit
+//sets  Question count based on user game mode choice
 
-  quitBtn.onclick = () => {
-    window.location.reload();
-  };
-  
+userGameModeSelect = quesCount;
+setRules(choice);
+};
+
+// Enables the continue button when a user selects a game mode
+
+let contBtnShow = () => {
+continue_btn.disabled = false;
+continue_btn.classList.add("restart");
+continue_btn.classList.remove("greyed");
+};
+
+// Disables the continue button when a user unselects a game mode
+
+let contBtnHide = () => {
+continue_btn.disabled = true;
+continue_btn.classList.remove("restart");
+continue_btn.classList.add("greyed");
+};
+
+// Get Questions from Questions Object
+
+let quesList = [];
+quesList = quizObj.map((ques) => ques.question);
+let answerList = quizObj.map((answ) => answ.answers);
+
+let findAnswer = [];
+findAnswer = quizObj.map((answer) => answer.correct);
+
+// Onclick Event that display the Rules box after clicking Start
+
+startBtn.onclick = () => {
+contBtnHide();
+rulesBox.classList.add("activerules");
+startBtn.style.visibility = "hidden";
+logo.style.visibility = "hidden";
+};
+
+// Onclick Event to display Questions Box and run the game
+
+continue_btn.onclick = () => {
+quesBox.classList.add("activeQuiz");
+rulesBox.classList.remove("activerules");
+randomQues();
+};
+
+exitBtn.onclick = () => {
+logo.style.visibility = "visible";
+rulesBox.classList.remove("activerules");
+startBtn.style.visibility = "visible";
+};
+
+// Function that generates the random questions
+
+let randomQues = () => {
+timeCount(timeVal);
+randomNum = Math.ceil(Math.random() * 100);
+
+// Code to try stop duplicating a question on after another by checkiing previous number.
+
+if (prevRandomNum == randomNum) {
+    randomNum += 1;
+} else if (randomNum == 100) {
+    randomNum -= 1;
+} else if (randomNum == 0) {
+    randomNum += 1;
+}
+
+// sets previous number value for next round
+
+prevRandomNum = randomNum;
+
+// Set Question Number and the corresponding question
+
+question.innerHTML = `${quesNum}. ${quesList[randomNum]}`;
+
+choiceBox.innerHTML = `<div class="option">${answerList[randomNum][0]}</div>
+    <div class="option">${answerList[randomNum][1]}</div>
+    <div class="option">${answerList[randomNum][2]}</div>
+    <div class="option">${answerList[randomNum][3]}</div>`;
+
+let option = choiceBox.querySelectorAll(".option");
+
+for (i = 0; i < option.length; i++) {
+    option[i].setAttribute("onclick", "checkAnswers(this)");
+}
+
+totalQues.innerHTML = `<p><span>${quesNum}</span> of <span>${quesCount}</span> questions</p>`;
+};
+
+// Function that checkers users answer
+
+let checkAnswers = (userChoice) => {
+let userSelect = userChoice.textContent;
+let correctAnswer = findAnswer[randomNum];
+if (userSelect == correctAnswer) {
+    userChoice.classList.add("correct");
+    userChoice.insertAdjacentHTML("beforeend", correctIconTag);
+    nextBtn.classList.add("show");
+    points += 10;
+} else if (userSelect != correctAnswer) {
+    userChoice.classList.add("incorrect");
+    userChoice.insertAdjacentHTML("beforeend", incorrectIconTag);
+    nextBtn.classList.add("show");
+    incorrectAnswer(correctAnswer);
+}
+afterChoice(correctAnswer);
+};
+
+//function to stop user selecting another option and next button text based on question number
+
+let afterChoice = () => {
+
+// Stops the user from selecting another option
+
+for (i = 0; i < choiceBox.children.length; i++) {
+    choiceBox.children[i].classList.add("disabled");
+}
+
+// Check the whether quiz must continue or end based on question count
+
+if (quesNum < quesCount) {
+    nextBtn.innerText = "Next Question";
+} else if (quesNum == quesCount) {
+    nextBtn.innerText = "Completed!";
+}
+clearInterval(counter);
+};
+
+// function if user selects the wrong answer it will highlight the correct answer.
+
+let incorrectAnswer = (val) => {
+let checkOthers = answerList[randomNum];
+
+for (i = 0; i < checkOthers.length; i++) {
+    if (choiceBox.children[i].textContent == val) {
+    choiceBox.children[i].setAttribute("class", "option correct");
+    choiceBox.children[i].insertAdjacentHTML("beforeend", correctIconTag);
+    }
+}
+};
+
+// Function that sets a timer to Quick and Hard mode
+
+let timeCount = (timeVal) => {
+counter = setInterval(time, 1000);
+timeCounter.innerText = "00:00";
+let gameTime = timeVal;
+function time() {
+    let minutes = Math.floor(timeVal / 60);
+    let seconds = timeVal - minutes * 60;
+    timeVal--;
+
+    // Converts the time to minutes and seconds for Pub Quiz Game Mode
+
+    if (timeVal == 241) {
+    }
+    if (timeVal < 60) {
+    let totalTime;
+    if (seconds <= 9) {
+        totalTime = `0${minutes}:0${seconds}`;
+    } else {
+        totalTime = `0${minutes}:${seconds}`;
+    }
+    timeCounter.innerText = totalTime;
+    }
+
+    // Stops counter from counting down past zero
+
+    if (timeVal < 0) {
+    clearInterval(counter);
+    timeCounter.innerText = "00:00";
+    incorrectAnswer(findAnswer[randomNum]);
+    afterChoice();
+    nextBtn.classList.add("show");
+    }
+
+    let halfWay = Math.round(gameTime / 2);
+    let threeQuaters = Math.round(gameTime / 3);
+
+    if (timeVal >= halfWay) {
+    timeCounter.classList.remove("red-countdown");
+    timeCounter.classList.add("green-countdown");
+    }
+
+    if (timeVal == threeQuaters) {
+    timeCounter.classList.add("red-countdown");
+    timeCounter.classList.remove("green-countdown");
+    }
+}
+};
+
+// function to work out and display score
+
+let scoreCard = () => {
+let userScore = points;
+let totalPoints = quesCount * 10;
+score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
+};
+
+// Question Counter Onclick function that will add a number to the counter
+
+nextBtn.onclick = () => {
+clearInterval(counter);
+nextBtn.classList.remove("show");
+if (quesNum < quesCount) {
+    quesNum++;
+    randomQues();
+    timeCounter.classList.remove("time-countdown");
+} else {
+    quesBox.classList.remove("activeQuiz");
+    resultsBox.classList.add("activeResult");
+    trophy.classList.add("animate__bounceIn");
+    scoreCard();
+}
+};
+
+// REplay onlick function that will allow the user to restart the quiz using same choices
+
+replayBtn.onclick = () => {
+resultsBox.classList.remove("activeResult");
+rulesBox.classList.add("activerules");
+logo.style.visibility = "visible";
+nextBtn.classList.remove("show");
+randomNum = 0;
+quesNum = 1;
+prevRandomNum = 0;
+points = 0;
+};
+
+// Quit Function reloads window to Start Screen if they quit
+
+quitBtn.onclick = () => {
+window.location.reload();
+};
