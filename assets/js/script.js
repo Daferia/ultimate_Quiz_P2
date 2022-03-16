@@ -581,31 +581,24 @@ findAnswer = quizObj.map(answer => answer.correct);
 
 // Onclick Event that display the Rules box after clicking Start
 startBtn.onclick = () => {
-    if(screen.width < 360){
-        logo.style.visibility = 'hidden';
-        console.log('300');
-    }else{
-        logo.style.visibility = 'visible';
-    };
     contBtnHide();
     rulesBox.classList.add('activerules');
     startBtn.style.visibility = 'hidden';
+    logo.style.visibility = 'hidden';
 };
 
 // Onclick Event to display Questions Box and run the game
 continue_btn.onclick = () => {
-    logo.style.visibility = 'hidden';
     quesBox.classList.add('activeQuiz');
     rulesBox.classList.remove('activerules');
     randomQues();
 };
 
 exitBtn.onclick = () => {
+    logo.style.visibility = 'visible';
     rulesBox.classList.remove('activerules');
     startBtn.style.visibility = 'visible';
-
 };
-
 
 // Function that generates the random questions
 let randomQues = () => {
