@@ -581,6 +581,12 @@ findAnswer = quizObj.map(answer => answer.correct);
 
 // Onclick Event that display the Rules box after clicking Start
 startBtn.onclick = () => {
+    if(screen.width < 360){
+        logo.style.visibility = 'hidden';
+        console.log('300');
+    }else{
+        logo.style.visibility = 'visible';
+    };
     contBtnHide();
     rulesBox.classList.add('activerules');
     startBtn.style.visibility = 'hidden';
