@@ -24,7 +24,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Ubuntu', sans-serif;
-    font-size: 62.5%;
+    font-size: 55%;
 }
 
 body {
@@ -138,7 +138,6 @@ h1 {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.65), 
                 0 6px 20px 0 rgba(0, 0, 0, 0.75);
     background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.5));
@@ -626,15 +625,15 @@ body.dark-theme section .choices .option{
 }
 
 body.dark-theme section .choices .option.correct{
-    color: rgb(21, 87, 36);
-    background: rgb(212, 237, 218);
-    border: 1px solid rgb(195, 230, 203);
+    color: rgb(21, 87, 36) !important;
+    background: rgb(212, 237, 218) !important;
+    border: 1px solid rgb(195, 230, 203) !important;
 }
 
 body.dark-theme section .choices .option.incorrect{
-    color: rgb(114, 28, 36);
-    background: rgb(248, 215, 218);
-    border: 1px solid rgb(245, 198, 203);
+    color: rgb(114, 28, 36) !important;
+    background: rgb(248, 215, 218) !important;
+    border: 1px solid rgb(245, 198, 203) !important;
 }
 
 body.dark-theme .buttons .quit:hover {
@@ -677,9 +676,17 @@ body.dark-theme .buttons .quit:hover {
 }
 
 @media screen and (max-width: 350px) {
+
     footer {
         flex-direction: column-reverse;
         margin: 5px;
+    }
+}
+
+@media screen and (min-width: 400px) {
+
+    * {
+        font-size: 62.5%;
     }
 }
 
