@@ -1,112 +1,119 @@
 <!DOCTYPE html>
 <html lang='en'>
+
 <head>
-    <meta charset='UTF-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>The Ultimate Quiz App</title>
-    <link rel='stylesheet' href='assets/css/style.css'>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <!-- FontAweome CDN Link for Icons -->
-    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css'/>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>The Ultimate Quiz App</title>
+  <link rel='stylesheet' href='assets/css/style.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <!-- FontAweome CDN Link for Icons -->
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' />
 </head>
+
 <body>
-    <div class="theme-toggle">
+  <div class="theme-toggle">
     <label class="switch">
-        <input type="checkbox" id="theme-toggle">
-        <span class="slider round"></span>
-      </label>
-    </div>
+      <input type="checkbox" id="theme-toggle">
+      <span class="slider round"></span>
+    </label>
+  </div>
   <header id='logo'>
-      <h1 class="animate__animated animate__jackInTheBox">The Ultimate Quiz</h1>
+    <h1 class="animate__animated animate__jackInTheBox">The Ultimate Quiz</h1>
   </header>
-<!-- Start and Quiz Topic -->
+  <!-- Start and Quiz Topic -->
   <div class='start-btn'>
-      <button class="btn">Start</button>
+    <button class="btn">Start</button>
+  </div>
+
+  <!-- Rules and Game Mode Box -->
+  <div class='rules-box'>
+    <h2>Ultimate Quiz App</h2>
+    <div class='rules-title'>How to Play!</div>
+    <div class='rules-list'>
+      <h2 class='games-select'>Select your Game Mode</h2>
+      <div class='game-mode'>
+        <div class="individual">
+          <h3>Single Player</h3>
+          <button class='btn quick-mode'>Quick</button>
+          <button class='btn hard-mode'>Hard</button>
+        </div>
+        <div class="group-play">
+          <h3>Group Mode</h3>
+          <button class='btn pubquiz-mode'>Pub Quiz</button>
+        </div>
+      </div>
+      <div class="game-rules">
+        <!-- Rules added in by javaScript based on gameMode chosen by user -->
+      </div>
     </div>
 
-    <!-- Rules and Game Mode Box -->
-    <div class='rules-box'>
-        <h2>Ultimate Quiz App</h2>
-        <div class='rules-title'>How to Play!</div>
-        <div class='rules-list'>
-            <h2 class='games-select'>Select your Game Mode</h2>
-            <div class='game-mode'>
-                <div class="individual">
-                    <h3>Single Player</h3>
-                <button class='btn quick-mode'>Quick</button>
-                <button class='btn hard-mode'>Hard</button>
-            </div> 
-            <div class="group-play">
-                <h3>Group Mode</h3>
-                <button class='btn pubquiz-mode'>Pub Quiz</button>
-            </div>
-            </div>
-            <div class="game-rules">
-                <!-- Rules added in by javaScript based on gameMode chosen by user -->
-        </div>
-        </div>
-
-        <div class='buttons'>
-            <button class='btn quit'>Exit</button>
-            <button class='btn greyed restart'>Continue</button>
-        </div>
+    <div class='buttons'>
+      <button class='btn quit'>Exit</button>
+      <button class='btn greyed restart'>Continue</button>
     </div>
+  </div>
 
-    <!-- Questions Box -->
-    <div class='questions-box'>
-        <header>
-            <div class='title'>Ultimate Quiz App
-            <p class="user-selection"><!-- insert the user game mode selection with JS --></p></div>
-            <div class='timer'>
-                <div class='time'>Go!</div>
-            </div>
-        </header>
-        <section class="question-section">
-            <h2 class='questions'>Questions
-                <!-- replace text with the questions with JS -->
-            </h2>
-            <div class='choices'>
-                <!-- Insert 4 different possible answers using JS -->
-                <div class="option choice-one"></div>
-                <div class="option choice-two"></div>
-                <div class="option choice-three"></div>
-                <div class="option choice-four"></div>
-            </div>
-        </section>
+  <!-- Questions Box -->
+  <div class='questions-box'>
+    <header>
+      <div class='title'>Ultimate Quiz App
+        <p class="user-selection">
+          <!-- insert the user game mode selection with JS -->
+        </p>
+      </div>
+      <div class='timer'>
+        <div class='time'>Go!</div>
+      </div>
+    </header>
+    <section class="question-section">
+      <h2 class='questions'>Questions
+        <!-- replace text with the questions with JS -->
+      </h2>
+      <div class='choices'>
+        <!-- Insert 4 different possible answers using JS -->
+        <div class="option choice-one"></div>
+        <div class="option choice-two"></div>
+        <div class="option choice-three"></div>
+        <div class="option choice-four"></div>
+      </div>
+    </section>
 
-        <!-- Footer for Questions Box -->
-        <footer>
-            <div class='total-ques'>
-                <!-- Counter goes here from JS -->
-            </div>
-            <button class='btn next-ques'>Next Question</button>
-        </footer>
-    </div>
-
-    <!-- Result Box -->
-    <div class='result-box'>
-        <div class='trophy'>
-            <i class="fas fa-trophy"></i>
-        </div>
-        <div class="completed">You completed the Quiz!</div>
-        <div class="score">
-            <!-- Insert the score using JS -->
-        </div>
-        <div class="buttons">
-            <button class="btn replay-btn">Replay</button>
-            <button class="btn quit">Exit</button>
-        </div>
-    </div>
-
-    <div class="disc"></div>
-    <div class="triangle"></div>
-
-    <footer class="page-footer">
-        <div><a href="http://github.com/Daferia" target="_blank"><i class="fab fa-github"></i></a>
-        <p>Fabio Faria 2022</p></div>
+    <!-- Footer for Questions Box -->
+    <footer>
+      <div class='total-ques'>
+        <!-- Counter goes here from JS -->
+      </div>
+      <button class='btn next-ques'>Next Question</button>
     </footer>
+  </div>
 
-    <script src="assets/js/script.js"></script>
+  <!-- Result Box -->
+  <div class='result-box'>
+    <div class='trophy'>
+      <i class="fas fa-trophy"></i>
+    </div>
+    <div class="completed">You completed the Quiz!</div>
+    <div class="score">
+      <!-- Insert the score using JS -->
+    </div>
+    <div class="buttons">
+      <button class="btn replay-btn">Replay</button>
+      <button class="btn quit">Exit</button>
+    </div>
+  </div>
+
+  <div class="disc"></div>
+  <div class="triangle"></div>
+
+  <footer class="page-footer">
+    <div><a href="http://github.com/Daferia" target="_blank"><i class="fab fa-github"></i></a>
+      <p>Fabio Faria 2022</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
 </body>
+
 </html>
