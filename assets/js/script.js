@@ -1109,8 +1109,6 @@ const quizObj = [
     let userScore = points;
     let totalPoints = quesCount * 10;
     score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
-  
-    console.log(userScore);
   };
   
   // Question Counter Onclick function that will add a number to the counter
@@ -1123,7 +1121,6 @@ const quizObj = [
       randomQues();
       timeCounter.classList.remove("time-countdown");
     } else {
-      console.log("print");
       quesBox.classList.remove("activeQuiz");
       resultsBox.classList.add("activeResult");
       trophy.classList.add("animate__bounceIn");
