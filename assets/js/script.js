@@ -462,10 +462,8 @@ let game = '';
 themeToggler.onclick = () =>{
         if (themeToggler.checked) {
             document.body.classList.add("dark-theme");
-            document.getElementById('theme-toggle').checked = true;
           } else {
             document.body.classList.remove("dark-theme");
-            document.getElementById('theme-toggle').checked = false;
           }
         };
 
