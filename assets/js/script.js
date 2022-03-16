@@ -787,10 +787,8 @@ const quizObj = [
   const nextBtn = quesBox.querySelector(".next-ques");
   const replayBtn = resultsBox.querySelector(".replay-btn");
   const quitBtn = resultsBox.querySelector(".buttons .quit");
-  const gameMode = document.querySelector(".game-mode");
   const gameRules = document.querySelector(".game-rules");
   const logo = document.getElementById("logo");
-  const timer = document.querySelector(".timer");
   const timeCounter = document.querySelector(".time");
   const score = resultsBox.querySelector(".score");
   
@@ -820,15 +818,16 @@ const quizObj = [
   let points = 0;
   let timeVal = 0;
   let counter;
-  let game = "";
   
   // Onclick Events
 
   themeToggler.onclick = () => {
     if (themeToggler.checked) {
       document.body.classList.add("dark-theme");
+      localStorage.setItem("theme", "dark");
     } else {
       document.body.classList.remove("dark-theme");
+      localStorage.setItem("theme", "light");
     }
   };
   
@@ -1070,6 +1069,7 @@ const quizObj = [
       if (timeVal == 241) {
       }
       if (timeVal < 60) {
+        let totalTime;
         if (seconds <= 9) {
           totalTime = `0${minutes}:0${seconds}`;
         } else {
