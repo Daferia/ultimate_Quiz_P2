@@ -72,7 +72,6 @@ I have used? for most of the site.
 I have chosen to use the amazing icons supplied from [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are easy to interpret and are free to use on the website
 
 ## Colours
-
 I used [Coolors](https://coolors.co/ "Coolors") to generate the colour palette.
 All variable colours were chosen with the point to be able to quickly be able to make changes as needed.
 Any other general RGB colours in the CSS are to stay as is and only the variable are planned to be changed if need be.
