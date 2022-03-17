@@ -4,7 +4,7 @@
 
 # The Goal for this Project
 
-THe goal of the project is to keep users entertained and at the same time, getting them to test their general knowledge through a variety of different questions. Project was inpiraed by our companies Pub Quiz evening and the struggle to find a good free application for the fun evenings.
+The goal of the project is to keep users entertained and at the same time, get them to test their general knowledge through a variety of different questions. The project was inspired by our company’s Pub Quiz nights and the struggle to find a good free application.
 
 ![Responsive Displays](wireframes/amiresponsive.png)
 
@@ -19,7 +19,7 @@ THe goal of the project is to keep users entertained and at the same time, getti
         + [Icons](#icons)
         + [Colours](#colours)
         + [Structure](#structure)
-        + [Resposive Displays](#responsive-displays)
+        + [Responsive Displays](#responsive-displays)
         + [Wireframes](#wireframes)
     + [Features](#features)
         + [Existing Features](#existing-features)
@@ -45,7 +45,7 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 ## User Stories
 
-+ As a User, I want the user to be engage in the quiz
++ As a User, I want the user to be engaged in the quiz
 + As a User, I want them to feel challenged as well as provide enjoyment during play
 + As a User, I want to be able to see my results after playing the game.
 + As a User, I want to play a quiz intuitively.
@@ -55,7 +55,7 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 + Needs to work on any device and browser
 + Able to generate the questions without fail or try not to duplicate questions
-+ Allow the user to change to a dark theme or ligth theme
++ Allow the user to change to a dark theme or light theme
 
 \
 &nbsp;
@@ -67,14 +67,14 @@ THe goal of the project is to keep users entertained and at the same time, getti
 
 ## Fonts
 I have used [Google Fonts](https://fonts.google.com/ "Google Fonts") to find a text that best suits the feel of the website.
-I have used ? for most of the site.
+I have used? for most of the site.
 
 ## Icons
 I have chosen to use the amazing icons supplied from [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are easy to interpret and are free to use on the website
 
 ## Colours
 
-I used start colours instead of using a pallette.
+I used start colours instead of using a palette.
 
 All colours used are as follows:
 \
@@ -182,8 +182,8 @@ All colours used are as follows:
 ## Future Features
 
 + I plan to continue to add more features as I learn new technologies throughout the course.
-+ I plan to add a phone app tht will allow pubquiz mode to be played by the different users as the questions come up for the Pub Quiz Master.
-+ I want to save the ability to save score to a database as this app will be used during out pub quiz nights at work.
++ I plan to add a phone app that will allow pub quiz mode to be played by the different users as the questions come up for the Pub Quiz Master.
++ I want to save the ability to save the score to a database as this app will be used during our pub quiz nights.
 
 \
 &nbsp;
@@ -207,7 +207,7 @@ All colours used are as follows:
 
 ## Tools and Libraries
 
-+ [Github](https://github.com/ "Github")
++ [GitHub](https://github.com/ "GitHub")
 + [Gitpod](https://www.gitpod.io/ "Gitpod")
 + [Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
 + [W3C HTML Validation Service](https://validator.w3.org/ "W3C HTML")
@@ -225,11 +225,11 @@ All colours used are as follows:
 
 # Testing
 
-+ During tsting the biggest issue is the duplication of the questions on the pubquiz mode and sometimes during the hard mode.
-+ Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
-+ On some devices, Theme toggler is not being checked on load. After loading it once it would be fine but seemed to be only on Dark themed devices that thie issue happened.
-+ Some mobile devices the screen width would cause the rules box to over stretch. I tried adding more media queries however this would cause the majority of the deives to have layout errors. decided to revert it back to have the majority working.
-+ Using the browser's responsive device list would not simulate the acual device layout. I had to use the actual device to achieve the desired result.
++ During testing the biggest issue is the duplication of the questions on the pub quiz mode and sometimes during the hard mode.
++ Found that on mobile devices, it sometimes would render differently on iPhone Safari browsers. Could not figure out the reason for it but as it was intermittent I decided to leave the code as-is.
++ On some devices, the Theme toggler is not being checked on load. After loading it once it would be fine but seemed to be only on Dark themed devices that this issue happened.
++ Some mobile devices the screen width would cause the rules box to overstretch. I tried adding more media queries however this would cause many of the devices to have layout errors. I decided to revert it back to have the majority working.
++ Using the browser's responsive device list would not simulate the actual device layout. I had to use the actual device to achieve the desired result.
 
 \
 &nbsp;
@@ -256,8 +256,8 @@ All colours used are as follows:
 
 ## Unfixed Bugs
 
-+ Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
-+ On smaller devices, the user could not change the theme when viewing the rules section after selecting the game mode. Looking at options to achieving this but will be for future releases.
++ Found that on mobile devices, it sometimes would render differently on iPhone Safari browsers. Could not figure out the reason for it but as it was intermittent I decided to leave the code as-is.
++ On smaller devices, the user could not change the theme when viewing the rules section after selecting the game mode. Looking at options to achieve this but will be for future releases.
 \
 &nbsp;
 
@@ -272,7 +272,7 @@ Following writing the code then committing and pushing to GitHub, this project w
 + Select the 'None' dropdown, and then click 'master'.
 + Click on the 'Save' button.
 + Now the website is live on 
-+ If any changes are required, they can be done, committed and pushed to GitHub and the changes will be updated.
++ If any changes are required, they can be done, committed, and pushed to GitHub and the changes will be updated.
 \
 &nbsp;
 
@@ -306,7 +306,7 @@ For code inspiration, help and advice. Thank you!
 + [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz HTML and CSS Template idea
 + [StackOverFlow](https://stackoverflow.com/questions/64301191/save-a-dark-mode-checkbox-toggle-to-local-storage?msclkid=44391fb2a5f911ec80be0947d6490ece "Stackoverflow Theme Solution") - Stackoverflow Theme Solution
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Glass effect for main look of the page.
-+ [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Theme Toggle swtich code
++ [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Theme Toggle switch code
 + [Pixabay](https://pixabay.com/images/search/quiz/?msclkid=bca6a6d9a5fd11ecb74515cc9e48485a) - image for favicon
 \
 &nbsp;
