@@ -813,7 +813,7 @@ let counter;
   //theme set on load from stack overflow
 
 let detectColorScheme = () =>{
-    let userTheme="light";    //default to light
+    let userTheme="";    //default to light
 
     //local storage is used to override OS theme settings
     if(localStorage.getItem("theme")){
@@ -831,10 +831,13 @@ let detectColorScheme = () =>{
     //dark theme preferred, set document with a `data-theme` attribute
     if (userTheme == "dark") {
         document.body.classList.add("dark-theme");
+        themeToggler.checked = true;
     }
 };
 
 detectColorScheme();
+
+  //theme set on load from stack overflow
 
 if (localStorage.getItem("theme") == "dark"){
     themeToggler.checked = true;
