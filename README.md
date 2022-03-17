@@ -289,6 +289,7 @@ For code inspiration, help and advice. Thank you!
 + [StackOverFlow](https://stackoverflow.com/questions/64301191/save-a-dark-mode-checkbox-toggle-to-local-storage?msclkid=44391fb2a5f911ec80be0947d6490ece "Stackoverflow Theme Solution") - Stackoverflow Theme Solution
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Glass effect for main look of the page.
 + [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Theme Toggle swtich code
++ [Pixabay](https://pixabay.com/images/search/quiz/?msclkid=bca6a6d9a5fd11ecb74515cc9e48485a) - image for favicon
 
 ## For content and style inspiration
 
