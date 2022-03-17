@@ -1,4 +1,4 @@
-![Logo](assets/images/Resposible%20light%20start.png)
+![Logo](assets/images/Responsive%20light%20start.png)
 
 # The Ultimate Quiz
 
@@ -6,7 +6,6 @@
 
 The goal of the project is to keep users entertained and at the same time, get them to test their general knowledge through a variety of different questions. The project was inspired by our company’s Pub Quiz nights and the struggle to find a good free application.
 
-![Responsive Displays](wireframes/amiresponsive.png)
 
 # Table of Contents
 
