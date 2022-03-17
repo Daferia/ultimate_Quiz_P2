@@ -690,6 +690,20 @@ body.dark-theme .buttons .quit:hover {
   }
 }
 
+/* fix for iphones 4 & 5 */
+
+@media screen and (max-width: 320px) {
+    * {
+        font-size: 45%;
+      }
+    }
+  
+  @media screen and (min-width: 400px) {
+    * {
+      font-size: 62.5%;
+    }
+  }
+
 @media screen and (max-width: 380px) {
   .rules-box.activerules {
     transform: translate(-50%, -50%) scale(0.88);
