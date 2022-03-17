@@ -1,4 +1,4 @@
-![Logo](wireframes/logo.png)
+![Logo](assets/images/Resposible%20light%20start.png)
 
 # The Ultimate Quiz
 
@@ -19,7 +19,8 @@ THe goal of the project is to keep users entertained and at the same time, getti
         + [Icons](#icons)
         + [Colours](#colours)
         + [Structure](#structure)
-    + [Wireframes](#wireframes)
+        + [Resposive Displays](#responsive-displays)
+        + [Wireframes](#wireframes)
     + [Features](#features)
         + [Existing Features](#existing-features)
         + [Future Features](#future-features)
@@ -88,28 +89,75 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 ## Structure
 
+![Start Screen Light Theme](assets/images/light%20theme%20desktop.png)
+![Start Screen Dark Theme](assets/images/dark%20theme%20desktop.png)
 
 \
 &nbsp;
+
+![Rules Light Theme](assets/images/light%20theme%20rules%20box.png)
+![Rules Dark Theme](assets/images/dark%20theme%20rules%20box.png)
+
+
+\
+&nbsp;
+![Questions, game modes, Answers and Counter Light Theme](assets/images/light%20theme%20questions%20box.png)
+![Questions, game modes, Answers and Counter Dark Theme](assets/images/dark%20theme%20questions%20box.png)
+
+
+\
+&nbsp;
+![Results light Theme](assets/images/ligth%20theme%20results%20box.png)
+![Results Dark Theme](assets/images/dark%20theme%20results%20box.png)
+
+
+\
+&nbsp;
+
 [Back to Top](#table-of-contents)
 \
 &nbsp;
 
-# Wireframes
+## Responsive Displays
 
+![Start Responsive Dark Theme](assets/images/Responsive%20light%20start.png)
+![Start Responsive Light Theme](assets/images/Responsive%20dark%20start.png)
 
-## Desktop Wireframe
-
-![Start Screen]()
 \
 &nbsp;
-![Rules]()
+
+![Rules Responsive Dark Theme](assets/images/Responsive%20light%20rules.png)
+![Rules Responsive Light Theme](assets/images/Responsive%20dark%20rules.png)
 \
 &nbsp;
-![Questions, game modes, Answers and Counter]()
+![Questions, game modes, Answers and Counter Responsive Dark Theme](assets/images/Responsive%20light%20ques.png)
+![Questions, game modes, Answers and Counter Responsive Light Theme](assets/images/Responsive%20dark%20ques.png)
 \
 &nbsp;
-![Results](wireframes/homeaboutusmobile.png)
+![Results Dark Responsive Theme](assets/images/Responsive%20light%20results.png)
+![Results light Responsive Theme](assets/images/Responsive%20dark%20results.png)
+\
+&nbsp;
+
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+## Wireframes
+
+![Start Screen](assets/images/Landing%20Page.png)
+\
+&nbsp;
+
+![Rules](assets/images/Rules%20Box.png)
+\
+&nbsp;
+
+![Questions, game modes, Answers and Counter](assets/images/Questions%20Box.png)
+\
+&nbsp;
+
+![Results](assets/images/Results%20Box.png)
 \
 &nbsp;
 
@@ -119,9 +167,9 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 # Features
 
-+ 
-+ 
-+ 
++ Allow the user to select between light and dark themes and saving that choice to local
++ Highlights the correct answer when a user selects the incorrect answer
++ timer auto selects the corrects answer and regards it as incorrect
 
 \
 &nbsp;
@@ -174,6 +222,9 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 + During tsting the biggest issue is the duplication of the questions on the pubquiz mode and sometimes during the hard mode.
 + Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
++ On some devices, Theme toggler is not being checked on load. After loading it once it would be fine but seemed to be only on Dark themed devices that thie issue happened.
++ Some mobile devices the screen width would cause the rules box to over stretch. I tried adding more media queries however this would cause the majority of the deives to have layout errors. decided to revert it back to have the majority working.
++ Using the browser's responsive device list would not simulate the acual device layout. I had to use the actual device to achieve the desired result.
 
 \
 &nbsp;
@@ -181,18 +232,18 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 ## Additional Testing
 
 + W3 HTML Validation
-![W3 HTML Validation]()
+![W3 HTML Validation](assets/images/html%20w3%20validator.png)
 
 + W3 CSS Validation
-![W3 CSS Validation]()
+![W3 CSS Validation](assets/images/css_validation.png)
 
 + JSHint Testing
-![JSHint Testing]()
+![JSHint Testing](assets/images/jshint%20check.png)
 
 ## Unfixed Bugs
 
 + Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
-+ 
++ On smaller devices, the user could not change the theme when viewing the rules section after selecting the game mode. Looking at options to achieving this but will be for future releases.
 
 ## Deployment
 
@@ -231,14 +282,13 @@ Too clone the project, the following steps are to be followed:
 For code inspiration, help and advice. Thank you!
 
 + [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") - Code Institute Mentor.
++ [Martina Terlevic](https://www.linkedin.com/in/martinaterlevic/ "Martina Terlevic") - Code Institute Mentor.
 + [Christopher Rees](https://portfolio.christopher-rees.co.uk/ "Christopher Rees") - Colleague, friend and motivator.
 + [Sam Timmins](https://github.com/sam-timmins "Sam Timmins") - README Template help.
-+ [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
-
-
-## Image Credits
-https://unsplash.com/@rudy_issa
- 
++ [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz HTML and CSS Template idea
++ [StackOverFlow](https://stackoverflow.com/questions/64301191/save-a-dark-mode-checkbox-toggle-to-local-storage?msclkid=44391fb2a5f911ec80be0947d6490ece "Stackoverflow Theme Solution") - Stackoverflow Theme Solution
++ [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Glass effect for main look of the page.
++ [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Theme Toggle swtich code
 
 ## For content and style inspiration
 
@@ -246,7 +296,7 @@ https://unsplash.com/@rudy_issa
 + [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Reference for HTML, CSS and JavaScript
 + [Kevin Powell](https://www.youtube.com/kepowob "Kevin Powell") - CSS ideas
 + [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
-+ [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lost of great ideas including the glass effect i used came from Dev Ed.
++ [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lots of great ideas including the glass effect i used came from Dev Ed.
 
 
 \
