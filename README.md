@@ -73,9 +73,39 @@ I have chosen to use the amazing icons supplied from [Font Awesome library](http
 
 ## Colours
 
-I used start colours instead of using a palette.
+I used [Coolors](https://coolors.co/ "Coolors") to generate the colour palette.
+All variable colours were chosen with the point to be able to quickly be able to make changes as needed.
+Any other general RGB colours in the CSS are to stay as is and only the variable are planned to be changed if need be.
 
-All colours used are as follows:
+All variable colours are as follows:
+
+  ### General colours used
+
+  * --white: rgb(255, 255, 255);
+  * --light-gray: rgb(206, 212, 218);
+  * --sonic-silver: rgb(108, 117, 125);
+
+    ![General colours](assets/images/general%20colours.png)
+
+
+
+  ### Dark theme colours
+
+  * --davys-grey: rgb(74, 80, 87);
+  * --onyx: rgb(52, 58, 64);
+  * --charleston-green: rgb(34, 38, 42);
+
+  ![Dark theme colours](assets/images/dark%20theme.png)
+
+  ### Default (light) theme
+
+  * --pacific-blue: rgb(84, 176, 189);
+  * --alice-blue: rgb(240, 248, 255);
+  * --turquoise: rgb(102, 222, 208);
+  * --sky-blue-crayola: rgb(107, 219, 233);
+  * --maya-blue: rgb(132, 197, 254);
+
+  ![Default (light) theme](assets/images/Light%20theme.png)
 \
 &nbsp;
 
