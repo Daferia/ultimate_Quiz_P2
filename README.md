@@ -74,39 +74,33 @@ I have chosen to use the amazing icons supplied from [Font Awesome library](http
 
 ## Colours
 
-I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable palette for my colour scheme. 
+I used start colours instead of using a pallette.
 
-![Colour Pallet](wireframes/coolors.png)
-
- I will explain the uses of the various colours below:
-
- + 
-   
- + 
-   
- + 
-
+All colours used are as follows:
+\
+&nbsp;
 
 ## Structure
 
+### Start Screen
 ![Start Screen Light Theme](assets/images/light%20theme%20desktop.png)
 ![Start Screen Dark Theme](assets/images/dark%20theme%20desktop.png)
-
 \
 &nbsp;
 
+### Rules
 ![Rules Light Theme](assets/images/light%20theme%20rules%20box.png)
 ![Rules Dark Theme](assets/images/dark%20theme%20rules%20box.png)
-
-
 \
 &nbsp;
+
+### Questions, game modes, Answers and Counter
 ![Questions, game modes, Answers and Counter Light Theme](assets/images/light%20theme%20questions%20box.png)
 ![Questions, game modes, Answers and Counter Dark Theme](assets/images/dark%20theme%20questions%20box.png)
-
-
 \
 &nbsp;
+
+### Results
 ![Results light Theme](assets/images/ligth%20theme%20results%20box.png)
 ![Results Dark Theme](assets/images/dark%20theme%20results%20box.png)
 
@@ -120,20 +114,26 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 ## Responsive Displays
 
+### Start Screen
 ![Start Responsive Dark Theme](assets/images/Responsive%20light%20start.png)
 ![Start Responsive Light Theme](assets/images/Responsive%20dark%20start.png)
 
 \
 &nbsp;
 
+### Rules
 ![Rules Responsive Dark Theme](assets/images/Responsive%20light%20rules.png)
 ![Rules Responsive Light Theme](assets/images/Responsive%20dark%20rules.png)
 \
 &nbsp;
+
+### Questions, game modes, Answers and Counter
 ![Questions, game modes, Answers and Counter Responsive Dark Theme](assets/images/Responsive%20light%20ques.png)
 ![Questions, game modes, Answers and Counter Responsive Light Theme](assets/images/Responsive%20dark%20ques.png)
 \
 &nbsp;
+
+### Results
 ![Results Dark Responsive Theme](assets/images/Responsive%20light%20results.png)
 ![Results light Responsive Theme](assets/images/Responsive%20dark%20results.png)
 \
@@ -145,18 +145,23 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 ## Wireframes
 
+### Start Screen
 ![Start Screen](assets/images/Landing%20Page.png)
 \
 &nbsp;
 
+### Rules
 ![Rules](assets/images/Rules%20Box.png)
 \
 &nbsp;
 
+### Questions, game modes, Answers and Counter
 ![Questions, game modes, Answers and Counter](assets/images/Questions%20Box.png)
 \
 &nbsp;
 
+
+### Results
 ![Results](assets/images/Results%20Box.png)
 \
 &nbsp;
@@ -186,7 +191,7 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 \
 &nbsp;
 
-# Technologies used
+# Technologies Used
 
 ## Languages
 
@@ -231,19 +236,30 @@ I have used [Coolors](https://coolors.co/ "coolors") to generate a suitable pale
 
 ## Additional Testing
 
-+ W3 HTML Validation
+### W3 HTML Validation
+
 ![W3 HTML Validation](assets/images/html%20w3%20validator.png)
 
-+ W3 CSS Validation
+### W3 CSS Validation  
+
 ![W3 CSS Validation](assets/images/css_validation.png)
 
-+ JSHint Testing
+### JSHint Testing
+
 ![JSHint Testing](assets/images/jshint%20check.png)
+
+### Lighthouse Testing
+
+![Lighthouse Testing](assets/images/light%20house.png)
+\
+&nbsp;
 
 ## Unfixed Bugs
 
 + Found that on mobile devices, it sometimes would render differently on Iphone Safari browsers. Could not figure out the reason around it but as it was intermintent i decided to leave the code as is. Left the css in for safari browsers but will need to relook at it later.
 + On smaller devices, the user could not change the theme when viewing the rules section after selecting the game mode. Looking at options to achieving this but will be for future releases.
+\
+&nbsp;
 
 ## Deployment
 
@@ -257,6 +273,8 @@ Following writing the code then committing and pushing to GitHub, this project w
 + Click on the 'Save' button.
 + Now the website is live on 
 + If any changes are required, they can be done, committed and pushed to GitHub and the changes will be updated.
+\
+&nbsp;
 
 ### Cloning
 
@@ -290,6 +308,8 @@ For code inspiration, help and advice. Thank you!
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Glass effect for main look of the page.
 + [W3 Schools](https://www.w3schools.com/ "W3 Schools") - Theme Toggle swtich code
 + [Pixabay](https://pixabay.com/images/search/quiz/?msclkid=bca6a6d9a5fd11ecb74515cc9e48485a) - image for favicon
+\
+&nbsp;
 
 ## For content and style inspiration
 
