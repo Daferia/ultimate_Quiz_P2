@@ -1159,7 +1159,6 @@ if (quesNum < quesCount) {
 replayBtn.onclick = () => {
 resultsBox.classList.remove("activeResult");
 rulesBox.classList.add("activerules");
-logo.style.visibility = "visible";
 nextBtn.classList.remove("show");
 randomNum = 0;
 quesNum = 1;
