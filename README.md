@@ -34,26 +34,26 @@ The goal of the project is to keep users entertained and at the same time, get t
 
 ## User Goals
 
-+ Provide a good amount of variety of questions
-+ Easy to navigate and use
-+ Provide different colour options
-+ Get the user to learn while in the quiz by providing them with the correct answers
++ Provide a good amount of variety of questions.
++ Easy to navigate and use.
++ Provide different colour options.
++ Get the user to learn while in the quiz by providing them with the correct answers.
 + Create a quiz that is visually appealing to the user.
 
 
 ## User Stories
 
-+ As a User, I want the user to be engaged in the quiz and feel absorbed by the UI and the gameplay
-+ As a User, I want them to feel challenged as well as provide enjoyment during play
++ As a User, I want the user to be engaged in the quiz and feel absorbed by the UI and the gameplay.
++ As a User, I want them to feel challenged as well as provide enjoyment during play.
 + As a User, I want to be able to see their results after playing the game.
 + As a User, I want to play a quiz intuitively.
-+ As a User, I expect the users to come back to improve their scores
++ As a User, I expect the users to come back to improve their scores.
 
 ## Requirements
 
-+ Needs to work on any device and browser
-+ Able to generate the questions without fail or try not to duplicate questions
-+ Allow the user to change to a dark theme or light theme
++ Needs to work on any device and browser.
++ Able to generate the questions without fail or try not to duplicate questions.
++ Allow the user to change to a dark theme or light theme.
 
 \
 &nbsp;
@@ -68,7 +68,7 @@ I have used [Google Fonts](https://fonts.google.com/ "Google Fonts") to find a t
 I have used the "Ubuntu" for most of the site.
 
 ## Icons
-I have chosen to use the amazing icons supplied from [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are easy to interpret and are free to use on the website
+I have chosen to use the amazing icons supplied from [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are easy to interpret and are free to use on the website.
 
 ## Colours
 I used [Coolors](https://coolors.co/ "Coolors") to generate the colour palette.
@@ -203,9 +203,10 @@ All variable colours are as follows:
 
 # Features
 
-+ Allow the user to select between light and dark themes and saving that choice to local
-+ Highlights the correct answer when a user selects the incorrect answer
-+ timer auto selects the corrects answer and regards it as incorrect
++ Allow the user to select between light and dark themes and saving that choice to local.
++ Highlights the correct answer when a user selects the incorrect answer.
++ Timer auto selects the corrects answer and regards it as incorrect.
++ Light and Dark themes that save according to user preference.
 \
 &nbsp;
 
