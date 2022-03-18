@@ -35,6 +35,7 @@
 
 body {
   /* bg-colour set in case browser does not support the linear-gradient property*/
+
   background: rgb(2, 0, 36);
   background: linear-gradient(312deg, var(--turquoise), var(--sky-blue-crayola));
   background-attachment: fixed;
@@ -49,8 +50,6 @@ h1 {
   color: var(--white);
   text-align: center;
 }
-
-/* Inspiration from Dev Ed on youtube for glass effect, disc and triangle*/
 
 .disc,
 .triangle {
@@ -71,6 +70,7 @@ h1 {
   animation: disc-animation 80s;
   animation-iteration-count: infinite;
 }
+
 .triangle {
   clip-path: polygon(100% 0%, 100% 100%, 0% 50%);
   animation: tri-animation 60s;
@@ -514,26 +514,55 @@ footer button:hover {
 
 .result-box .trophy {
   font-size: 10rem;
-  padding: 6.5%;
+  padding: 5%;
   border: 6px solid;
   border-radius: 50%;
-  line-height: 1rem;
-  animation-duration: 2s;
+  display: flex;
+  justify-content: center;
 }
 
-#gold {
+.popinout {
+  animation: 2s popoutin ease ;
+}
+
+@keyframes popoutin {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  }
+  25% {
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 3px 10px 5px rgba(0, 0, 0, 0.5);
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+  100% {
+    /* animate nothing to add pause at the end of animation */
+    transform: scale(1);
+    opacity: 1;
+    text-shadow: 1px 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.result-box .trophy#gold {
   color: rgb(255, 215, 0);
-  background-color: rgb(255 215 0 / 20%);
+  background-color: rgba(255 215 0 / 20%);
 }
 
-#amber {
+
+.result-box .trophy#amber {
   color: rgb(238, 168, 17);
-  background-color: rgb(238, 168, 17 / 20%);
+  background-color: rgba(238, 168, 17, 0.2);
 }
 
-#red {
+.result-box .trophy#red {
   color: rgb(255, 0, 0);
-  background-color: rgb(255, 0, 0 / 20%);
+  background-color: rgba(255, 0, 0, 0.2);
 }
 
 .result-box .completed {
@@ -677,6 +706,90 @@ body.dark-theme .buttons .quit:hover {
   border: 1px solid var(--white);
 }
 
+/* Theme toggler code*/
+
+.theme-toggle {
+  margin: 10px;
+  text-align: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  color: #000;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--pacific-blue);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--white);
+  -webkit-transition: 0.4s;
+  transition: 0.7s;
+  content: "\f186";
+  font-family: "Font Awesome 5 Free";
+  transform: rotate(360deg);
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(109, 108, 108);
+}
+
+body.dark-theme .slider:before {
+  content: "\f185";
+  font-family: "Font Awesome 5 Free";
+}
+
+input:checked + .slider {
+  background-color: var(--sonic-silver);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--sonic-silver);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px) rotate(-180deg);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Media Queries*/
+
 @media screen and (min-width: 480px) {
   .start-btn {
     transform: translate(-50%, -50%) scale(1.4);
@@ -757,85 +870,4 @@ body.dark-theme .buttons .quit:hover {
     margin-top: 45px;
     font-size: 8rem;
   }
-}
-
-/* Theme toggler code*/
-
-.theme-toggle {
-  margin: 10px;
-  text-align: center;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  color: #000;
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--pacific-blue);
-  -webkit-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.slider:before {
-  position: absolute;
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: var(--white);
-  -webkit-transition: 0.4s;
-  transition: 0.7s;
-  content: "\f186";
-  font-family: "Font Awesome 5 Free";
-  transform: rotate(360deg);
-  font-size: 2rem;
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(109, 108, 108);
-}
-
-body.dark-theme .slider:before {
-  content: "\f185";
-  font-family: "Font Awesome 5 Free";
-}
-
-input:checked + .slider {
-  background-color: var(--sonic-silver);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--sonic-silver);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px) rotate(-180deg);
-}
-
-/* Rounded sliders */
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
 }
