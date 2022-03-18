@@ -789,7 +789,7 @@ const quickMode = document.querySelector(".quick-mode");
 const hardMode = document.querySelector(".hard-mode");
 const pubQuizMode = document.querySelector(".pubquiz-mode");
 
-// creating the new div tags which for icons
+// Creating the new div tags which for icons
 
 let correctIconTag =
 `<div class="icon tick"><i class="fas fa-check"></i></div>`;
@@ -807,25 +807,24 @@ let points = 0;
 let timeVal = 0;
 let counter;
 
-  //theme set on load from stack overflow
+  // Theme set on load from stack overflow
 
 let detectColorScheme = () =>{
     let userTheme="";    //default to light
 
-    //local storage is used to override OS theme settings
+    // Local storage is used to override OS theme settings
     if(localStorage.getItem("theme")){
         if(localStorage.getItem("theme") == "dark"){
             userTheme = "dark";
         }
     } else if(!window.matchMedia) {
-        //matchMedia method not supported
         return false;
     } else if(window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        //OS theme setting detected as dark
+        // OS theme setting detected as dark
         userTheme = "dark";
     }
 
-    //dark theme preferred, set document with a `data-theme` attribute
+    // Dark theme preferred, set document with a `data-theme` attribute
     if (userTheme == "dark") {
         document.body.classList.add("dark-theme");
         themeToggler.checked = true;
@@ -834,7 +833,7 @@ let detectColorScheme = () =>{
 
 detectColorScheme();
 
-  //theme set on load from stack overflow
+// Theme set on load from stack overflow
 
 if (localStorage.getItem("theme") == "dark"){
     themeToggler.checked = true;
@@ -858,7 +857,7 @@ quickMode.onclick = () => gameSelect("quick");
 hardMode.onclick = () => gameSelect("hard");
 pubQuizMode.onclick = () => gameSelect("pubQuiz");
 
-// sets rules text based on selection of game mode
+// Sets rules text based on selection of game mode
 
 let setRules = (e) => {
 let numOfQues = quesCount;
@@ -870,7 +869,7 @@ if (e == "pubQuiz") {
     timeToPlay = `${timeVal} seconds`;
 }
 
-// displays the users game mode in the title header of the quetions box
+// Displays the users game mode in the title header of the quetions box
 
 if (e) {
     userSelection.innerText = `${e} Mode`;
@@ -932,7 +931,7 @@ if (choice == "quick") {
     }
 }
 
-//sets  Question count based on user game mode choice
+// Sets question count based on user game mode choice
 
 userGameModeSelect = quesCount;
 setRules(choice);
@@ -1002,7 +1001,7 @@ if (prevRandomNum == randomNum) {
     randomNum += 1;
 }
 
-// sets previous number value for next round
+// Sets previous number value for next round
 
 prevRandomNum = randomNum;
 
@@ -1043,7 +1042,7 @@ if (userSelect == correctAnswer) {
 afterChoice(correctAnswer);
 };
 
-//function to stop user selecting another option and next button text based on question number
+// Function to stop user selecting another option and next button text based on question number
 
 let afterChoice = () => {
 
@@ -1157,16 +1156,16 @@ if (quesNum < quesCount) {
 } else {
     quesBox.classList.remove("activeQuiz");
     resultsBox.classList.add("activeResult");
-    trophy.classList.add("animate__bounceIn");
+    trophy.classList.add("popinout");
     scoreCard();
 }
 };
 
-// REplay onlick function that will allow the user to restart the quiz using same choices
+// Replay onlick function that will allow the user to restart the quiz using same choices
 
 replayBtn.onclick = () => {
 resultsBox.classList.remove("activeResult");
-trophy.classList.remove("animate__bounceIn");
+trophy.classList.remove("popinout");
 trophy.removeAttribute("id");
 rulesBox.classList.add("activerules");
 nextBtn.classList.remove("show");
