@@ -129,7 +129,7 @@ All variable colours are as follows:
 &nbsp;
 
 ### Results
-![Results light Theme Trophy](assets/images/ligth%20theme%20results%20box.png)
+![Results light Theme Trophy](assets/images/light%20theme%20results%20box.png)
 ![Results Dark Theme Trophy](assets/images/dark%20theme%20results%20box.png)
 ![Results light ThemeHalf Star](assets/images/light%20theme%20results%20box%20half%20star.png)
 ![Results Dark Theme Half Star](assets/images/dark%20theme%20results%20box%20half%20star.png)
