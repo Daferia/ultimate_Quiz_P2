@@ -1135,6 +1135,17 @@ let scoreCard = () => {
 let userScore = points;
 let totalPoints = quesCount * 10;
 score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
+let percentage = points / totalPoints*100;
+if(percentage >= 80){
+  trophy.classList.add('gold');
+  trophy.innerHTML = `<i class="fas fa-trophy"></i>`;
+} else if(percentage >= 30){
+  trophy.classList.add('amber');
+  trophy.innerHTML = `<i class="fas fa-star-half-alt"></i>`
+}else if(percentage < 30){
+  trophy.classList.add('red');
+  trophy.innerHTML = `<i class="fas fa-times-circle"></i>`
+}
 };
 
 // Question Counter Onclick function that will add a number to the counter
