@@ -787,17 +787,14 @@ const score = resultsBox.querySelector(".score");
 
 const quickMode = document.querySelector(".quick-mode");
 const hardMode = document.querySelector(".hard-mode");
-
-// const groupPlay = document.querySelector('.group-play');
-
 const pubQuizMode = document.querySelector(".pubquiz-mode");
 
 // creating the new div tags which for icons
 
 let correctIconTag =
-'<div class="icon tick"><i class="fas fa-check"></i></div>';
+`<div class="icon tick"><i class="fas fa-check"></i></div>`;
 let incorrectIconTag =
-'<div class="icon cross"><i class="fas fa-times"></i></div>';
+`<div class="icon cross"><i class="fas fa-times"></i></div>`;
 
 // Declare the starting values for variables
 
@@ -845,10 +842,10 @@ if (localStorage.getItem("theme") == "dark"){
 
 let switchTheme = e =>{
     if (e.checked) {
-        localStorage.setItem('theme', 'dark');
+        localStorage.setItem("theme", "dark");
         document.body.classList.add("dark-theme");
     } else {
-        localStorage.setItem('theme', 'light');
+        localStorage.setItem("theme", "light");
         document.body.classList.remove("dark-theme");
     }    
 };
@@ -878,11 +875,11 @@ if (e == "pubQuiz") {
 if (e) {
     userSelection.innerText = `${e} Mode`;
     gameRules.innerHTML = `<ol>
-                <li class='rules'>You have a total of <span>${numOfQues}</span> questions.</li>
-                <li class='rules'>You have <span>${timeToPlay}</span> per question when playing in <span>${e}</span> mode.</li>
-                <li class='rules'>You cannot quit while playing.</li>
-                <li class='rules'>Once a question is answered, it is final.</li>
-                <li class='rules'>Points will be tallied up on the last question for a final score.</li>
+                <li class="rules">You have a total of <span>${numOfQues}</span> questions.</li>
+                <li class="rules">You have <span>${timeToPlay}</span> per question when playing in <span>${e}</span> mode.</li>
+                <li class="rules">You cannot quit while playing.</li>
+                <li class="rules">Once a question is answered, it is final.</li>
+                <li class="rules">Points will be tallied up on the last question for a final score.</li>
                 </ol>`;
     gameRules.classList.add("rules-tile");
 } else {
@@ -1137,13 +1134,13 @@ let totalPoints = quesCount * 10;
 score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
 let percentage = points / totalPoints*100;
 if(percentage >= 80){
-  trophy.setAttribute('id','gold');
+  trophy.setAttribute("id","gold");
   trophy.innerHTML = `<i class="fas fa-trophy"></i>`;
-} else if(percentage >= 30){
-  trophy.setAttribute('id','amber');
+}else if(percentage >= 30){
+  trophy.setAttribute("id","amber");
   trophy.innerHTML = `<i class="fas fa-star-half-alt"></i>`;
 }else if(percentage <= 29){
-  trophy.setAttribute('id','red');
+  trophy.setAttribute("id","red");
   trophy.innerHTML = `<i class="fas fa-times-circle"></i>`;
 }
 };
@@ -1169,7 +1166,7 @@ if (quesNum < quesCount) {
 
 replayBtn.onclick = () => {
 resultsBox.classList.remove("activeResult");
-trophy.removeAttribute('id');
+trophy.removeAttribute("id");
 rulesBox.classList.add("activerules");
 nextBtn.classList.remove("show");
 randomNum = 0;
