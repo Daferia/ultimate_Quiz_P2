@@ -1137,14 +1137,14 @@ let totalPoints = quesCount * 10;
 score.innerHTML = `<p>You scored<span> ${userScore}</span> of <span>${totalPoints}</span> total points</p>`;
 let percentage = points / totalPoints*100;
 if(percentage >= 80){
-  trophy.classList.add('gold');
+  trophy.setAttribute('id','gold');
   trophy.innerHTML = `<i class="fas fa-trophy"></i>`;
 } else if(percentage >= 30){
-  trophy.classList.add('amber');
-  trophy.innerHTML = `<i class="fas fa-star-half-alt"></i>`
-}else if(percentage < 30){
-  trophy.classList.add('red');
-  trophy.innerHTML = `<i class="fas fa-times-circle"></i>`
+  trophy.setAttribute('id','amber');
+  trophy.innerHTML = `<i class="fas fa-star-half-alt"></i>`;
+}else if(percentage <= 29){
+  trophy.setAttribute('id','red');
+  trophy.innerHTML = `<i class="fas fa-times-circle"></i>`;
 }
 };
 
@@ -1169,6 +1169,7 @@ if (quesNum < quesCount) {
 
 replayBtn.onclick = () => {
 resultsBox.classList.remove("activeResult");
+trophy.removeAttribute('id');
 rulesBox.classList.add("activerules");
 nextBtn.classList.remove("show");
 randomNum = 0;
