@@ -1,11 +1,10 @@
-![Logo](assets/images/Responsive%20light%20start.png)
-
 # The Ultimate Quiz
+
+![Logo](assets/images/Responsive%20light%20start.png)
 
 # The Goal for this Project
 
 The goal of the project is to keep users entertained and at the same time, get them to test their general knowledge through a variety of different questions. The project was inspired by our company’s Pub Quiz nights and the struggle to find a good free application.
-
 
 # Table of Contents
 
@@ -44,11 +43,11 @@ The goal of the project is to keep users entertained and at the same time, get t
 
 ## User Stories
 
-+ As a User, I want the user to be engaged in the quiz
++ As a User, I want the user to be engaged in the quiz and feel absorbed by the UI and the gameplay
 + As a User, I want them to feel challenged as well as provide enjoyment during play
-+ As a User, I want to be able to see my results after playing the game.
++ As a User, I want to be able to see their results after playing the game.
 + As a User, I want to play a quiz intuitively.
-+ As a User, I expect the users to come back to improve their score
++ As a User, I expect the users to come back to improve their scores
 
 ## Requirements
 
@@ -66,7 +65,7 @@ The goal of the project is to keep users entertained and at the same time, get t
 
 ## Fonts
 I have used [Google Fonts](https://fonts.google.com/ "Google Fonts") to find a text that best suits the feel of the website.
-I have used? for most of the site.
+I have used the "Ubuntu" for most of the site.
 
 ## Icons
 I have chosen to use the amazing icons supplied from [Font Awesome library](https://fontawesome.com/ "Font Awesome"). These icons are easy to interpret and are free to use on the website
@@ -207,7 +206,6 @@ All variable colours are as follows:
 + Allow the user to select between light and dark themes and saving that choice to local
 + Highlights the correct answer when a user selects the incorrect answer
 + timer auto selects the corrects answer and regards it as incorrect
-
 \
 &nbsp;
 
@@ -246,6 +244,7 @@ All variable colours are as follows:
 + [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/ "W3C CSS")
 + [JSHint](https://jshint.com/ "JSHint")
 + [Coolors](https://coolors.io/ "Coolors")
++ [Animate.css](https://animate.style/ "Animate.css")
 + [Font Awesome library](https://fontawesome.com/ "Font Awesome")
 + [Google Fonts](https://fonts.google.com/ "Google Fonts")
 
@@ -262,7 +261,6 @@ All variable colours are as follows:
 + On some devices, the Theme toggler is not being checked on load. After loading it once it would be fine but seemed to be only on Dark themed devices that this issue happened.
 + Some mobile devices the screen width would cause the rules box to overstretch. I tried adding more media queries however this would cause many of the devices to have layout errors. I decided to revert it back to have the majority working.
 + Using the browser's responsive device list would not simulate the actual device layout. I had to use the actual device to achieve the desired result.
-
 \
 &nbsp;
 
@@ -290,6 +288,7 @@ All variable colours are as follows:
 
 + Found that on mobile devices, it sometimes would render differently on iPhone Safari browsers. Could not figure out the reason for it but as it was intermittent I decided to leave the code as-is.
 + On smaller devices, the user could not change the theme when viewing the rules section after selecting the game mode. Looking at options to achieve this but will be for future releases.
++ Repeating of questions in some cases especially in the pub quiz mode.
 \
 &nbsp;
 
@@ -350,7 +349,7 @@ For code inspiration, help and advice. Thank you!
 + [Kevin Powell](https://www.youtube.com/kepowob "Kevin Powell") - CSS ideas
 + [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lots of great ideas including the glass effect i used came from Dev Ed.
-
++ [alvarotrigo.com](https://alvarotrigo.com/blog/css-text-animations/?msclkid=cb618b19a6fa11ec8719630984310aee "alvarotrigo.com") - Animation code for popinout on trophy element on results page
 
 \
 &nbsp;
