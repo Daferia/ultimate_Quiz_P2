@@ -1166,6 +1166,7 @@ if (quesNum < quesCount) {
 
 replayBtn.onclick = () => {
 resultsBox.classList.remove("activeResult");
+trophy.classList.remove("animate__bounceIn");
 trophy.removeAttribute("id");
 rulesBox.classList.add("activerules");
 nextBtn.classList.remove("show");
