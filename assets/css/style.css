@@ -514,13 +514,26 @@ footer button:hover {
 
 .result-box .trophy {
   font-size: 15rem;
-  color: rgb(255, 215, 0);
-  background-color: rgb(255 215 0 / 20%);
   padding: 8.5%;
   border: 6px solid;
   border-radius: 50%;
   line-height: 1rem;
   animation-duration: 2s;
+}
+
+.gold {
+  color: rgb(255, 215, 0);
+  background-color: rgb(255 215 0 / 20%);
+}
+
+.amber {
+  color: rgb(238, 168, 17);
+  background-color: rgb(238, 168, 17 / 20%);
+}
+
+.red {
+  color: rgb(255, 0, 0);
+  background-color: rgb(255, 0, 0 / 20%);
 }
 
 .result-box .completed {
