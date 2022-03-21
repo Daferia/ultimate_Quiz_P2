@@ -257,8 +257,8 @@ All variable colours are as follows:
 
 # Testing
 
-+ During testing the biggest issue is the duplication of the questions on the pub quiz mode and sometimes during the hard mode.
-+ Found that on mobile devices, it sometimes would render differently on iPhone Safari browsers. Could not figure out the reason for it but as it was intermittent I decided to leave the code as-is.
++ During testing the biggest issue is the duplication of the questions on the pub quiz mode and sometimes during the hard mode. This was overlooked when the code was put together but should noot repeat due to function in the Random question function (line: 1008)
++ Found that on mobile devices, it sometimes would render differently on iPhone Safari browsers. Could not fix this issue but as it was intermittent I decided to leave the code as-is.
 + On some devices, the Theme toggler is not being checked on load. After loading it once it would be fine but seemed to be only on Dark themed devices that this issue happened.
 + Some mobile devices the screen width would cause the rules box to overstretch. I tried adding more media queries however this would cause many of the devices to have layout errors. I decided to revert it back to have the majority working.
 + Using the browser's responsive device list would not simulate the actual device layout. I had to use the actual device to achieve the desired result.
@@ -351,6 +351,7 @@ For code inspiration, help and advice. Thank you!
 + [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lots of great ideas including the glass effect i used came from Dev Ed.
 + [alvarotrigo.com](https://alvarotrigo.com/blog/css-text-animations/?msclkid=cb618b19a6fa11ec8719630984310aee "alvarotrigo.com") - Animation code for popinout on trophy element on results page
++ [100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games](https://www.quiztriviagames.com/multiple-choice-trivia-questions/ "100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games") - Questions used for the quiz - I did reach our to ask for permission to use the questions from the site owner and he said it was fine as long as it was credited and i sent him the link afterwards to see my project.
 
 \
 &nbsp;
