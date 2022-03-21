@@ -1015,11 +1015,11 @@ let randomQues = () => {
   };
   stopDuplicates(randomNum);
 
-  // Pushes randon number to previous number array for comparsion to stop duplicates
+  // Pushes random number to previous number array for comparsion to stop duplicates
 
   prevRandomNum.push(randomNum);
 
-  // Set Question Number and the corresponding question
+  // Set Question Number and the corresponding question and set the 4 possible answers
 
   question.innerHTML = `${quesNum}. ${quesList[randomNum]}`;
 
