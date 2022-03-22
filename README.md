@@ -352,7 +352,7 @@ For code inspiration, help and advice. Thank you!
 + [Coding Nepal](https://www.codingnepalweb.com/ "Coding Nepal") - Quiz Template idea and some code ideas
 + [Dev Ed](https://www.youtube.com/channel/UClb90NQQcskPUGDIXsQEz5Q "Dev Ed") - Lots of great ideas including the glass effect i used came from Dev Ed.
 + [alvarotrigo.com](https://alvarotrigo.com/blog/css-text-animations/?msclkid=cb618b19a6fa11ec8719630984310aee "alvarotrigo.com") - Animation code for popinout on trophy element on results page
-+ [100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games](https://www.quiztriviagames.com/multiple-choice-trivia-questions/ "100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games") - Questions used for the quiz - I did reach our to ask for permission to use the questions from the site owner and he said it was fine as long as it was credited and i sent him the link afterwards to see my project.
++ [100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games](https://www.quiztriviagames.com/multiple-choice-trivia-questions/ "100 Multiple Choice Trivia Questions & Answers - Quiz Trivia Games") - Questions used for the quiz - I did reach our to ask for permission to use the questions from the site owner and he said it was fine as long as it was credited and I sent him the link afterwards to see my project.
 
 \
 &nbsp;
